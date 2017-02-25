@@ -4,38 +4,26 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.activities.TestActivity;
-import com.junior.davino.ran.adapters.GridItemAdapter;
 import com.junior.davino.ran.adapters.GridTestItemAdapter;
 import com.junior.davino.ran.models.Item;
 
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link RanTestFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link RanTestFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class RanTestFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private List<Item> items;
-    private GridItemAdapter adapter;
 
 
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
 
 
     public RanTestFragment() {
@@ -63,25 +51,13 @@ public class RanTestFragment extends Fragment {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.rv_item);
         mRecyclerView.setHasFixedSize(true);
 
-//        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 8, GridLayoutManager.VERTICAL, false);
-        StaggeredGridLayoutManager gridLayoutManager = new StaggeredGridLayoutManager(8, StaggeredGridLayoutManager.VERTICAL);
-        gridLayoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 8, GridLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
         items = ((TestActivity)getActivity()).getItems();
         GridTestItemAdapter adapter = new GridTestItemAdapter(getActivity(),items);
         mRecyclerView.setAdapter(adapter);
 
-//        GridView gridView = (GridView) view.findViewById(R.id.grid_test);
-//        gridView.setBackgroundColor(Color.WHITE);
-//        gridView.setColumnWidth(GridView.AUTO_FIT);
-//        gridView.setStretchMode(GridView.STRETCH_COLUMN_WIDTH);
-//        gridView.setVerticalSpacing(25);
-//        gridView.setHorizontalSpacing(25);
-//
-//        items = ColorBuilder.createListOfColors(gridView, 20);
-//        adapter = new GridItemAdapter(view.getContext(),items);
-//        gridView.setAdapter(adapter);
 
         return view;
     }
