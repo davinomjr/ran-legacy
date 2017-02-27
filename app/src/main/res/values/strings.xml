@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">RAN</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btStart">Start</string>
+    <string name="tvResult">Result</string>
+    <string name="sNumberMatches">Number of matches</string>
+    <string name="etHint">Hint</string>
+    <string name="voiceRecognitionNotPresent">Voice recognition not available.</string>
+    <string name="selectNumberOfMatches">Please select number of matches from Spinner</string>
+    <string name="audioError">Audio error on application</string>
+    <string name="clientError">Cliente error</string>
+    <string name="networkError">Network error</string>
+    <string name="noMatchError">No matches found</string>
+    <string name="serverError">Server problem</string>
+    <string name="Ok">Ok</string>
 </resources>
