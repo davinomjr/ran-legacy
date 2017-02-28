@@ -32,9 +32,6 @@ public class GridTestItemAdapter extends RecyclerView.Adapter<GridTestItemAdapte
 
     /**
      * Chamado quando é necessário criar uma view
-     * @param parent
-     * @param viewType
-     * @return
      */
     @Override
     public GridViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -53,8 +50,6 @@ public class GridTestItemAdapter extends RecyclerView.Adapter<GridTestItemAdapte
         shape.setColor(item.getOrderNumber());
         viewHolder.imgView.setLayoutParams(new LinearLayout.LayoutParams(150, 150));
         viewHolder.imgView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-
-
     }
 
     @Override

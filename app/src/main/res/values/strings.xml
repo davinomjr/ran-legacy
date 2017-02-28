@@ -12,4 +12,16 @@
     <string name="noMatchError">No matches found</string>
     <string name="serverError">Server problem</string>
     <string name="Ok">Ok</string>
+    <string name="time">Time</string>
+    <string name="matches">Matches</string>
+    <string name="result">Results</string>
+    <string name="progress_dialog">Processing</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="menu_color">Color</string>
+    <string name="menu_digit">Digits</string>
+    <string name="menu_letter">Letters</string>
+    <string name="menu_object">Objects</string>
+    <string name="action_settings">Settinngs</string>
+    <string name="reseted">Reseted</string>
+
 </resources>

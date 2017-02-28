@@ -12,7 +12,7 @@
         android:id="@+id/item_view"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:background="@layout/shape_circle"
+        android:background="@drawable/shape_circle"
         android:layout_weight="1" />
 
 

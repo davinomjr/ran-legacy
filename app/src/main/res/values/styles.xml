@@ -1,11 +1,43 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="AppTheme.Base">
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light">
+        <item name="android:typeface">monospace</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionMenuTextColor">@color/textColorPrimary</item>
+        <item name="android:itemTextAppearance">@color/textColorPrimary</item>
+
+        <!--
+    The name of font in assets/fonts used on titles and action buttons
+    (null uses device default). E.g. [your-project]/app/main/assets/fonts/[medium]
+-->
+        <item name="md_medium_font">OpenDyslexic-Regular.otf</item>
+
+        <!--
+            The name of font in assets/fonts used everywhere else, like content and list items
+            (null uses device default). E.g. [your-project]/app/main/assets/fonts/[regular]
+        -->
+        <item name="md_regular_font">OpenDyslexic-Regular.otf</item>
+
+        <item name="md_divider_color">#000</item>
     </style>
+
+    <style name="MainButtonTheme">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:drawablePadding">-80dp</item>
+        <item name="android:paddingBottom">60dp</item>
+    </style>
+
+<style name="AppTheme.ActionBar" parent="AppTheme.Base">
+    <item name="actionMenuTextColor">#fff</item>
+</style>
+
 
 </resources>
