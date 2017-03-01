@@ -24,7 +24,7 @@ import com.junior.davino.ran.models.Item;
 import com.junior.davino.ran.models.ResultItem;
 import com.junior.davino.ran.utils.ColorBuilder;
 import com.junior.davino.ran.utils.TimerUtil;
-import com.junior.davino.ran.utils.Util;
+import com.junior.davino.ran.utils.Toaster;
 import com.junior.davino.ran.utils.VoiceUtil;
 import com.junior.davino.ran.view.VerticalSpaceItemDecoration;
 
@@ -45,14 +45,17 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
     private List<Item> items;
     SpeechRecognizer sr;
     Button btnSpeak;
+    Toaster toaster = new Toaster();
     TimerUtil timerUtil = new TimerUtil();
     int qtdAcertos = 0;
+    boolean listening;
+    Intent intent;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        items = ColorBuilder.createListOfColors(32);
+        items = ColorBuilder.createListOfColors(24);
         RanTestFragment fragment = RanTestFragment.newInstance();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_test_container, fragment)
@@ -65,6 +68,12 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
         checkVoiceRecognition(btnSpeak);
         if (VoiceUtil.isPermissionOk(this)) {
             btnSpeak.setOnClickListener(this);
+            intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+            intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
+            intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, "com.junior.davino.ran.activities");
+            intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "pt-BR");
+            intent.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, true);
+            intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1);
             createRecognizer();
         }
 
@@ -92,7 +101,6 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
     }
 
     public void onFragmentInteraction(Uri uri){
-
     }
 
     public List<Item> getItems() {
@@ -104,34 +112,48 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
     }
 
     private void reset(){
-        sr.destroy();
+        listening = false;
         timerUtil.reset();
-        qtdAcertos = 0;
-        TestActivity.this.findViewById(R.id.btn_start).setBackgroundColor(getResources().getColor(R.color.md_material_blue_800));
+        sr.destroy();
         createRecognizer();
-        Util.showToastMessage(this, getString(R.string.reseted));
+        alterStateButtonStart(R.string.btStart, R.color.md_material_blue_800);
+        toaster.showToastMessage(this, getString(R.string.reseted), Toast.LENGTH_SHORT);
+    }
+
+    private void stop(){
+        listening = false;
+        sr.stopListening();
+        Log.i(TAG, "STOP LISTENENING");
+        alterStateButtonStart(R.string.btStart, R.color.md_material_blue_800);
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_start) {
-            Log.i(TAG, "Starting listening");
-            Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-            intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
-            intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, "voice.recognition.test");
-            intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "pt-BR");
-            intent.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, true);
-            intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1);
-            sr.startListening(intent);
-            TestActivity.this.findViewById(R.id.btn_start).setBackgroundColor(getResources().getColor(R.color.md_material_blue_600));
-            timerUtil.start();
+            if(!listening) {
+                listening = true;
+                sr.startListening(intent);
+                Log.i(TAG, "START LISTENENING");
+                alterStateButtonStart(R.string.btFinalize, R.color.md_material_blue_600);
+                timerUtil.start();
+            }
+            else{
+                stop();
+            }
         }
         else if(v.getId() == R.id.btn_back){
+            sr.destroy();
             finish();
         }
         else{ //Reset
             reset();
         }
+    }
+
+    private void alterStateButtonStart(int stringResourceId, int colorId){
+        Button button = (Button)TestActivity.this.findViewById(R.id.btn_start);
+        button.setText(getString(stringResourceId));
+        button.setBackgroundColor(getResources().getColor(colorId));
     }
 
 
@@ -156,8 +178,10 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
         }
 
         public void onEndOfSpeech() {
-            Log.i(TAG, "onEndofSpeech");
-            TestActivity.this.findViewById(R.id.btn_start).setBackgroundColor(getResources().getColor(R.color.md_material_blue_800));
+            Log.i(TAG, "onEnndOfSpeech");
+            timerUtil.stop();
+            listening = false;
+            alterStateButtonStart(R.string.btStart, R.color.md_material_blue_800);
             processingDialog = new MaterialDialog.Builder(TestActivity.this)
                     .title(R.string.progress_dialog)
                     .content(R.string.please_wait)
@@ -200,19 +224,19 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
             }
 
             Log.i(TAG, "error " + error);
-            Util.showToastMessage(TestActivity.this, toastMessage);
+            toaster.showToastMessage(TestActivity.this, toastMessage);
             if(processingDialog != null && !processingDialog.isCancelled()){
                 processingDialog.dismiss();
             }
         }
 
         public void onResults(Bundle results) {
+            qtdAcertos = 0;
             processingDialog.dismiss();
-            int ellapsedTime = timerUtil.stop();
+            int ellapsedTime = timerUtil.getLastResult();
 
             List<Item> itemsClone = new ArrayList<Item>(getItems());
             ArrayList data = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
-
 
             if (data.size() > 1) {
                 List<String> words = new ArrayList<String>(Arrays.asList(data.get(0).toString().split(" ")));

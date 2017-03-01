@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">RAN</string>
     <string name="btStart">Start</string>
+    <string name="btStop">Stop</string>
+    <string name="btFinalize">Finish</string>
     <string name="tvResult">Result</string>
     <string name="sNumberMatches">Number of matches</string>
     <string name="etHint">Hint</string>
@@ -17,10 +19,12 @@
     <string name="result">Results</string>
     <string name="progress_dialog">Processing</string>
     <string name="please_wait">Please wait...</string>
-    <string name="menu_color">Color</string>
+    <string name="menu_color">Colors (Images)</string>
+    <string name="menu_color_written">Colors</string>
     <string name="menu_digit">Digits</string>
     <string name="menu_letter">Letters</string>
-    <string name="menu_object">Objects</string>
+    <string name="menu_object">Objects (Images)</string>
+    <string name="menu_object_written">Objects</string>
     <string name="action_settings">Settinngs</string>
     <string name="reseted">Reseted</string>
 

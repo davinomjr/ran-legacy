@@ -51,7 +51,7 @@ public class RanTestFragment extends Fragment {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.rv_item);
         mRecyclerView.setHasFixedSize(true);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 8, GridLayoutManager.VERTICAL, false);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 6, GridLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
         items = ((TestActivity)getActivity()).getItems();

@@ -66,9 +66,6 @@ public class GridTestItemAdapter extends RecyclerView.Adapter<GridTestItemAdapte
             super(view);
             imgView = (ImageView)view.findViewById(R.id.item_view);
         }
-
-
-
     }
 
 

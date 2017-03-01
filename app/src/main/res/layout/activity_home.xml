@@ -14,71 +14,126 @@
         layout="@layout/toolbar"
         ></include>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin">
-
     <LinearLayout
-        android:id="@+id/menu_part_1"
-        android:layout_width="match_parent"
-        android:layout_marginTop="100dp"
-        android:layout_height="180dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:orientation="vertical"
+        android:layout_below="@id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <Button
-            android:id="@+id/btn_color"
-            android:layout_width="wrap_content"
-            android:layout_height="180dp"
-            android:text="@string/menu_color"
-            android:background="#0D47A1"
-            android:layout_marginRight="5dp"
-            android:drawableBottom="@drawable/ic_palette_white_24dp"
-            style="@style/MainButtonTheme"
-            />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btn_digit"
-            android:layout_width="wrap_content"
-            android:layout_height="180dp"
-            android:text="@string/menu_digit"
-            android:background="#2196F3"
-            android:drawableBottom="@drawable/ic_looks_one_white_24dp"
-            style="@style/MainButtonTheme"/>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:weightSum="1"
+                android:layout_weight="0.5">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <Button
+                        android:id="@+id/btn_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/menu_color"
+                        android:background="#01579B"
+                        android:drawableBottom="@drawable/ic_palette_white_24dp"
+                        style="@style/MainButtonTheme" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <Button
+                        android:id="@+id/btn_digit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/menu_digit"
+                        android:background="#0277BD"
+                        android:drawableBottom="@drawable/ic_looks_one_white_24dp"
+                        style="@style/MainButtonTheme"/>
+                </RelativeLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:weightSum="1"
+                android:layout_weight="0.5">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+                    <Button
+                        android:id="@+id/btn_letter"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/menu_letter"
+                        android:background="#0288D1"
+                        android:drawableBottom="@drawable/ic_text_format_white_24dp"
+                        style="@style/MainButtonTheme"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <Button
+                        android:id="@+id/btn_object"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/menu_object"
+                        android:background="#039BE5"
+                        android:drawableBottom="@drawable/ic_flight_white_24dp"
+                        style="@style/MainButtonTheme"/>
+                </RelativeLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:weightSum="1"
+                android:layout_weight="0.5">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+                    <Button
+                        android:id="@+id/btn_color_written"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/menu_color_written"
+                        android:background="#03A9F4"
+                        android:drawableBottom="@drawable/ic_invert_colors_white_24dp"
+                        style="@style/MainButtonTheme"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <Button
+                        android:id="@+id/btn_object_written"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/menu_object_written"
+                        android:background="#29B6F6"
+                        android:drawableBottom="@drawable/ic_directions_car_white_24dp"
+                        style="@style/MainButtonTheme"/>
+                </RelativeLayout>
+            </TableRow>
+
+        </TableLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/menu_part_2"
-        android:layout_width="match_parent"
-        android:layout_below="@+id/menu_part_1"
-        android:layout_height="190dp">
-
-        <Button
-            android:id="@+id/btn_letter"
-            android:layout_width="wrap_content"
-            android:layout_height="180dp"
-            android:text="@string/menu_letter"
-            android:background="#1565C0"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:drawableBottom="@drawable/ic_text_format_white_24dp"
-            style="@style/MainButtonTheme"/>
-
-        <Button
-            android:id="@+id/btn_object"
-            android:layout_width="wrap_content"
-            android:layout_height="180dp"
-            android:text="@string/menu_object"
-            android:background="#1E88E5"
-            android:layout_marginTop="5dp"
-            android:drawableBottom="@drawable/ic_directions_car_white_24dp"
-            style="@style/MainButtonTheme"/>
-
-    </LinearLayout>
-    </RelativeLayout>
 
 </RelativeLayout>
