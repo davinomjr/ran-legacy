@@ -20,8 +20,8 @@
         <activity
             android:name=".activities.TestActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".activities.ResultActivity"></activity>
     </application>
 
 </manifest>
