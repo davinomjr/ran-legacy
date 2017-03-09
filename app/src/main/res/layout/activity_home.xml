@@ -97,40 +97,6 @@
                 </RelativeLayout>
             </TableRow>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:weightSum="1"
-                android:layout_weight="0.5">
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5">
-                    <Button
-                        android:id="@+id/btn_color_written"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="@string/menu_color_written"
-                        android:background="#03A9F4"
-                        android:drawableBottom="@drawable/ic_invert_colors_white_24dp"
-                        style="@style/MainButtonTheme"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5">
-
-                    <Button
-                        android:id="@+id/btn_object_written"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="@string/menu_object_written"
-                        android:background="#29B6F6"
-                        android:drawableBottom="@drawable/ic_directions_car_white_24dp"
-                        style="@style/MainButtonTheme"/>
-                </RelativeLayout>
-            </TableRow>
 
         </TableLayout>
 

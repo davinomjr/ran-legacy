@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.junior.davino.ran.R;
+import com.junior.davino.ran.models.enums.EnumTestType;
 
 public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
@@ -19,8 +20,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        findViewById(R.id.btn_color).setOnClickListener(this);
+        setListeners();
         toolbar = (Toolbar) findViewById(R.id.toolbar); // Attaching the layout to the toolbar object
         setSupportActionBar(toolbar);                   // Setting toolbar as the ActionBar with setSupportActionBar() call
     }
@@ -52,17 +52,33 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         return super.onOptionsItemSelected(item);
     }
 
+    private void setListeners(){
+        findViewById(R.id.btn_color).setOnClickListener(this);
+        findViewById(R.id.btn_digit).setOnClickListener(this);
+    }
+
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btn_color:
-                initializeTest();
+                initializeTest(EnumTestType.COLORS);
+                break;
+            case R.id.btn_digit:
+                initializeTest(EnumTestType.DIGITS);
+                break;
+            case R.id.btn_letter:
+//                initializeTest(EnumTestType.LETTERS);
+                break;
+            case R.id.btn_object:
+//                initializeTest(EnumTestType.OBJECTS);
+                break;
 
         }
     }
 
 
-    private void initializeTest(){
+    private void initializeTest(EnumTestType testType){
         Intent intent = new Intent(this, TestActivity.class);
+        intent.putExtra("option", testType);
         this.startActivity(intent);
     }
 

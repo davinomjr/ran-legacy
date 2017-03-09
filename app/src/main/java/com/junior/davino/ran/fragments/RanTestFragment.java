@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.activities.TestActivity;
 import com.junior.davino.ran.adapters.GridTestItemAdapter;
+import com.junior.davino.ran.models.enums.EnumTestType;
 import com.junior.davino.ran.models.Item;
 
 import java.util.List;
@@ -30,15 +31,11 @@ public class RanTestFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment RanTestFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static RanTestFragment newInstance() {
+
+    public static RanTestFragment newInstance(EnumTestType testType) {
         RanTestFragment fragment = new RanTestFragment();
         Bundle args = new Bundle();
+        args.putSerializable("option", testType);
         fragment.setArguments(args);
         return fragment;
     }
@@ -48,14 +45,17 @@ public class RanTestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ran_test, container, false);
 
+        EnumTestType option = (EnumTestType) getArguments().getSerializable("option");
+
         mRecyclerView = (RecyclerView) view.findViewById(R.id.rv_item);
         mRecyclerView.setHasFixedSize(true);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 6, GridLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
+
         items = ((TestActivity)getActivity()).getItems();
-        GridTestItemAdapter adapter = new GridTestItemAdapter(getActivity(),items);
+        GridTestItemAdapter adapter = new GridTestItemAdapter(getActivity(),items, option);
         mRecyclerView.setAdapter(adapter);
 
 

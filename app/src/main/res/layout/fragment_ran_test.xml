@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    >
+    android:padding="10dp">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_item"
@@ -11,23 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:minHeight="99999dp"/>
-
-
-    <!---->
-    <!--<GridView-->
-        <!--android:id="@+id/grid_test"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:numColumns="5"-->
-        <!--android:rowCount="3"-->
-        <!--android:columnWidth="25dp"-->
-        <!--android:paddingLeft="25dp"-->
-        <!--android:paddingRight="25dp">-->
-
-    <!--</GridView>-->
 
 
 </FrameLayout>

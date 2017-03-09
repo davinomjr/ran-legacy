@@ -5,15 +5,15 @@
     android:layout_height="match_parent"
     android:paddingRight="5dp"
     android:paddingLeft="5dp"
-    android:layout_margin="4dp"
-    android:id="@+id/teste">
+    android:layout_margin="4dp">
 
     <ImageView
         android:id="@+id/item_view"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:background="@drawable/shape_circle"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:scaleType="centerCrop"/>
 
 
 </LinearLayout>

@@ -21,12 +21,12 @@
     <string name="result">Results</string>
     <string name="progress_dialog">Processing</string>
     <string name="please_wait">Please wait...</string>
-    <string name="menu_color">Colors (Images)</string>
-    <string name="menu_color_written">Colors</string>
+    <string name="menu_color">Colors</string>
+    <string name="menu_color_written">Colors (Written)</string>
     <string name="menu_digit">Digits</string>
     <string name="menu_letter">Letters</string>
-    <string name="menu_object">Objects (Images)</string>
-    <string name="menu_object_written">Objects</string>
+    <string name="menu_object">Objects</string>
+    <string name="menu_object_written">Objects (Written)</string>
     <string name="action_settings">Settinngs</string>
     <string name="reseted">Reseted</string>
     <string name="startWord1">Start</string>

@@ -1,7 +1,7 @@
 package com.junior.davino.ran.activities;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 
 import com.junior.davino.ran.utils.FontsUtil;
 
@@ -9,7 +9,7 @@ import com.junior.davino.ran.utils.FontsUtil;
  * Created by davin on 24/02/2017.
  */
 
-public abstract class BaseActivity extends ActionBarActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

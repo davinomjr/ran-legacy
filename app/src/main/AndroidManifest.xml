@@ -10,7 +10,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.HomeActivity">
+        <activity
+            android:name=".activities.HomeActivity"
+            android:screenOrientation="portrait">>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,8 +22,15 @@
         <activity
             android:name=".activities.TestActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape"></activity>
-        <activity android:name=".activities.ResultActivity"></activity>
+            android:screenOrientation="landscape">
+        </activity>
+
+        <activity
+            android:name=".activities.ResultActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape">
+        </activity>
+
     </application>
 
 </manifest>

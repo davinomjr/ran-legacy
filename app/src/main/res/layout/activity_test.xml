@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/textColorPrimary">
+    android:background="@color/backgroundTest">
 
     <LinearLayout
         android:id="@+id/buttons"
@@ -21,7 +21,7 @@
             android:drawableLeft="@drawable/ic_cancel_white_24dp"
             android:drawablePadding="-45sp"
             android:paddingLeft="50dp"
-            android:background="@android:color/darker_gray"
+            android:background="@color/orange_accent"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_marginRight="15dp"
             />
@@ -49,7 +49,7 @@
             android:drawableLeft="@drawable/ic_restore_white_24dp"
             android:layout_marginLeft="15dp"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:background="#FF5252" />
+            android:background="@color/md_edittext_error" />
 
 
     </LinearLayout>

@@ -21,14 +21,16 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.fragments.RanTestFragment;
+import com.junior.davino.ran.interfaces.IItemBuilder;
 import com.junior.davino.ran.models.Item;
 import com.junior.davino.ran.models.ResultItem;
 import com.junior.davino.ran.models.ResultSummary;
-import com.junior.davino.ran.utils.ColorBuilder;
+import com.junior.davino.ran.models.enums.EnumTestType;
 import com.junior.davino.ran.utils.TimerUtil;
 import com.junior.davino.ran.utils.Toaster;
 import com.junior.davino.ran.utils.Util;
 import com.junior.davino.ran.utils.VoiceUtil;
+import com.junior.davino.ran.utils.builders.FactoryBuilder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,8 +44,10 @@ import java.util.List;
 public class TestActivity extends FragmentActivity implements RanTestFragment.OnFragmentInteractionListener, View.OnClickListener {
 
     private static final String TAG = "TestActivity";
+    private static final int ITEMSCOUNT = 24;
+
     private List<Item> items;
-    SpeechRecognizer testRecognizer, startRecognizer;
+    SpeechRecognizer testRecognizer;
     Button btnSpeak;
     Toaster toaster = new Toaster();
     TimerUtil timerUtil = new TimerUtil();
@@ -53,26 +57,38 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
     boolean testFinalized = false;
     CountDownTimer countdownTimer;
     MaterialDialog processingDialog;
+    int current_volume;
+    EnumTestType testType;
+    String characterSplit;
 
-    RecognitionListener startRecognitionListener, testRecognitionnListener;
+    RecognitionListener testRecognitionnListener;
+
+    private AudioManager mAudioManager;
+    private int mStreamVolume = 0;
 
     List<String> wordsRecognition = new ArrayList<>();
+    Button btn_back, btn_reset;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        items = ColorBuilder.createListOfColors(24);
-        RanTestFragment fragment = RanTestFragment.newInstance();
+
+        Bundle extras = getIntent().getExtras();
+        if(extras == null){
+            Log.i(TAG, "Null Intent extras");
+        }
+
+        prepareTest();
+        RanTestFragment fragment = RanTestFragment.newInstance(testType);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_test_container, fragment)
                 .commit();
 
 
         btnSpeak = (Button) findViewById(R.id.btn_start);
-        findViewById(R.id.btn_back).setOnClickListener(this);
-        findViewById(R.id.btn_reset).setOnClickListener(this);
+        setClickListeners();
         checkVoiceRecognition(btnSpeak);
         if (!VoiceUtil.isPermissionOk(this)) {
             toaster.showToastMessage(this, getString(R.string.voiceRecognitionNotPresent));
@@ -81,16 +97,21 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
 
         btnSpeak.setOnClickListener(this);
         intent = buildVoiceRecognitionIntent();
-        startRecognitionListener = new StartVoiceRecognitionListener();
         testRecognitionnListener = new VoiceRecognitionListener();
-        startRecognizer = createRecognizer(startRecognitionListener);
         testRecognizer = createRecognizer(testRecognitionnListener);
 
-        AudioManager audioManager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
-        audioManager.setStreamMute(AudioManager.STREAM_MUSIC, true);
-
-        startRecognizer.startListening(intent);
+        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        mStreamVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC); // getting system volume into var for later un-muting
+        mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 0, 0); // setting system volume to zero, muting
     }
+
+    private void setClickListeners(){
+        btn_back = (Button) findViewById(R.id.btn_back);
+        btn_reset = (Button) findViewById(R.id.btn_reset);
+        btn_back.setOnClickListener(this);
+        btn_reset.setOnClickListener(this);
+    }
+
 
     private Intent buildVoiceRecognitionIntent() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -98,6 +119,7 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "pt-BR");
         intent.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, true);
         intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1);
+        intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getPackageName());
         intent.putExtra("android.speech.extra.DICTATION_MODE", true);
         return intent;
     }
@@ -106,16 +128,6 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
         SpeechRecognizer recognizer = SpeechRecognizer.createSpeechRecognizer(this);
         recognizer.setRecognitionListener(listener);
         return recognizer;
-    }
-
-
-    private void restartStartRecognizer() {
-        if (startRecognizer == null) {
-            startRecognizer = createRecognizer(startRecognitionListener);
-        }
-
-        startRecognizer.cancel();
-        startRecognizer.startListening(intent);
     }
 
     private void restartVoiceTestRecognizer() {
@@ -129,8 +141,8 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
 
 
     private void destroyListeningRecognizer(SpeechRecognizer recognizer) {
-        Log.i(TAG, "Destroying recognizer");
         if (recognizer != null) {
+            Log.i(TAG, "Destroying recognizer");
             recognizer.destroy();
         }
     }
@@ -142,9 +154,6 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
             testRecognizer.destroy();
         }
 
-        if (startRecognizer != null) {
-            startRecognizer.destroy();
-        }
         super.onDestroy();
     }
 
@@ -155,26 +164,16 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
             testRecognizer.destroy();
         }
 
-        if (startRecognizer != null) {
-            startRecognizer.destroy();
-        }
-
         super.onPause();
     }
 
     @Override
     public void onResume() {
         Log.i(TAG, "onResume");
-        if (startRecognizer == null) {
-            startRecognizer = createRecognizer(startRecognitionListener);
-        }
-
         if (testRecognizer == null) {
             testRecognizer = createRecognizer(testRecognitionnListener);
         }
 
-        Log.i(TAG, "STARTRECOGNIZER = NULL ? " + String.valueOf(startRecognitionListener == null));
-        Log.i(TAG, "INTENT = NULL ? " + String.valueOf(intent == null));
         reset();
         super.onResume();
     }
@@ -202,29 +201,36 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
     private void reset() {
         listening = false;
         wordsRecognition.clear();
-        destroyListeningRecognizer(startRecognizer);
         destroyListeningRecognizer(testRecognizer);
-        startRecognizer = createRecognizer(startRecognitionListener);
         testRecognizer = createRecognizer(testRecognitionnListener);
         changeStartButtonState(R.string.btStart, R.color.md_material_blue_800);
         timerUtil.reset();
-        startRecognizer.startListening(intent);
     }
 
-    private void stop() {
+    private void stopTest() {
+        Log.i(TAG, "STOP LISTENENING");
         listening = false;
         timerUtil.stop();
-        Log.i(TAG, "STOP LISTENENING");
+        testRecognizer.stopListening();
+
         changeStartButtonState(R.string.btStart, R.color.md_material_blue_800);
+        processingDialog = new MaterialDialog.Builder(TestActivity.this)
+                .title(R.string.progress_dialog)
+                .content(R.string.please_wait)
+                .progress(true, 0)
+                .build();
+
+        processingDialog.show();
+
     }
 
     public void startTest() {
-        AudioManager audioManager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
-        audioManager.setStreamMute(AudioManager.STREAM_MUSIC, false);
-
+        btn_reset.setClickable(false);
+        btn_reset.setBackgroundColor(getResources().getColor(R.color.light_red));
         countdownTimer = new CountDownTimer(3 * 1000, 750) {
             TextView countdownView = (TextView) findViewById(R.id.countdownTimer);
             boolean firstTick = true;
+
 
             @Override
             public void onTick(long millisUntilFinished) {
@@ -239,12 +245,11 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
 
             @Override
             public void onFinish() {
+                btn_reset.setClickable(true);
+                btn_reset.setBackgroundColor(getResources().getColor(R.color.red_accent));
                 Log.i(TAG, "START LISTENENING");
                 listening = true;
                 countdownView.setVisibility(View.INVISIBLE);
-                if (startRecognizer != null) {
-                    startRecognizer.destroy();
-                }
                 testRecognizer.startListening(intent);
                 changeStartButtonState(R.string.btFinalize, R.color.md_material_blue_600);
                 timerUtil.start();
@@ -265,16 +270,22 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
             if (!listening) {
                 startTest();
             } else {
-                stop();
-                Log.i(TAG, "Finalizando teste");
-                testRecognizer.stopListening();
+                stopTest();
+                new android.os.Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() { // Tempo para realizacao de reconhecimento (onResults)
+                        if(!testFinalized){
+                            finalizeTest();
+                        }
+                    }
+                },2500);
             }
         } else if (v.getId() == R.id.btn_back) {
-            destroyListeningRecognizer(startRecognizer);
             destroyListeningRecognizer(testRecognizer);
             finish();
-        } else { //Reset
+        } else {
             reset();
+            toaster.showToastMessage(this, getString(R.string.reseted));
         }
     }
 
@@ -285,13 +296,13 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
     }
 
     private void finalizeTest() {
+        Log.i(TAG, "Finalizando teste");
         testFinalized = true;
         if (processingDialog != null && !processingDialog.isCancelled()) {
             processingDialog.dismiss();
         }
 
         int ellapsedTime = timerUtil.getLastResult();
-        Log.i(TAG, "TEMPO PASSADO = " + ellapsedTime);
 
         List<Item> itemsClone = new ArrayList<Item>(getItems());
 
@@ -306,6 +317,8 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
             Item item = iterator.next();
             while (itWords.hasNext()) {
                 String nextWord = itWords.next();
+                Log.i(TAG, "ITEM SENDO COMPARADO = " + item.getName());
+                Log.i(TAG, "PALAVRA SENDO COMPARADO = " + nextWord);
                 if (Util.isEqualStripAccentsIgnoreCase(item.getName(), nextWord)) {
                     matchWords.add(nextWord.toLowerCase());
                     Log.i(TAG, " ITEMS LEFT:" + String.valueOf(itemsClone.size()));
@@ -325,69 +338,26 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
         resultSummary.setMissesWords(missesWords);
         Intent intent = new Intent(TestActivity.this, ResultActivity.class);
         intent.putExtra("Result", resultSummary);
+        intent.putExtra("option", testType);
         startActivity(intent);
+//        finish(); Descomentar apenas se necessario voltar para a tela de testes
     }
 
-    class StartVoiceRecognitionListener implements RecognitionListener {
-
-        public void onReadyForSpeech(Bundle params) {
-            Log.i(TAG, "onReadyForSpeech startRecognizer");
-        }
-
-        public void onBeginningOfSpeech() {
-            Log.i(TAG, "onBeginningOfSpeech startRecognizer");
-        }
-
-        public void onRmsChanged(float rmsdB) {
-            Log.d(TAG, "onRmsChanged startRecognizer");
-        }
-
-        public void onBufferReceived(byte[] buffer) {
-            Log.d(TAG, "onBufferReceived startRecognizer");
-        }
-
-        @Override
-        public void onEndOfSpeech() {
-            Log.i(TAG, "onEnndOfSpeech startRecognizer");
-        }
-
-        @Override
-        public void onError(int error) {
-            if (error == 7 && !listening) {
-                Log.i(TAG, "onError startRecognizer");
-                restartStartRecognizer();
-            }
-        }
-
-        @Override
-        public void onResults(Bundle results) {
-            restartStartRecognizer();
-            ArrayList data = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
-            if (data.size() > 1) {
-                List<String> words = new ArrayList<String>(Arrays.asList(data.get(0).toString().split(" ")));
-                for (String word : words) {
-                    if (Util.isEqualStripAccentsIgnoreCase(getString(R.string.startWord1), word)) {
-                        Log.i(TAG, "ACHOU PALAVRA INICIAR");
-                        startRecognizer.destroy();
-                        startTest();
-                        break;
-                    }
-                }
-            }
-        }
-
-
-        @Override
-        public void onPartialResults(Bundle partialResults) {
-
-        }
-
-        @Override
-        public void onEvent(int eventType, Bundle params) {
-
-        }
+    private void prepareTest(){
+        testType = (EnumTestType) getIntent().getSerializableExtra("option");
+        IItemBuilder builder = FactoryBuilder.createItemBuilder(testType);
+        items = builder.buildItems(ITEMSCOUNT);
+        setCharacterSplit();
     }
 
+    private void setCharacterSplit(){
+        if(testType == EnumTestType.DIGITS){
+            characterSplit = "";
+        }
+        else{
+            characterSplit = " ";
+        }
+    }
 
     public class VoiceRecognitionListener implements RecognitionListener {
 
@@ -413,51 +383,39 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
             if (listening) {
                 return;
             }
-
-            if (!testFinalized) {
-                timerUtil.stop();
-                changeStartButtonState(R.string.btStart, R.color.md_material_blue_800);
-                processingDialog = new MaterialDialog.Builder(TestActivity.this)
-                        .title(R.string.progress_dialog)
-                        .content(R.string.please_wait)
-                        .progress(true, 0)
-                        .build();
-
-                processingDialog.show();
-            }
         }
 
         public void onError(int error) {
             Log.i(TAG, "onError TEST");
-            if (listening && error == 7) {
+            if (listening && error == SpeechRecognizer.ERROR_NO_MATCH) {
                 restartVoiceTestRecognizer();
                 return;
             }
 
             String toastMessage = "";
             switch (error) {
-                case 1:
+                case SpeechRecognizer.ERROR_NETWORK_TIMEOUT:
                     toastMessage = getString(R.string.networkTimeoutError);
                     break;
-                case 2:
+                case SpeechRecognizer.ERROR_NETWORK:
                     toastMessage = getString(R.string.networkError);
                     break;
-                case 3:
+                case SpeechRecognizer.ERROR_AUDIO:
                     toastMessage = getString(R.string.audioError);
                     break;
-                case 4:
+                case SpeechRecognizer.ERROR_SERVER:
                     toastMessage = getString(R.string.serverError);
                     break;
-                case 5:
+                case SpeechRecognizer.ERROR_CLIENT:
                     toastMessage = getString(R.string.clientError);
                     break;
-                case 6:
+                case SpeechRecognizer.ERROR_SPEECH_TIMEOUT:
                     toastMessage = getString(R.string.speechTimeoutError);
                     break;
-                case 7:
+                case SpeechRecognizer.ERROR_NO_MATCH:
                     toastMessage = getString(R.string.noMatchError);
                     break;
-                case 8:
+                case SpeechRecognizer.ERROR_RECOGNIZER_BUSY:
                     toastMessage = getString(R.string.recoginizerBusyError);
                     break;
                 default:
@@ -465,11 +423,14 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
                     break;
             }
 
-            Log.i(TAG, "Error " + error);
-            toaster.showToastMessage(TestActivity.this, toastMessage);
+            Log.i(TAG, "Error: " + toastMessage);
             if (processingDialog != null && !processingDialog.isCancelled()) {
                 processingDialog.dismiss();
             }
+        }
+
+        private List<String> getRecognizedWordsByType(String sentenceRecognized){
+            return Arrays.asList(sentenceRecognized.split(characterSplit));
         }
 
         public void onResults(Bundle results) {
@@ -480,23 +441,13 @@ public class TestActivity extends FragmentActivity implements RanTestFragment.On
 
             ArrayList data = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
             if (data.size() > 1) {
-                List<String> words = new ArrayList<String>(Arrays.asList(data.get(0).toString().split(" ")));
+                List<String> words = getRecognizedWordsByType(data.get(0).toString());
+                boolean foundMagicWord = false;
                 for (String word : words) {
-                    if (Util.isEqualStripAccentsIgnoreCase(getString(R.string.endWord1), word)) {
-                        stop();
-                        destroyListeningRecognizer(testRecognizer);
-                        Log.i(TAG, "Finalizando teste");
-                        finalizeTest();
-                        break;
-                    } else {
-                        Log.i(TAG, "ADDED RESULT WORD");
+                    if(!word.isEmpty()){
                         wordsRecognition.add(word.toLowerCase());
                     }
                 }
-            }
-
-            if(!listening){
-                finalizeTest();
             }
         }
 
