@@ -8,8 +8,7 @@ import java.lang.reflect.Field;
 public final class FontsUtil {
 
     public static void setDefaultFont(Context context,String staticTypefaceFieldName, String fontAssetName) {
-        final Typeface regular = Typeface.createFromAsset(context.getAssets(),
-                fontAssetName);
+        final Typeface regular = Typeface.createFromAsset(context.getAssets(), fontAssetName);
         replaceFont(staticTypefaceFieldName, regular);
     }
 

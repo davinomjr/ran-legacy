@@ -13,21 +13,21 @@ public class ColorBuilder extends BaseBuilder implements IItemBuilder {
 
 
     @Override
-    protected Item getItem(int colorCode){
+    protected Item getItem(int code){
         Item item = new Item();
-        if(colorCode == 1){
+        if(code == 1){
             item.setName("Vermelho");
             item.setOrderNumber(Color.RED);
         }
-        else if(colorCode == 2){
+        else if(code == 2){
             item.setName("Verde");
             item.setOrderNumber(Color.GREEN);
         }
-        else if(colorCode == 3){
+        else if(code == 3){
             item.setName("Azul");
             item.setOrderNumber(Color.BLUE);
         }
-        else if(colorCode == 4){
+        else if(code == 4){
             item.setName("Preto");
             item.setOrderNumber(Color.BLACK);
         }

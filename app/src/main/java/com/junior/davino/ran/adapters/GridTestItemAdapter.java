@@ -1,6 +1,7 @@
 package com.junior.davino.ran.adapters;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.models.Item;
 import com.junior.davino.ran.models.enums.EnumTestType;
@@ -28,9 +30,11 @@ public class GridTestItemAdapter extends RecyclerView.Adapter<GridTestItemAdapte
     EnumTestType testType;
     private List<Item> items;
     private LayoutInflater inflater;
+    private Context context;
 
 
     public GridTestItemAdapter(Context context, List<Item> items, EnumTestType testType){
+        this.context = context;
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.items = items;
         this.testType = testType;
@@ -46,7 +50,11 @@ public class GridTestItemAdapter extends RecyclerView.Adapter<GridTestItemAdapte
         if(testType == EnumTestType.COLORS) {
             itemView = inflater.inflate(R.layout.item_test, parent, false);
         }
-        else if(testType == EnumTestType.DIGITS){
+        else if(testType == EnumTestType.OBJECTS){
+            itemView = inflater.inflate(R.layout.item_object_test, parent, false);
+        }
+        else{
+//        else if(testType == EnumTestType.DIGITS){
             itemView = inflater.inflate(R.layout.item_digit_test, parent, false);
             int height = parent.getMeasuredHeight() / 6;
             itemView.getLayoutParams().height = height;
@@ -68,8 +76,32 @@ public class GridTestItemAdapter extends RecyclerView.Adapter<GridTestItemAdapte
             shape.setColor(item.getOrderNumber());
             viewHolder.imgView.setLayoutParams(new LinearLayout.LayoutParams(150, 150));
         }
-        else if(testType == EnumTestType.DIGITS){
-            viewHolder.txtView.setText(String.valueOf(item.getOrderNumber()));
+        else if(testType == EnumTestType.OBJECTS){
+            Glide.with(context)
+                    .load("")
+                    .placeholder(getObjectImage(item.getOrderNumber()))
+                    .into(viewHolder.imgView);
+
+//            viewHolder.imgView.setLayoutParams(new LinearLayout.LayoutParams(150, 150));
+        }
+        else {//if(testType == EnumTestType.DIGITS){
+            viewHolder.txtView.setText(String.valueOf(item.getName()));
+        }
+    }
+
+    private Drawable getObjectImage(int code){
+        switch(code){
+            case 1:
+                return context.getResources().getDrawable(R.drawable.cachorro);
+            case 2:
+                return context.getResources().getDrawable(R.drawable.tesoura);
+            case 3:
+                return context.getResources().getDrawable(R.drawable.pente);
+            case 4:
+                return context.getResources().getDrawable(R.drawable.panela);
+            case 5:
+                return context.getResources().getDrawable(R.drawable.bola);
+            default: throw new IllegalArgumentException("Imagem não encontrada");
         }
     }
 
@@ -94,10 +126,12 @@ public class GridTestItemAdapter extends RecyclerView.Adapter<GridTestItemAdapte
             if(testType == EnumTestType.COLORS){
                 imgView = (ImageView)view.findViewById(R.id.item_view);
             }
-            else if(testType == EnumTestType.DIGITS){
+            else if(testType == EnumTestType.OBJECTS){
+                imgView = (ImageView)view.findViewById(R.id.item_object_view);
+            }
+            else { // DIGIS OR LETTERS
                 txtView = (TextView)view.findViewById(R.id.item_tview);
             }
-
         }
     }
 

@@ -16,7 +16,11 @@ public final class FactoryBuilder {
         else if(testType == EnumTestType.DIGITS){
             return new DigitBuilder();
         }
-
-        return null;
+        else if(testType == EnumTestType.LETTERS){
+            return new LetterBuilder();
+        }
+        else{ // OBJECTS
+            return new ObjectBuilder();
+        }
     }
 }

@@ -4,9 +4,9 @@
     <string name="btStop">Stop</string>
     <string name="btFinalize">Finish</string>
     <string name="tvResult">Result</string>
-    <string name="sNumberWords">Number of words</string>
-    <string name="sNumberMatches">Number of matches</string>
-    <string name="sNumberMiss">Number of miss</string>
+    <string name="sNumberWords">Number of words: %s</string>
+    <string name="sNumberMatches">Number of matches: %s</string>
+    <string name="sNumberMiss">Number of miss: %s</string>
     <string name="etHint">Hint</string>
     <string name="voiceRecognitionNotPresent">Voice recognition not available.</string>
     <string name="selectNumberOfMatches">Please select number of matches from Spinner</string>
@@ -16,7 +16,7 @@
     <string name="noMatchError">No matches found</string>
     <string name="serverError">Server problem</string>
     <string name="Ok">Ok</string>
-    <string name="time">Time</string>
+    <string name="time">Time: %s</string>
     <string name="matches">Matches</string>
     <string name="result">Results</string>
     <string name="progress_dialog">Processing</string>
@@ -34,6 +34,7 @@
     <string name="resultTabTitle1">Summary</string>
     <string name="resultTabTitle2">Matches</string>
     <string name="resultTabTitle3">Wrongs</string>
+    <string name="test">Test</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

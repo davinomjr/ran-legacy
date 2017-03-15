@@ -55,6 +55,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     private void setListeners(){
         findViewById(R.id.btn_color).setOnClickListener(this);
         findViewById(R.id.btn_digit).setOnClickListener(this);
+        findViewById(R.id.btn_letter).setOnClickListener(this);
+        findViewById(R.id.btn_object).setOnClickListener(this);
     }
 
     public void onClick(View v) {
@@ -66,10 +68,10 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                 initializeTest(EnumTestType.DIGITS);
                 break;
             case R.id.btn_letter:
-//                initializeTest(EnumTestType.LETTERS);
+                initializeTest(EnumTestType.LETTERS);
                 break;
             case R.id.btn_object:
-//                initializeTest(EnumTestType.OBJECTS);
+                initializeTest(EnumTestType.OBJECTS);
                 break;
 
         }

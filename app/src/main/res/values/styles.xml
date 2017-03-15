@@ -35,6 +35,13 @@
         <item name="android:paddingBottom">100dp</item>
     </style>
 
+
+    <style name="MainButtonTheme_Land">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingBottom">50dp</item>
+    </style>
+
 <style name="AppTheme.ActionBar" parent="AppTheme.Base">
     <item name="actionMenuTextColor">#fff</item>
 </style>

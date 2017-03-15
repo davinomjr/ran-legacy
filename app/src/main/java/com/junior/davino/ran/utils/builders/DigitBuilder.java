@@ -10,21 +10,21 @@ import com.junior.davino.ran.models.Item;
 public class DigitBuilder extends BaseBuilder implements IItemBuilder {
 
     @Override
-    protected Item getItem(int colorCode){
+    protected Item getItem(int code){
         Item item = new Item();
-        if(colorCode == 1){
+        if(code == 1){
             item.setName("6");
             item.setOrderNumber(6);
         }
-        else if(colorCode == 2){
+        else if(code == 2){
             item.setName("4");
             item.setOrderNumber(4);
         }
-        else if(colorCode == 3){
+        else if(code == 3){
             item.setName("7");
             item.setOrderNumber(7);
         }
-        else if(colorCode == 4){
+        else if(code == 4){
             item.setName("9");
             item.setOrderNumber(9);
         }

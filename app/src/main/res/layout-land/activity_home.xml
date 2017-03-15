@@ -37,7 +37,7 @@
             android:layout_marginRight="5dp"
             android:drawablePadding="-60dp"
             android:drawableBottom="@drawable/ic_palette_white_24dp"
-            style="@style/MainButtonTheme"
+            style="@style/MainButtonTheme_Land"
             />
 
         <Button
@@ -48,7 +48,7 @@
             android:background="#2196F3"
             android:drawableBottom="@drawable/ic_looks_one_white_24dp"
             android:drawablePadding="-60dp"
-            style="@style/MainButtonTheme"/>
+            style="@style/MainButtonTheme_Land"/>
 
     </LinearLayout>
 
@@ -68,7 +68,7 @@
             android:layout_marginRight="5dp"
             android:drawablePadding="-60dp"
             android:drawableBottom="@drawable/ic_text_format_white_24dp"
-            style="@style/MainButtonTheme"/>
+            style="@style/MainButtonTheme_Land"/>
 
         <Button
             android:id="@+id/btn_object"
@@ -79,7 +79,7 @@
             android:layout_marginTop="5dp"
             android:drawablePadding="-60dp"
             android:drawableBottom="@drawable/ic_directions_car_white_24dp"
-            style="@style/MainButtonTheme"/>
+            style="@style/MainButtonTheme_Land"/>
 
     </LinearLayout>
     </RelativeLayout>
