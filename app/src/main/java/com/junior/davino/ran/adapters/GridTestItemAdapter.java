@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.junior.davino.ran.R;
-import com.junior.davino.ran.models.Item;
+import com.junior.davino.ran.models.TestItem;
 import com.junior.davino.ran.models.enums.EnumTestType;
 
 import java.util.List;
@@ -28,12 +28,12 @@ public class GridTestItemAdapter extends RecyclerView.Adapter<GridTestItemAdapte
     private static final String TAG = "GridTestItemAdapter";
 
     EnumTestType testType;
-    private List<Item> items;
+    private List<TestItem> items;
     private LayoutInflater inflater;
     private Context context;
 
 
-    public GridTestItemAdapter(Context context, List<Item> items, EnumTestType testType){
+    public GridTestItemAdapter(Context context, List<TestItem> items, EnumTestType testType){
         this.context = context;
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.items = items;
@@ -70,7 +70,7 @@ public class GridTestItemAdapter extends RecyclerView.Adapter<GridTestItemAdapte
      */
     @Override
     public void onBindViewHolder(GridViewHolder viewHolder, int position) {
-        Item item = items.get(position);
+        TestItem item = items.get(position);
         if(testType == EnumTestType.COLORS){
             GradientDrawable shape = (GradientDrawable)viewHolder.imgView.getBackground();
             shape.setColor(item.getOrderNumber());

@@ -1,41 +1,48 @@
 <resources>
     <string name="app_name">RAN</string>
     <string name="btStart">Start</string>
-    <string name="btStop">Stop</string>
     <string name="btFinalize">Finish</string>
-    <string name="tvResult">Result</string>
     <string name="sNumberWords">Number of words: %s</string>
     <string name="sNumberMatches">Number of matches: %s</string>
     <string name="sNumberMiss">Number of miss: %s</string>
-    <string name="etHint">Hint</string>
     <string name="voiceRecognitionNotPresent">Voice recognition not available.</string>
-    <string name="selectNumberOfMatches">Please select number of matches from Spinner</string>
     <string name="audioError">Audio error on application</string>
     <string name="clientError">Cliente error</string>
     <string name="networkError">Network error</string>
     <string name="noMatchError">No matches found</string>
     <string name="serverError">Server problem</string>
-    <string name="Ok">Ok</string>
     <string name="time">Time: %s</string>
-    <string name="matches">Matches</string>
-    <string name="result">Results</string>
     <string name="progress_dialog">Processing</string>
     <string name="please_wait">Please wait...</string>
     <string name="menu_color">Colors</string>
-    <string name="menu_color_written">Colors (Written)</string>
     <string name="menu_digit">Digits</string>
     <string name="menu_letter">Letters</string>
     <string name="menu_object">Objects</string>
-    <string name="menu_object_written">Objects (Written)</string>
     <string name="action_settings">Settinngs</string>
     <string name="reseted">Reseted</string>
-    <string name="startWord1">Start</string>
-    <string name="endWord1">Finalize</string>
     <string name="resultTabTitle1">Summary</string>
     <string name="resultTabTitle2">Matches</string>
     <string name="resultTabTitle3">Wrongs</string>
     <string name="test">Test</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="two">2 two</string>
+    <string name="four">4 four</string>
+    <string name="six">6 six</string>
+    <string name="seven">7 seven</string>
+    <string name="nine">9 nine</string>
+
+    <string name="letter_a">a aa aaa</string>
+    <string name="letter_d">d v g</string>
+    <string name="letter_o">o</string>
+    <string name="letter_s">s ss es</string>
+    <string name="letter_p">p v</string>
+
+    <string name="letter_f">f s F S</string>
+    <string name="letter_g">g G</string>
+    <string name="letter_r">r R</string>
+    <string name="letter_h">h H</string>
+    <string name="letter_e">e E é É</string>
+
+    <string name="language_code">en-US</string>
 </resources>

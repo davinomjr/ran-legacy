@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.interfaces.IGridAdapter;
-import com.junior.davino.ran.models.Item;
+import com.junior.davino.ran.models.TestItem;
 
 import java.util.List;
 
@@ -22,12 +22,12 @@ public class DigitItemGridAdapter extends RecyclerView.Adapter<DigitItemGridAdap
 
     private static final String TAG = "DigitItemGridAdapter";
 
-    private List<Item> items;
+    private List<TestItem> items;
     private LayoutInflater inflater;
     private Context context;
 
 
-    public DigitItemGridAdapter(Context context, List<Item> items){
+    public DigitItemGridAdapter(Context context, List<TestItem> items){
         this.inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.context = context;
         this.items = items;
@@ -51,7 +51,7 @@ public class DigitItemGridAdapter extends RecyclerView.Adapter<DigitItemGridAdap
      */
     @Override
     public void onBindViewHolder(DigitItemGridAdapter.GridViewHolder viewHolder, int position) {
-        Item item = items.get(position);
+        TestItem item = items.get(position);
         viewHolder.txtView.setText(item.getName().toString());
     }
 

@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.interfaces.IGridAdapter;
-import com.junior.davino.ran.models.Item;
+import com.junior.davino.ran.models.TestItem;
 
 import java.util.List;
 
@@ -24,12 +24,12 @@ public class ColorItemGridAdapter extends RecyclerView.Adapter<ColorItemGridAdap
 
     private static final String TAG = "ColorItemGridAdapter";
 
-    private List<Item> items;
+    private List<TestItem> items;
     private LayoutInflater inflater;
     private Context context;
 
 
-    public ColorItemGridAdapter(Context context, List<Item> items){
+    public ColorItemGridAdapter(Context context, List<TestItem> items){
         this.context = context;
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.items = items;
@@ -52,7 +52,7 @@ public class ColorItemGridAdapter extends RecyclerView.Adapter<ColorItemGridAdap
      */
     @Override
     public void onBindViewHolder(GridViewHolder viewHolder, int position) {
-        Item item = items.get(position);
+        TestItem item = items.get(position);
         GradientDrawable shape = (GradientDrawable)viewHolder.imgView.getBackground();
         shape.setColor(item.getOrderNumber());
         viewHolder.imgView.setLayoutParams(new LinearLayout.LayoutParams(150, 150));

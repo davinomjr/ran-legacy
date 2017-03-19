@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.interfaces.IGridAdapter;
-import com.junior.davino.ran.models.Item;
+import com.junior.davino.ran.models.TestItem;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -24,12 +24,12 @@ public class ObjectItemGridAdapter extends RecyclerView.Adapter<ObjectItemGridAd
 
     private static final String TAG = "ObjectItemGridAdapter";
 
-    private List<Item> items;
+    private List<TestItem> items;
     private LayoutInflater inflater;
     private Context context;
 
 
-    public ObjectItemGridAdapter(Context context, List<Item> items){
+    public ObjectItemGridAdapter(Context context, List<TestItem> items){
         this.context = context;
         this.inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.items = items;
@@ -51,7 +51,7 @@ public class ObjectItemGridAdapter extends RecyclerView.Adapter<ObjectItemGridAd
      */
     @Override
     public void onBindViewHolder(GridViewHolder viewHolder, int position) {
-        Item item = items.get(position);
+        TestItem item = items.get(position);
         Picasso.with(context).load(item.getOrderNumber()).resize(250,250).noFade().centerCrop().into(viewHolder.imgView);
         viewHolder.imgView.setLayoutParams(new LinearLayout.LayoutParams(150, 150));
     }

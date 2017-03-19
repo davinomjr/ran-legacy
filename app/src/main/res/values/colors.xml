@@ -4,12 +4,8 @@
     <color name="colorPrimaryDark">#01579B</color>
     <color name="colorAccent">#c8e8ff</color>
     <color name="textColorPrimary">#FFFFFF</color>
-    <color name="windowBackground">#FFFFFF</color>
-    <color name="navigationBarColor">#FFFFFF</color>
-    <color name="dialogTextColor">#000</color>
     <color name="backgroundTest">#f0f0f0</color>
     <color name="light_red">#FF5252</color>
     <color name="red_accent">#d50000</color>
-    <color name="yellow_accent">#ffd600</color>
     <color name="orange_accent">#ffa000</color>
 </resources>

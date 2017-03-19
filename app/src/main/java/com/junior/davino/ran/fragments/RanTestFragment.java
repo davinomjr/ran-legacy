@@ -11,9 +11,9 @@ import android.view.ViewGroup;
 
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.interfaces.IGridAdapter;
-import com.junior.davino.ran.models.Item;
+import com.junior.davino.ran.models.TestItem;
 import com.junior.davino.ran.models.enums.EnumTestType;
-import com.junior.davino.ran.utils.builders.FactoryAdapter;
+import com.junior.davino.ran.factories.AdapterFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class RanTestFragment extends Fragment {
 
     private static final String TAG = "RanTestFragment";
 
-    private List<Item> items;
+    private List<TestItem> items;
     private RecyclerView mRecyclerView;
 
 
@@ -31,7 +31,7 @@ public class RanTestFragment extends Fragment {
     }
 
 
-    public static RanTestFragment newInstance(EnumTestType testType, ArrayList<Item> items) {
+    public static RanTestFragment newInstance(EnumTestType testType, ArrayList<TestItem> items) {
         RanTestFragment fragment = new RanTestFragment();
         Bundle args = new Bundle();
         args.putSerializable("option", testType);
@@ -47,7 +47,7 @@ public class RanTestFragment extends Fragment {
 
         Context context = getActivity();
         EnumTestType option = (EnumTestType) getArguments().getSerializable("option");
-        items = (List<Item>)getArguments().getSerializable("items");
+        items = (List<TestItem>)getArguments().getSerializable("items");
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.rv_item);
         mRecyclerView.setHasFixedSize(true);
@@ -55,7 +55,7 @@ public class RanTestFragment extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 6, GridLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
-        IGridAdapter adapter = FactoryAdapter.buildAdapter(context, items, option);
+        IGridAdapter adapter = AdapterFactory.buildAdapter(context, items, option);
         mRecyclerView.setAdapter((RecyclerView.Adapter) adapter);
         return view;
     }

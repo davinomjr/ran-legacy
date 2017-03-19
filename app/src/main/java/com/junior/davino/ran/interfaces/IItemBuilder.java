@@ -1,6 +1,6 @@
 package com.junior.davino.ran.interfaces;
 
-import com.junior.davino.ran.models.Item;
+import com.junior.davino.ran.models.TestItem;
 
 import java.util.List;
 
@@ -9,5 +9,6 @@ import java.util.List;
  */
 
 public interface IItemBuilder {
-    List<Item> buildItems(int numberOfItems);
+    List<TestItem> buildItems(int numberOfItems);
+    List<String> getGrammarItems();
 }

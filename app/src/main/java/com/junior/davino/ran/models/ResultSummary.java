@@ -3,27 +3,20 @@ package com.junior.davino.ran.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by davin on 02/03/2017.
  */
 
 public class ResultSummary implements Parcelable {
 
-    private int resultTime;
-    private List<String> words;
-    private List<String> matchWords;
-    private List<String> missesWords;
-
-
     public ResultSummary(){
-        words = new ArrayList();
-        matchWords = new ArrayList();
-        missesWords = new ArrayList();
+
     }
 
+    private int resultTime;
+    private int meanResultTime;
+    private int matchesCount;
+    private int missesCount;
 
     public int getResultTime() {
         return resultTime;
@@ -37,31 +30,29 @@ public class ResultSummary implements Parcelable {
         this.resultTime = resultTime;
     }
 
-    public List<String> getMatchWords() {
-        return matchWords;
+    public int getMeanResultTime() {
+        return meanResultTime;
     }
 
-    public void setMatchWords(List<String> matchWords) {
-        this.matchWords = matchWords;
+    public void setMeanResultTime(int meanResultTime) {
+        this.meanResultTime = meanResultTime;
     }
 
-    public List<String> getMissesWords() {
-        return missesWords;
+    public int getMatchesCount() {
+        return matchesCount;
     }
 
-    public void setMissesWords(List<String> missesWords) {
-        this.missesWords = missesWords;
+    public void setMatchesCount(int matchesCount) {
+        this.matchesCount = matchesCount;
     }
 
-    public void setWords(List<String> words) {
-        this.words = words;
+    public int getMissesCount() {
+        return missesCount;
     }
 
-    public List<String> getWords() {
-        return words;
+    public void setMissesCount(int missesCount) {
+        this.missesCount = missesCount;
     }
-
-
 
     public static final Parcelable.Creator<ResultSummary> CREATOR = new Parcelable.ClassLoaderCreator<ResultSummary>(){
         @Override
@@ -78,14 +69,13 @@ public class ResultSummary implements Parcelable {
         public ResultSummary createFromParcel(Parcel source, ClassLoader loader) {
             return new ResultSummary(source);
         }
-
     };
 
     private ResultSummary(Parcel in){
         resultTime = in.readInt();
-        words = in.createStringArrayList();
-        matchWords = in.createStringArrayList();
-        missesWords = in.createStringArrayList();
+        meanResultTime = in.readInt();
+        matchesCount = in.readInt();
+        missesCount = in.readInt();
     }
 
     @Override
@@ -96,8 +86,8 @@ public class ResultSummary implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(resultTime);
-        dest.writeStringList(words);
-        dest.writeStringList(matchWords);
-        dest.writeStringList(missesWords);
+        dest.writeInt(meanResultTime);
+        dest.writeInt(matchesCount);
+        dest.writeInt(missesCount);
     }
 }
