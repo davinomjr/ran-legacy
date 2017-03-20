@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.interfaces.IGridAdapter;
@@ -31,7 +30,7 @@ public class ColorItemGridAdapter extends RecyclerView.Adapter<ColorItemGridAdap
 
     public ColorItemGridAdapter(Context context, List<TestItem> items){
         this.context = context;
-        inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.items = items;
     }
 
@@ -41,8 +40,9 @@ public class ColorItemGridAdapter extends RecyclerView.Adapter<ColorItemGridAdap
      */
     @Override
     public GridViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = null;
-        itemView = inflater.inflate(R.layout.item_test, parent, false);
+        View itemView = inflater.inflate(R.layout.item_color_test, parent, false);
+        int height = parent.getMeasuredHeight() / 5;
+        itemView.getLayoutParams().height = height;
         GridViewHolder viewHolder = new GridViewHolder(itemView);
         return viewHolder;
     }
@@ -55,7 +55,6 @@ public class ColorItemGridAdapter extends RecyclerView.Adapter<ColorItemGridAdap
         TestItem item = items.get(position);
         GradientDrawable shape = (GradientDrawable)viewHolder.imgView.getBackground();
         shape.setColor(item.getOrderNumber());
-        viewHolder.imgView.setLayoutParams(new LinearLayout.LayoutParams(150, 150));
     }
 
     @Override
@@ -74,7 +73,7 @@ public class ColorItemGridAdapter extends RecyclerView.Adapter<ColorItemGridAdap
                 Log.i(TAG, "View nulla no GridViewHolder para geração de items do teste");
             }
 
-            imgView = (ImageView)view.findViewById(R.id.item_view);
+            imgView = (ImageView)view.findViewById(R.id.item_color_view);
         }
     }
 

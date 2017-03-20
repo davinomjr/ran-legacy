@@ -11,7 +11,8 @@
     <string name="networkError">Network error</string>
     <string name="noMatchError">No matches found</string>
     <string name="serverError">Server problem</string>
-    <string name="time">Time: %s</string>
+    <string name="time">Time: %s seconds</string>
+    <string name="meanTime">Mean time/stimuli: %s seconds</string>
     <string name="progress_dialog">Processing</string>
     <string name="please_wait">Please wait...</string>
     <string name="menu_color">Colors</string>
@@ -24,7 +25,7 @@
     <string name="resultTabTitle2">Matches</string>
     <string name="resultTabTitle3">Wrongs</string>
     <string name="test">Test</string>
-
+    <string name="play">Play</string>
 
     <string name="two">2 two</string>
     <string name="four">4 four</string>

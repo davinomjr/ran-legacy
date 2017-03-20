@@ -15,15 +15,21 @@ public class ResultSummary implements Parcelable {
 
     private int resultTime;
     private int meanResultTime;
-    private int matchesCount;
+    private int stimuliCount;
+    private int hitsCount;
     private int missesCount;
+
+
+    public int getStimuliCount() {
+        return stimuliCount;
+    }
+
+    public void setStimuliCount(int stimuliCount) {
+        this.stimuliCount = stimuliCount;
+    }
 
     public int getResultTime() {
         return resultTime;
-    }
-
-    public String getResultTimeInSeconds(){
-        return resultTime + "s";
     }
 
     public void setResultTime(int resultTime) {
@@ -38,12 +44,12 @@ public class ResultSummary implements Parcelable {
         this.meanResultTime = meanResultTime;
     }
 
-    public int getMatchesCount() {
-        return matchesCount;
+    public int getHitsCount() {
+        return hitsCount;
     }
 
-    public void setMatchesCount(int matchesCount) {
-        this.matchesCount = matchesCount;
+    public void setHitsCount(int hitsCount) {
+        this.hitsCount = hitsCount;
     }
 
     public int getMissesCount() {
@@ -74,7 +80,8 @@ public class ResultSummary implements Parcelable {
     private ResultSummary(Parcel in){
         resultTime = in.readInt();
         meanResultTime = in.readInt();
-        matchesCount = in.readInt();
+        stimuliCount = in.readInt();
+        hitsCount = in.readInt();
         missesCount = in.readInt();
     }
 
@@ -87,7 +94,8 @@ public class ResultSummary implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(resultTime);
         dest.writeInt(meanResultTime);
-        dest.writeInt(matchesCount);
+        dest.writeInt(stimuliCount);
+        dest.writeInt(hitsCount);
         dest.writeInt(missesCount);
     }
 }

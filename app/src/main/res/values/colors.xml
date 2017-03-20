@@ -8,4 +8,5 @@
     <color name="light_red">#FF5252</color>
     <color name="red_accent">#d50000</color>
     <color name="orange_accent">#ffa000</color>
+    <color name="green_accent">#00c853</color>
 </resources>

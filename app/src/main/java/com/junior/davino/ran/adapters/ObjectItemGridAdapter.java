@@ -28,7 +28,6 @@ public class ObjectItemGridAdapter extends RecyclerView.Adapter<ObjectItemGridAd
     private LayoutInflater inflater;
     private Context context;
 
-
     public ObjectItemGridAdapter(Context context, List<TestItem> items){
         this.context = context;
         this.inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

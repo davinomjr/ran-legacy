@@ -23,7 +23,8 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="2dp">
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -34,7 +35,8 @@
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.5">
+                    android:layout_weight="0.5"
+                    android:layout_margin="2dp">
 
                     <Button
                         android:id="@+id/btn_color"
@@ -48,7 +50,8 @@
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.5">
+                    android:layout_weight="0.5"
+                    android:layout_margin="2dp">
 
                     <Button
                         android:id="@+id/btn_digit"
@@ -70,7 +73,8 @@
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.5">
+                    android:layout_weight="0.5"
+                    android:layout_margin="2dp">
                     <Button
                         android:id="@+id/btn_letter"
                         android:layout_width="match_parent"
@@ -84,7 +88,8 @@
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.5">
+                    android:layout_weight="0.5"
+                    android:layout_margin="2dp">
 
                     <Button
                         android:id="@+id/btn_object"

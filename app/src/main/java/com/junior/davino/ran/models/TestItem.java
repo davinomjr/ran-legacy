@@ -7,19 +7,19 @@ import java.io.Serializable;
  */
 
 public class TestItem implements Serializable {
+
     private int orderNumber;
     private int position;
     private String name;
+    private boolean result;
 
-    public boolean isResult() {
+    public boolean getResult() {
         return result;
     }
 
     public void setResult(boolean result) {
         this.result = result;
     }
-
-    private boolean result;
 
     public String getName() {
         return name;

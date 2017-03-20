@@ -1,8 +1,11 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp"
+    android:layout_marginStart="3dp"
+    android:layout_marginLeft="3dp">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_item"
@@ -10,8 +13,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:layout_marginLeft="30dp"
-            android:layout_marginStart="30dp"
             android:minHeight="99999dp"/>
 
 </FrameLayout>

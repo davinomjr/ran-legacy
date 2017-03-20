@@ -3,9 +3,13 @@ package com.junior.davino.ran.factories;
 import android.content.Context;
 
 import com.junior.davino.ran.adapters.ColorItemGridAdapter;
+import com.junior.davino.ran.adapters.ColorItemResultGridAdapter;
 import com.junior.davino.ran.adapters.DigitItemGridAdapter;
+import com.junior.davino.ran.adapters.DigitItemResultGridAdapter;
 import com.junior.davino.ran.adapters.LetterItemGridAdapter;
+import com.junior.davino.ran.adapters.LetterItemResultGridAdapter;
 import com.junior.davino.ran.adapters.ObjectItemGridAdapter;
+import com.junior.davino.ran.adapters.ObjectItemResultGridAdapter;
 import com.junior.davino.ran.interfaces.IGridAdapter;
 import com.junior.davino.ran.models.TestItem;
 import com.junior.davino.ran.models.enums.EnumTestType;
@@ -18,18 +22,22 @@ import java.util.List;
 
 public class AdapterFactory {
 
-    public static IGridAdapter buildAdapter(Context context, List<TestItem> items, EnumTestType testType){
+    public static IGridAdapter buildAdapter(Context context, List<TestItem> items, EnumTestType testType) {
+        return buildAdapter(context, items, testType, false);
+    }
+
+    public static IGridAdapter buildAdapter(Context context, List<TestItem> items, EnumTestType testType, boolean isResult){
         if(testType == EnumTestType.COLORS){
-            return new ColorItemGridAdapter(context, items);
+            return !isResult ? new ColorItemGridAdapter(context, items) : new ColorItemResultGridAdapter(context, items);
         }
         else if(testType == EnumTestType.DIGITS){
-            return new DigitItemGridAdapter(context, items);
+            return !isResult ? new DigitItemGridAdapter(context, items) : new DigitItemResultGridAdapter(context, items);
         }
         else if(testType == EnumTestType.LETTERS){
-            return new LetterItemGridAdapter(context, items);
+            return !isResult ? new LetterItemGridAdapter(context, items) : new LetterItemResultGridAdapter(context, items);
         }
         else{ // OBJECTS
-            return new ObjectItemGridAdapter(context, items);
+            return !isResult ? new ObjectItemGridAdapter(context, items) : new ObjectItemResultGridAdapter(context, items);
         }
     }
 }

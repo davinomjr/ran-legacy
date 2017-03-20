@@ -131,13 +131,12 @@ public class VoiceController {
     }
 
 
-    public void playAudio(String filePath) throws IOException{
-        // We keep temporarily filePath globally as we have only two sample sounds now..
+    public static void playAudio(String filePath) throws IOException{
         if (filePath==null)
             return;
 
         //Reading the file..
-        File file = new File(filePath); // for ex. path= "/sdcard/samplesound.pcm" or "/sdcard/samplesound.wav"
+        File file = new File(filePath);
         byte[] byteData = new byte[(int) file.length()];
 
         Log.d(TAG, (int) file.length()+"");
@@ -163,8 +162,8 @@ public class VoiceController {
             at.stop();
             at.release();
         }
-        else
+        else {
             Log.d(TAG, "audio track is not initialised ");
-
+        }
     }
 }

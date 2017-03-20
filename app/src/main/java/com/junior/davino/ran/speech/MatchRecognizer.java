@@ -43,7 +43,8 @@ public class MatchRecognizer {
         ResultSummary result = new ResultSummary();
         result.setResultTime(ellapsedTime);
         result.setMeanResultTime(ellapsedTime / items.size());
-        result.setMatchesCount(matchResuts);
+        result.setStimuliCount(items.size());
+        result.setHitsCount(matchResuts);
         result.setMissesCount(wrongResults);
         return result;
     }

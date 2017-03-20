@@ -30,7 +30,6 @@ public class RanTestFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     public static RanTestFragment newInstance(EnumTestType testType, ArrayList<TestItem> items) {
         RanTestFragment fragment = new RanTestFragment();
         Bundle args = new Bundle();

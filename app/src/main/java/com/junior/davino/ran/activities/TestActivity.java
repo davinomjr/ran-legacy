@@ -36,7 +36,6 @@ import com.junior.davino.ran.utils.TimerUtil;
 import com.junior.davino.ran.utils.Toaster;
 import com.junior.davino.ran.utils.Util;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,7 +66,22 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
     private SpeechService mSpeechService;
     private MatchRecognizer matchRecognizer;
     private VoiceController voiceController;
-    private String filePath;
+    private String audioFilePath;
+
+
+    private final SpeechService.Listener mSpeechServiceListener =
+            new SpeechService.Listener() {
+                @Override
+                public void onSpeechRecognized(final String text, final boolean isFinal) {
+                    Log.i(TAG, "onSpeechRecognized");
+                    if(isFinal) {
+                        Log.i(TAG, "isFinal");
+                        wordsRecognition.addAll(inputRecognizer.getRecognizedWordsByType(text));
+                        finalizeTest();
+                    }
+                }
+            };
+
 
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
 
@@ -84,52 +98,6 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
         }
 
     };
-
-
-    private final SpeechService.Listener mSpeechServiceListener =
-            new SpeechService.Listener() {
-                @Override
-                public void onSpeechRecognized(final String text, final boolean isFinal) {
-                    Log.i(TAG, "onSpeechRecognized");
-                    if(isFinal) {
-                        Log.i(TAG, "isFinal");
-                        wordsRecognition.addAll(inputRecognizer.getRecognizedWordsByType(text));
-                        for(String word : wordsRecognition){
-                            Log.i(TAG, "WORD TO BE TESTED = " + word);
-                        }
-
-                        //TODO: PROCESS RESULT
-//                        finalizeTest();
-                        try {
-                            voiceController.playAudio(filePath);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-
-
-//                    if (isFinal) {
-//                        mVoiceRecorder.dismiss();
-//                    }
-//                    if (mText != null && !TextUtils.isEmpty(text)) {
-//                        runOnUiThread(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                if (isFinal) {
-//                                    mText.setText(null);
-//                                    mAdapter.addResult(text);
-//                                    mRecyclerView.smoothScrollToPosition(0);
-//                                } else {
-//                                    mText.setText(text);
-//                                }
-//                            }
-//                        });
-                    //}
-                }
-            };
-
-
 
 
     @Override
@@ -254,7 +222,7 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
         btn_reset.setBackgroundColor(getResources().getColor(R.color.light_red));
 
         if(voiceController == null){
-            voiceController = new VoiceController(mSpeechService, filePath);
+            voiceController = new VoiceController(mSpeechService, audioFilePath);
         }
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
 //            mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_MUTE, 0);
@@ -338,6 +306,7 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
         intent.putExtra("result", result);
         intent.putExtra("option", testType);
         intent.putExtra("items", new ArrayList<>(getItems()));
+        intent.putExtra("audioFilePath", audioFilePath);
         startActivity(intent);
     }
 
@@ -349,7 +318,7 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
         inputRecognizer = new InputRecognizer(WordFilterFactory.createWordFilter(this, testType), getCharacterSplit());
         matchRecognizer = new MatchRecognizer(GrammarFactory.createGrammar(this, testType));
         prepareVoiceRecognition();
-        filePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/ran_test.pcm";
+        audioFilePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/ran_test.pcm";
     }
 
 

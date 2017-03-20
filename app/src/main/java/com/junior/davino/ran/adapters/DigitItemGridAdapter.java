@@ -41,7 +41,7 @@ public class DigitItemGridAdapter extends RecyclerView.Adapter<DigitItemGridAdap
     public DigitItemGridAdapter.GridViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = inflater.inflate(R.layout.item_digit_test, parent, false);
         DigitItemGridAdapter.GridViewHolder viewHolder = new DigitItemGridAdapter.GridViewHolder(itemView);
-        int height = parent.getMeasuredHeight() / 6;
+        int height = parent.getMeasuredHeight() / 5;
         itemView.getLayoutParams().height = height;
         return viewHolder;
     }
@@ -75,6 +75,4 @@ public class DigitItemGridAdapter extends RecyclerView.Adapter<DigitItemGridAdap
             txtView = (TextView)view.findViewById(R.id.item_tview);
         }
     }
-
-
 }
