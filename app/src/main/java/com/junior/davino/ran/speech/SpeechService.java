@@ -34,6 +34,7 @@ import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.speech.v1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1beta1.RecognitionConfig;
+import com.google.cloud.speech.v1beta1.SpeechContext;
 import com.google.cloud.speech.v1beta1.SpeechGrpc;
 import com.google.cloud.speech.v1beta1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1beta1.SpeechRecognitionResult;
@@ -264,31 +265,20 @@ public class SpeechService extends Service {
      * @param data The audio data.
      * @param size The number of elements that are actually relevant in the {@code data}.
      */
-    public void recognize(byte[] data, int size, int sampleRate) {
+    public void recognize(byte[] data, int size, int sampleRate, List<String> words) {
         if (data == null || size == 0) {
             Log.i(TAG, "No audio to recognize");
             return;
         }
-//        List<String> words = new ArrayList<>();
-//        words.add("a");
-//        words.add("A");
-//        words.add("d");
-//        words.add("D");
-//        words.add("o");
-//        words.add("O");
-//        words.add("s");
-//        words.add("S");
-//        words.add("p");
-//        words.add("P");
 
         SyncRecognizeRequest req = SyncRecognizeRequest.newBuilder()
                 .setConfig(RecognitionConfig.newBuilder()
                         .setLanguageCode(getString(R.string.language_code))
                         .setEncoding(RecognitionConfig.AudioEncoding.LINEAR16)
                         .setSampleRate(sampleRate)
-//                        .setSpeechContext(SpeechContext.newBuilder()
-//                                .addAllPhrases(words)
-//                                .build())
+                        .setSpeechContext(SpeechContext.newBuilder()
+                                .addAllPhrases(words)
+                                .build())
                         .build())
                 .setAudio(RecognitionAudio.newBuilder()
                         .setContent(ByteString.copyFrom(data, 0, size))

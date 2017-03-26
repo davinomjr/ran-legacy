@@ -12,7 +12,7 @@ import com.junior.davino.ran.utils.FontsUtil;
 public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FontsUtil.setDefaultFont(this, "DEFAULT", "fonts/OpenDyslexic-Regular.otf");
         FontsUtil.setDefaultFont(this, "MONOSPACE", "fonts/OpenDyslexic-Regular.otf");

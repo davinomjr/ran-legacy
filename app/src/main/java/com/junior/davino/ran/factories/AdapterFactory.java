@@ -23,21 +23,32 @@ import java.util.List;
 public class AdapterFactory {
 
     public static IGridAdapter buildAdapter(Context context, List<TestItem> items, EnumTestType testType) {
-        return buildAdapter(context, items, testType, false);
-    }
-
-    public static IGridAdapter buildAdapter(Context context, List<TestItem> items, EnumTestType testType, boolean isResult){
         if(testType == EnumTestType.COLORS){
-            return !isResult ? new ColorItemGridAdapter(context, items) : new ColorItemResultGridAdapter(context, items);
+            return new ColorItemGridAdapter(context, items);
         }
         else if(testType == EnumTestType.DIGITS){
-            return !isResult ? new DigitItemGridAdapter(context, items) : new DigitItemResultGridAdapter(context, items);
+            return new DigitItemGridAdapter(context, items);
         }
         else if(testType == EnumTestType.LETTERS){
-            return !isResult ? new LetterItemGridAdapter(context, items) : new LetterItemResultGridAdapter(context, items);
+            return new LetterItemGridAdapter(context, items);
         }
         else{ // OBJECTS
-            return !isResult ? new ObjectItemGridAdapter(context, items) : new ObjectItemResultGridAdapter(context, items);
+            return new ObjectItemGridAdapter(context, items);
+        }
+    }
+
+    public static IGridAdapter buildAdapterResult(Context context, List<TestItem> items, EnumTestType testType){
+        if(testType == EnumTestType.COLORS){
+            return new ColorItemResultGridAdapter(context, items);
+        }
+        else if(testType == EnumTestType.DIGITS){
+            return new DigitItemResultGridAdapter(context, items);
+        }
+        else if(testType == EnumTestType.LETTERS){
+            return new LetterItemResultGridAdapter(context, items);
+        }
+        else{ // OBJECTS
+            return new ObjectItemResultGridAdapter(context, items);
         }
     }
 }

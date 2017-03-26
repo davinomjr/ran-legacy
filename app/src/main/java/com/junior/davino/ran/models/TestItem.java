@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 public class TestItem implements Serializable {
 
-    private int orderNumber;
+    private int codeTestNumber;
     private int position;
     private String name;
     private boolean result;
@@ -29,12 +29,12 @@ public class TestItem implements Serializable {
         this.name = name;
     }
 
-    public int getOrderNumber() {
-        return orderNumber;
+    public int getCodeTestNumber() {
+        return codeTestNumber;
     }
 
-    public void setOrderNumber(int orderNumber) {
-        this.orderNumber = orderNumber;
+    public void setCodeTestNumber(int codeTestNumber) {
+        this.codeTestNumber = codeTestNumber;
     }
 
     public int getPosition() {

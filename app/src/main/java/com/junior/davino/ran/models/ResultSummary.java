@@ -14,7 +14,7 @@ public class ResultSummary implements Parcelable {
     }
 
     private int resultTime;
-    private int meanResultTime;
+    private double meanResultTime;
     private int stimuliCount;
     private int hitsCount;
     private int missesCount;
@@ -36,11 +36,11 @@ public class ResultSummary implements Parcelable {
         this.resultTime = resultTime;
     }
 
-    public int getMeanResultTime() {
+    public double getMeanResultTime() {
         return meanResultTime;
     }
 
-    public void setMeanResultTime(int meanResultTime) {
+    public void setMeanResultTime(double meanResultTime) {
         this.meanResultTime = meanResultTime;
     }
 
@@ -79,7 +79,7 @@ public class ResultSummary implements Parcelable {
 
     private ResultSummary(Parcel in){
         resultTime = in.readInt();
-        meanResultTime = in.readInt();
+        meanResultTime = in.readDouble();
         stimuliCount = in.readInt();
         hitsCount = in.readInt();
         missesCount = in.readInt();
@@ -93,7 +93,7 @@ public class ResultSummary implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(resultTime);
-        dest.writeInt(meanResultTime);
+        dest.writeDouble(meanResultTime);
         dest.writeInt(stimuliCount);
         dest.writeInt(hitsCount);
         dest.writeInt(missesCount);

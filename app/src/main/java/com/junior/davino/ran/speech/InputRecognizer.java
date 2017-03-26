@@ -3,8 +3,6 @@ package com.junior.davino.ran.speech;
 import com.junior.davino.ran.interfaces.IWordFilter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -16,15 +14,13 @@ public class InputRecognizer {
     IWordFilter filter;
     String characterSplit;
 
-    public InputRecognizer(IWordFilter filter, String charcterSplit){
+    public InputRecognizer(IWordFilter filter, String characterSplit){
         this.filter = filter;
-        this.characterSplit = charcterSplit;
+        this.characterSplit = characterSplit;
     }
 
     public List<String> getRecognizedWordsByType(String sentenceRecognized) {
-        List<String> results = new LinkedList<String>(Arrays.asList(sentenceRecognized.split(characterSplit)));
-        filter.filterWords(results);
-        return results;
+        return filter.filterWords(sentenceRecognized, characterSplit);
     }
 
     public ArrayList<List<String>> getRecognizedWordsByTypeTest(ArrayList<String> sentencesRecognized){

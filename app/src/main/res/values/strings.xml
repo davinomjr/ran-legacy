@@ -27,23 +27,26 @@
     <string name="test">Test</string>
     <string name="play">Play</string>
 
-    <string name="two">2 two</string>
-    <string name="four">4 four</string>
-    <string name="six">6 six</string>
-    <string name="seven">7 seven</string>
-    <string name="nine">9 nine</string>
+    <string name="two">2</string>
+    <string name="four">4</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="nine">9</string>
 
-    <string name="letter_a">a aa aaa</string>
-    <string name="letter_d">d v g</string>
-    <string name="letter_o">o</string>
-    <string name="letter_s">s ss es</string>
-    <string name="letter_p">p v</string>
+    <string name="letter_a">a aa ah e</string>
+    <string name="letter_f">f F s S</string>
+    <string name="letter_s">s ss es e</string>
+    <string name="letter_g">g G d D</string>
+    <string name="letter_u">u U</string>
 
-    <string name="letter_f">f s F S</string>
-    <string name="letter_g">g G</string>
-    <string name="letter_r">r R</string>
+
+    <string name="letter_d">d v b e</string>
+    <string name="letter_o">o oh</string>
+    <string name="letter_p">p t v b e</string>
+
+    <string name="letter_r">r R s S</string>
     <string name="letter_h">h H</string>
-    <string name="letter_e">e E é É</string>
+
 
     <string name="language_code">en-US</string>
 </resources>

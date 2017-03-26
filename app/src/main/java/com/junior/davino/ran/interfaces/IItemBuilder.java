@@ -10,5 +10,4 @@ import java.util.List;
 
 public interface IItemBuilder {
     List<TestItem> buildItems(int numberOfItems);
-    List<String> getGrammarItems();
 }

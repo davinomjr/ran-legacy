@@ -7,5 +7,5 @@ import java.util.List;
  */
 
 public interface IWordFilter {
-     void filterWords(List<String> wordsRecognized);
+     List<String> filterWords(String sentenceRecognized, String characterSplit);
 }

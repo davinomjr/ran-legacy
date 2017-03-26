@@ -15,18 +15,18 @@ import com.junior.davino.ran.speech.filters.ObjectFilter;
 
 public final class WordFilterFactory {
 
-    public static IWordFilter createWordFilter(Context context, EnumTestType testType){
+    public static IWordFilter createWordFilter(Context context, EnumTestType testType, int minLength, int maxLength){
         if(testType == EnumTestType.COLORS){
-            return new ColorFilter(context);
+            return new ColorFilter(context, minLength, maxLength);
         }
         else if(testType == EnumTestType.DIGITS){
-            return new DigitFilter(context);
+            return new DigitFilter(context, minLength, maxLength);
         }
         else if(testType == EnumTestType.LETTERS){
-            return new LetterFilter(context);
+            return new LetterFilter(context, minLength, maxLength);
         }
         else{ // OBJECTS
-            return new ObjectFilter(context);
+            return new ObjectFilter(context, minLength, maxLength);
         }
     }
 }

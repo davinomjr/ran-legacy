@@ -24,11 +24,11 @@ public abstract class BaseBuilder {
             TestItem item;
             previousItemOrder = 0;
             if(items.size() > 0 && i > 0){
-                previousItemOrder = items.get(i - 1).getOrderNumber();
+                previousItemOrder = items.get(i - 1).getCodeTestNumber();
             }
             do {
                 item = generateRandomItem();
-                actualItemOrder = item.getOrderNumber();
+                actualItemOrder = item.getCodeTestNumber();
             }while(actualItemOrder == previousItemOrder);
             item.setPosition(1);
             items.add(item);

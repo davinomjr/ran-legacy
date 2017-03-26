@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +21,7 @@ import java.util.List;
 
 public class ColorItemResultGridAdapter extends RecyclerView.Adapter<ColorItemResultGridAdapter.GridViewHolder> implements IGridAdapter {
 
-    private static final String TAG = "ColorResultGrid";
+    private static final String TAG = "ColorItemResultGridAdapter";
 
     private List<TestItem> items;
     private LayoutInflater inflater;
@@ -55,7 +54,7 @@ public class ColorItemResultGridAdapter extends RecyclerView.Adapter<ColorItemRe
     public void onBindViewHolder(GridViewHolder viewHolder, int position) {
         TestItem item = items.get(position);
         GradientDrawable shape = (GradientDrawable)viewHolder.imgView.getBackground();
-        shape.setColor(item.getOrderNumber());
+        shape.setColor(item.getCodeTestNumber());
         if(item.getResult()){ // Acerto
             viewHolder.resultView.setBackground(ResourcesCompat.getDrawable(context.getResources(), R.drawable.ic_done_white_24dp, null));
         }
@@ -69,20 +68,13 @@ public class ColorItemResultGridAdapter extends RecyclerView.Adapter<ColorItemRe
         return items.size();
     }
 
-    public class GridViewHolder extends RecyclerView.ViewHolder{
+    public class GridViewHolder extends BaseResultViewHolder {
 
         ImageView imgView;
-        ImageView resultView;
 
         public GridViewHolder(View view){
             super(view);
-
-            if(view == null){
-                Log.i(TAG, "View nulla no GridViewHolder para geração de items do teste");
-            }
-
             imgView = (ImageView)view.findViewById(R.id.item_color_result_view);
-            resultView = (ImageView)view.findViewById(R.id.item_result_check);
         }
     }
 

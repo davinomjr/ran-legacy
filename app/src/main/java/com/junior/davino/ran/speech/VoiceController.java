@@ -12,6 +12,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by davin on 19/03/2017.
@@ -20,11 +21,12 @@ import java.io.IOException;
 public class VoiceController {
 
     private static final String TAG = "VoiceController";
-    private static final int RECORDER_SAMPLERATE = 8000;
+    private static final int RECORDER_SAMPLERATE = 16000;
     private static final int RECORDER_CHANNELS_IN = AudioFormat.CHANNEL_IN_MONO;
     private static final int RECORDER_CHANNELS_OUT = AudioFormat.CHANNEL_OUT_MONO;
     private static final int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
     private boolean isRecording = false;
+    private List<String> wordsLookup;
 
     // Initialize minimum buffer size in bytes.
     private int bufferSize = AudioRecord.getMinBufferSize(RECORDER_SAMPLERATE, RECORDER_CHANNELS_IN, RECORDER_AUDIO_ENCODING);
@@ -35,9 +37,10 @@ public class VoiceController {
     private SpeechService speechService;
 
 
-    public VoiceController(SpeechService speechService, String filePath){
+    public VoiceController(SpeechService speechService, String filePath, List<String> wordsLookup){
         this.speechService = speechService;
         this.filePath = filePath;
+        this.wordsLookup = wordsLookup;
     }
 
 
@@ -66,14 +69,35 @@ public class VoiceController {
         recordingThread.start();
     }
 
-
-    public void stopVoiceRecorder()  {
-        Log.i(TAG, "Stopping voice recorder");
+    public void stopAndDestroy(){
         isRecording = false;
+        if(recorder != null){
+            recorder.stop();
+        }
+
+        if(recordingThread != null && recordingThread.isAlive()){
+            recordingThread.interrupt();
+            recordingThread = null;
+        }
+
+        if(recorder != null){
+            recorder.release();
+            recorder = null;
+        }
+    }
+
+    public void stop(){
+        isRecording = false;
+
         recorder.stop();
         recorder.release();
         recorder = null;
         recordingThread = null;
+    }
+
+    public void stopVoiceRecorder()  {
+        Log.i(TAG, "Stopping voice recorder");
+        stop();
 
         try {
             if (filePath ==null )
@@ -95,7 +119,7 @@ public class VoiceController {
             // Set and push to audio track..
             int intSize = android.media.AudioTrack.getMinBufferSize(RECORDER_SAMPLERATE, RECORDER_CHANNELS_OUT, RECORDER_AUDIO_ENCODING);
             Log.d(TAG, intSize+"");
-            speechService.recognize(byteData, byteData.length, RECORDER_SAMPLERATE);
+            speechService.recognize(byteData, byteData.length, RECORDER_SAMPLERATE, wordsLookup);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -113,16 +137,19 @@ public class VoiceController {
             e.printStackTrace();
         }
 
-        while (isRecording) {
-            // gets the voice output from microphone to byte format
-            recorder.read(saudioBuffer, 0, bufferSize);
-            try {
-                //  writes the data to file from buffer stores the voice buffer
-                fileOutput.write(saudioBuffer, 0, bufferSize);
-            } catch (IOException e) {
-                e.printStackTrace();
+        if(recorder != null){
+            while (isRecording) {
+                // gets the voice output from microphone to byte format
+                recorder.read(saudioBuffer, 0, bufferSize);
+                try {
+                    //  writes the data to file from buffer stores the voice buffer
+                    fileOutput.write(saudioBuffer, 0, bufferSize);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
+
         try {
             fileOutput.close();
         } catch (IOException e) {
@@ -147,7 +174,6 @@ public class VoiceController {
             in.read( byteData );
             in.close();
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         // Set and push to audio track..

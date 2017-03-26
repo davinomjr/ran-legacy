@@ -2,7 +2,6 @@ package com.junior.davino.ran.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,11 +66,6 @@ public class DigitItemGridAdapter extends RecyclerView.Adapter<DigitItemGridAdap
 
         public GridViewHolder(View view){
             super(view);
-
-            if(view == null){
-                Log.i(TAG, "View nulla no GridViewHolder para geração de items do teste");
-            }
-
             txtView = (TextView)view.findViewById(R.id.item_tview);
         }
     }

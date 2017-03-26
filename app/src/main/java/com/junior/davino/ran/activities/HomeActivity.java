@@ -72,7 +72,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn_object:
                 initializeTest(EnumTestType.OBJECTS);
-                break;
+            break;
 
         }
     }

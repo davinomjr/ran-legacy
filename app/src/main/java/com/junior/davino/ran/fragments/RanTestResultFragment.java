@@ -54,7 +54,7 @@ public class RanTestResultFragment extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 6, GridLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
-        IGridAdapter adapter = AdapterFactory.buildAdapter(context, items, option, true);
+        IGridAdapter adapter = AdapterFactory.buildAdapterResult(context, items, option);
         mRecyclerView.setAdapter((RecyclerView.Adapter) adapter);
         return view;
     }

@@ -24,6 +24,7 @@ import com.junior.davino.ran.factories.GrammarFactory;
 import com.junior.davino.ran.factories.ItemBuilderFactory;
 import com.junior.davino.ran.factories.WordFilterFactory;
 import com.junior.davino.ran.fragments.RanTestFragment;
+import com.junior.davino.ran.interfaces.IGrammar;
 import com.junior.davino.ran.interfaces.IItemBuilder;
 import com.junior.davino.ran.models.ResultSummary;
 import com.junior.davino.ran.models.TestItem;
@@ -69,36 +70,39 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
     private String audioFilePath;
 
 
-    private final SpeechService.Listener mSpeechServiceListener =
-            new SpeechService.Listener() {
-                @Override
-                public void onSpeechRecognized(final String text, final boolean isFinal) {
-                    Log.i(TAG, "onSpeechRecognized");
-                    if(isFinal) {
-                        Log.i(TAG, "isFinal");
-                        wordsRecognition.addAll(inputRecognizer.getRecognizedWordsByType(text));
-                        finalizeTest();
-                    }
+    private SpeechService.Listener mSpeechServiceListener = createServiceListener();
+
+    private SpeechService.Listener createServiceListener() {
+        return new SpeechService.Listener() {
+            @Override
+            public void onSpeechRecognized(final String text, final boolean isFinal) {
+                Log.i(TAG, "onSpeechRecognized");
+                if (isFinal) {
+                    Log.i(TAG, "isFinal");
+                    wordsRecognition.addAll(inputRecognizer.getRecognizedWordsByType(text));
+                    finalizeTest();
                 }
-            };
+            }
+        };
+    }
 
+    private ServiceConnection mServiceConnection = createServiceConnection();
 
-    private final ServiceConnection mServiceConnection = new ServiceConnection() {
+    private ServiceConnection createServiceConnection() {
+        return new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName componentName, IBinder binder) {
+                Log.i(TAG, "Serviço de reconhecimento de voz conectado");
+                mSpeechService = SpeechService.from(binder);
+                mSpeechService.addListener(mSpeechServiceListener);
+            }
 
-        @Override
-        public void onServiceConnected(ComponentName componentName, IBinder binder) {
-            Log.i(TAG, "Serviço de reconhecimento de voz conectado");
-            mSpeechService = SpeechService.from(binder);
-            mSpeechService.addListener(mSpeechServiceListener);
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName componentName) {
-            mSpeechService = null;
-        }
-
-    };
-
+            @Override
+            public void onServiceDisconnected(ComponentName componentName) {
+                mSpeechService = null;
+            }
+        };
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -106,12 +110,14 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
         Bundle extras = getIntent().getExtras();
-        if(extras == null){
+        if (extras == null) {
             Log.i(TAG, "Null Intent extras");
         }
 
         verifyPermissions();
-        prepareTest();
+        testType = (EnumTestType) getIntent().getSerializableExtra("option");
+        IItemBuilder builder = ItemBuilderFactory.createItemBuilder(testType);
+        items = builder.buildItems(ITEMSCOUNT);
         RanTestFragment fragment = RanTestFragment.newInstance(testType, new ArrayList<TestItem>(getItems()));
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_test_container, fragment)
@@ -123,48 +129,52 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
     }
 
     @Override
-    public void onDestroy() {
-        Log.i(TAG, "onDestroy");
-        if (mSpeechService != null) {
-            mSpeechService.stopSelf();
-        }
-
-        super.onDestroy();
+    protected void onStart() {
+        Log.i(TAG, "onStart");
+        super.onStart();
+        mSpeechServiceListener = createServiceListener();
+        mServiceConnection = createServiceConnection();
+        prepareTest();
     }
 
     @Override
-    public void onPause() {
-        Log.i(TAG, "onPause");
+    protected void onStop() {
+        Log.i(TAG, "onStop");
+
+        // Stop Cloud Speech API
         if (mSpeechService != null) {
-            mSpeechService.stopSelf();
+            stopServiceConnection();
         }
 
-        super.onPause();
+        super.onStop();
     }
 
-    @Override
-    public void onResume() {
-        Log.i(TAG, "onResume");
-        reset();
-        super.onResume();
-    }
+    private void verifyPermissions() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
+                == PackageManager.PERMISSION_GRANTED) {
+            Log.i(TAG, "PERMISSION OK!!");
+        } else if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.RECORD_AUDIO)) {
+            showPermissionMessageDialog();
+        } else {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO},
+                    REQUEST_RECORD_AUDIO_PERMISSION);
+        }
 
-    private void verifyPermissions(){
         String[] permissions = {
                 android.Manifest.permission.READ_EXTERNAL_STORAGE,
                 android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.INTERNET
         };
 
-        for(String permission : permissions){
-            if(!Util.isPermissionOk(this, permission)){
+        for (String permission : permissions) {
+            if (!Util.isPermissionOk(this, permission)) {
                 Log.i(TAG, "Permission not granted: " + permission);
                 finish();
             }
         }
     }
 
-    private void setClickListeners(){
+    private void setClickListeners() {
         btn_back = (Button) findViewById(R.id.btn_back);
         btn_reset = (Button) findViewById(R.id.btn_reset);
         btn_back.setOnClickListener(this);
@@ -173,33 +183,45 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
     }
 
 
-    private void destroyListeningRecognizer(SpeechService recognizer) {
-        if (recognizer != null) {
-            Log.i(TAG, "Destroying recognizer");
-            recognizer.stopSelf();
-        }
+    public void onFragmentInteraction(Uri uri) {
     }
 
 
-    public void onFragmentInteraction(Uri uri) { }
-
-
     private void reset() {
-        if(mSpeechService != null) {
-            mSpeechService.finishRecognizing();
+        changeStartButtonState(R.string.btStart, R.color.md_material_blue_800);
+        listening = false;
+        if(voiceController != null){
+            voiceController.stop();
         }
 
-        listening = false;
+        if(mSpeechService != null){
+            mSpeechService.stopSelf();
+        }
+
         wordsRecognition.clear();
-        changeStartButtonState(R.string.btStart, R.color.md_material_blue_800);
         timerUtil.reset();
+    }
+
+    private void stopRecording(){
+        if(voiceController != null){
+            voiceController.stopVoiceRecorder();
+            voiceController = null;
+        }
+    }
+
+    private void stopServiceConnection(){
+        if(mServiceConnection != null && mSpeechService != null){
+            unbindService(mServiceConnection);
+            mSpeechService.stopSelf();
+            mSpeechService.removeListener(mSpeechServiceListener);
+        }
     }
 
     private void stopTest() {
         Log.i(TAG, "STOP LISTENENING");
         listening = false;
         timerUtil.stop();
-        voiceController.stopVoiceRecorder();
+        stopRecording();
         changeStartButtonState(R.string.btStart, R.color.md_material_blue_800);
 
         processingDialog = new MaterialDialog.Builder(TestActivity.this)
@@ -221,8 +243,8 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
         btn_reset.setClickable(false);
         btn_reset.setBackgroundColor(getResources().getColor(R.color.light_red));
 
-        if(voiceController == null){
-            voiceController = new VoiceController(mSpeechService, audioFilePath);
+        if (voiceController == null) {
+            voiceController = new VoiceController(mSpeechService, audioFilePath, GrammarFactory.createGrammar(this, testType).getGrammarItems());
         }
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
 //            mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_MUTE, 0);
@@ -275,7 +297,6 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
                 stopTest();
             }
         } else if (v.getId() == R.id.btn_back) {
-            destroyListeningRecognizer(mSpeechService);
             finish();
         } else {
             reset();
@@ -311,19 +332,17 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
     }
 
 
-    private void prepareTest(){
-        testType = (EnumTestType) getIntent().getSerializableExtra("option");
-        IItemBuilder builder = ItemBuilderFactory.createItemBuilder(testType);
-        items = builder.buildItems(ITEMSCOUNT);
-        inputRecognizer = new InputRecognizer(WordFilterFactory.createWordFilter(this, testType), getCharacterSplit());
-        matchRecognizer = new MatchRecognizer(GrammarFactory.createGrammar(this, testType));
+    private void prepareTest() {
+        IGrammar grammar = GrammarFactory.createGrammar(this,testType);
+        inputRecognizer = new InputRecognizer(WordFilterFactory.createWordFilter(this, testType, grammar.getMinLength(), grammar.getMaxLength()), getCharacterSplit());
+        matchRecognizer = new MatchRecognizer(grammar);
+        wordsRecognition = new ArrayList<>();
         prepareVoiceRecognition();
         audioFilePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/ran_test.pcm";
     }
 
-
-    private String getCharacterSplit(){
-        if(testType == EnumTestType.DIGITS || testType == EnumTestType.LETTERS){
+    private String getCharacterSplit() {
+        if (testType == EnumTestType.DIGITS || testType == EnumTestType.LETTERS) {
             return "";
         }
 
@@ -334,19 +353,9 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
         return items;
     }
 
-    private void prepareVoiceRecognition(){
+    private void prepareVoiceRecognition() {
         // Prepare Cloud Speech API
         bindService(new Intent(this, SpeechService.class), mServiceConnection, BIND_AUTO_CREATE);
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
-                == PackageManager.PERMISSION_GRANTED) {
-                Log.i(TAG,  "PERMISSION OK!!");
-        } else if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.RECORD_AUDIO)) {
-            showPermissionMessageDialog();
-        } else {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO},
-                    REQUEST_RECORD_AUDIO_PERMISSION);
-        }
     }
 
     private void showPermissionMessageDialog() {
@@ -354,8 +363,6 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
         //                .newInstance(getString(R.string.permission_message))
         //                .show(getSupportFragmentManager(), FRAGMENT_MESSAGE_DIALOG);
     }
-
-
 
 
 }

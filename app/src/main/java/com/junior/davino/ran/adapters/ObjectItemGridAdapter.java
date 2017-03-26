@@ -2,12 +2,10 @@ package com.junior.davino.ran.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.interfaces.IGridAdapter;
@@ -51,8 +49,7 @@ public class ObjectItemGridAdapter extends RecyclerView.Adapter<ObjectItemGridAd
     @Override
     public void onBindViewHolder(GridViewHolder viewHolder, int position) {
         TestItem item = items.get(position);
-        Picasso.with(context).load(item.getOrderNumber()).resize(250,250).noFade().centerCrop().into(viewHolder.imgView);
-        viewHolder.imgView.setLayoutParams(new LinearLayout.LayoutParams(150, 150));
+        Picasso.with(context).load(item.getCodeTestNumber()).resize(250,250).noFade().centerCrop().into(viewHolder.imgView);
     }
 
 
@@ -67,11 +64,6 @@ public class ObjectItemGridAdapter extends RecyclerView.Adapter<ObjectItemGridAd
 
         public GridViewHolder(View view){
             super(view);
-
-            if(view == null){
-                Log.i(TAG, "View nulla no GridViewHolder para geração de items do teste");
-            }
-
             imgView = (ImageView)view.findViewById(R.id.item_object_view);
         }
     }

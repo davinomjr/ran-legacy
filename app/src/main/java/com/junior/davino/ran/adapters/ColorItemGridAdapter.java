@@ -54,7 +54,7 @@ public class ColorItemGridAdapter extends RecyclerView.Adapter<ColorItemGridAdap
     public void onBindViewHolder(GridViewHolder viewHolder, int position) {
         TestItem item = items.get(position);
         GradientDrawable shape = (GradientDrawable)viewHolder.imgView.getBackground();
-        shape.setColor(item.getOrderNumber());
+        shape.setColor(item.getCodeTestNumber());
     }
 
     @Override

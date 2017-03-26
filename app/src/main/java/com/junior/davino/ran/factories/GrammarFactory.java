@@ -1,6 +1,7 @@
 package com.junior.davino.ran.factories;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.junior.davino.ran.interfaces.IGrammar;
 import com.junior.davino.ran.models.enums.EnumTestType;
@@ -26,6 +27,7 @@ public class GrammarFactory {
             return new LetterGrammar(context);
         }
         else{ // OBJECTS
+            Log.i("GRAMMARFACTORY", "OBJECT GRAMMAR");
             return new ObjectGrammar(context);
         }
     }

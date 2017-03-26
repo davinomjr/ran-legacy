@@ -2,7 +2,6 @@ package com.junior.davino.ran.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +40,7 @@ public class LetterItemGridAdapter extends RecyclerView.Adapter<LetterItemGridAd
     public LetterItemGridAdapter.GridViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = inflater.inflate(R.layout.item_digit_test, parent, false);
         LetterItemGridAdapter.GridViewHolder viewHolder = new LetterItemGridAdapter.GridViewHolder(itemView);
-        int height = parent.getMeasuredHeight() / 6;
+        int height = parent.getMeasuredHeight() / 5;
         itemView.getLayoutParams().height = height;
         return viewHolder;
     }
@@ -64,17 +63,9 @@ public class LetterItemGridAdapter extends RecyclerView.Adapter<LetterItemGridAd
 
         public TextView txtView;
 
-
         public GridViewHolder(View view){
             super(view);
-
-            if(view == null){
-                Log.i(TAG, "View nulla no GridViewHolder para geração de items do teste");
-            }
-
             txtView = (TextView)view.findViewById(R.id.item_tview);
         }
     }
-
-
 }
