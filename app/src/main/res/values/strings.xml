@@ -49,4 +49,28 @@
 
 
     <string name="language_code">en-US</string>
+
+    <string name="createUser">Create</string>
+    <string name="updateUser">Atualizar</string>
+
+    <string name="inputName">Name</string>
+    <string name="inputAge">Age</string>
+    <string name="inputSchoolGrade">Grade</string>
+    <string name="inputGender">Gender</string>
+    <string name="inputPhoto">Photo</string>
+    <string name="genderMale">Male</string>
+    <string name="genderFemale">Female</string>
+    <string name="inputEmail">Email</string>
+    <string name="inputPassword">Password</string>
+
+    <string name="err_required_input">%s is a required field</string>
+    <string name="err_msg_age">Enter valid age</string>
+    <string name="err_msg_SchoolGrade">Enter valid school grade</string>
+    <string name="registerButton">Register</string>
+    <string name="createSuccess">Registered!</string>
+    <string name="updateSuccess">Updated!</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+
+    <string name="err_msg_signup">There was a problem registering the testUser</string>
+    <string name="err_msg_signin">There was a problem authenticating the testUser</string>
 </resources>

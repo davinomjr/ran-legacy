@@ -319,10 +319,6 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
         int ellapsedTime = timerUtil.getLastResult();
         ResultSummary result = matchRecognizer.processTestResult(getItems(), wordsRecognition, ellapsedTime);
 
-        if (processingDialog != null && !processingDialog.isCancelled()) {
-            processingDialog.dismiss();
-        }
-
         Intent intent = new Intent(TestActivity.this, ResultActivity.class);
         intent.putExtra("result", result);
         intent.putExtra("option", testType);

@@ -1,110 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_home"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.junior.davino.ran.activities.HomeActivity"
-    android:background="@color/colorAccent">
-
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-        ></include>
+    android:id="@+id/coordinator_layout"
+    android:background="@color/colorAccent"
+    tools:context="com.junior.davino.ran.activities.HomeActivity">
 
     <LinearLayout
+        android:paddingTop="100dp"
         android:orientation="vertical"
-        android:layout_below="@id/toolbar"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp">
 
-        <TableLayout
+        <ImageView
+            android:src="@drawable/letter_r"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="center_horizontal" />
+
+        <!-- Email Label -->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_email"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="2dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:theme="@style/TextLabel">
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:weightSum="1"
-                android:layout_weight="0.5">
+            <EditText android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="@string/inputEmail" />
+        </android.support.design.widget.TextInputLayout>
 
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:layout_margin="2dp">
+        <!-- Password Label -->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:theme="@style/TextLabel">
 
-                    <Button
-                        android:id="@+id/btn_color"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="@string/menu_color"
-                        android:background="#01579B"
-                        android:drawableBottom="@drawable/ic_palette_white_24dp"
-                        style="@style/MainButtonTheme" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:layout_margin="2dp">
+            <EditText android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/inputPassword"/>
+        </android.support.design.widget.TextInputLayout>
 
-                    <Button
-                        android:id="@+id/btn_digit"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="@string/menu_digit"
-                        android:background="#0277BD"
-                        android:drawableBottom="@drawable/ic_looks_one_white_24dp"
-                        style="@style/MainButtonTheme"/>
-                </RelativeLayout>
-            </TableRow>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:padding="12dp"
+            android:background="@color/md_material_blue_800"
+            android:textColor="@color/white"
+            android:text="Login"/>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:weightSum="1"
-                android:layout_weight="0.5">
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:layout_margin="2dp">
-                    <Button
-                        android:id="@+id/btn_letter"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="@string/menu_letter"
-                        android:background="#0288D1"
-                        android:drawableBottom="@drawable/ic_text_format_white_24dp"
-                        style="@style/MainButtonTheme"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:layout_margin="2dp">
-
-                    <Button
-                        android:id="@+id/btn_object"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="@string/menu_object"
-                        android:background="#039BE5"
-                        android:drawableBottom="@drawable/ic_flight_white_24dp"
-                        style="@style/MainButtonTheme"/>
-                </RelativeLayout>
-            </TableRow>
-
-
-        </TableLayout>
+        <TextView android:id="@+id/link_signup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Ainda não conta? Clique para registrar!"
+            android:gravity="center"
+            android:textSize="16dip"/>
 
     </LinearLayout>
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

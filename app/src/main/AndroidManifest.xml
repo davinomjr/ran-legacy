@@ -2,9 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.junior.davino.ran">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -13,28 +12,41 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity
-            android:name=".activities.HomeActivity">
+        android:theme="@style/AppTheme.Base">
+        <activity android:name=".activities.TestUsersActivity" />
+        <activity android:name=".activities.HomeTestActivity">
+
             <!-- android:screenOrientation="portrait" -->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".activities.TestActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activities.ResultActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Base.NoActionBar"
+            />
+
+        <service android:name=".speech.SpeechService" />
+
+        <activity android:name=".activities.RegisterTestUserActivity" />
+        <activity android:name=".activities.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activities.TestActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape">
-        </activity>
-
-        <activity
-            android:name=".activities.ResultActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape">
-        </activity>
-        <service android:name=".speech.SpeechService"/>
+        <activity android:name=".activities.SignUpActivity" />
+        <activity android:name=".activities.TestUsersDetailsActivity"></activity>
     </application>
 
 </manifest>

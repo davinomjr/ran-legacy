@@ -2,11 +2,14 @@
 <resources>
     <color name="colorPrimary">#03A9F4</color>
     <color name="colorPrimaryDark">#01579B</color>
-    <color name="colorAccent">#c8e8ff</color>
+    <color name="colorAccent">#fff</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="backgroundTest">#f0f0f0</color>
     <color name="light_red">#FF5252</color>
     <color name="red_accent">#d50000</color>
     <color name="orange_accent">#ffa000</color>
     <color name="green_accent">#00c853</color>
+    <color name="black">#000</color>
+    <color name="white">#fff</color>
+    <color name="yellow_accent">#ffe100</color>
 </resources>
