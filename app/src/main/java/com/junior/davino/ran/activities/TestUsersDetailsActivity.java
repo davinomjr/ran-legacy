@@ -2,29 +2,37 @@ package com.junior.davino.ran.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TextInputLayout;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
 
+import com.google.firebase.database.DatabaseReference;
 import com.junior.davino.ran.R;
+import com.junior.davino.ran.code.FirebaseApplication;
+import com.junior.davino.ran.fragments.TestUserForm;
+import com.junior.davino.ran.fragments.TestUserParentForm;
 import com.junior.davino.ran.models.TestUser;
-import com.junior.davino.ran.models.enums.EnumGender;
 
 import org.parceler.Parcels;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestUsersDetailsActivity extends BaseActivity {
 
     private static final String TAG = "TestUsersDetailsActivity";
-    private TextInputLayout inputLayoutName, inputLayoutAge, inputLayoutSchoolGrade;
-    private EditText inputName, inputAge, inputSchoolGrade;
-    private RadioButton radioMale, radioFemale;
-    private EnumGender currentChoseGender;
+    FirebaseApplication firebaseApp = new FirebaseApplication();
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private TestUserForm userFormFragment;
+    private TestUserParentForm parentFormFragment;
     private TestUser testUser;
 
     @Override
@@ -33,29 +41,14 @@ public class TestUsersDetailsActivity extends BaseActivity {
         setContentView(R.layout.activity_test_users_details);
         testUser = Parcels.unwrap(getIntent().getParcelableExtra("testUser"));
 
+        toolbar = (Toolbar) findViewById(R.id.tabBar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPager, testUser);
 
-        inputLayoutName = (TextInputLayout) findViewById(R.id.input_layout_name);
-        inputLayoutAge = (TextInputLayout) findViewById(R.id.input_layout_age);
-        inputLayoutSchoolGrade = (TextInputLayout) findViewById(R.id.input_layout_schoolGrade);
-
-        inputName = (EditText) findViewById(R.id.input_name);
-        inputAge = (EditText) findViewById(R.id.input_age);
-        inputSchoolGrade = (EditText) findViewById(R.id.input_schoolGrade);
-        inputName.addTextChangedListener(new TextChangeListener(inputName));
-
-        radioMale = (RadioButton)findViewById(R.id.radio_male);
-        radioFemale= (RadioButton)findViewById(R.id.radio_female);
-
-        inputName.setText(testUser.getName());
-        inputAge.setText(String.valueOf(testUser.getAge()));
-        inputSchoolGrade.setText(testUser.getSchoolGrade());
-
-        if(testUser.getGender().equals("Masculino")){
-            radioMale.setChecked(true);
-        }
-        else{
-            radioFemale.setChecked(true);
-        }
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
 
         Button updateButton = (Button)findViewById(R.id.btn_update_user);
         updateButton.setOnClickListener(new View.OnClickListener() {
@@ -76,42 +69,28 @@ public class TestUsersDetailsActivity extends BaseActivity {
         });
     }
 
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
+    private void setupViewPager(ViewPager viewPager, TestUser user) {
+        TestUsersDetailsActivity.ViewPagerAdapter adapter = new TestUsersDetailsActivity.ViewPagerAdapter(getSupportFragmentManager());
+        userFormFragment = TestUserForm.newInstance(user, false);
+        parentFormFragment = TestUserParentForm.newInstance(user.getParent(), false);
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.radio_male:
-                if (checked)
-                    currentChoseGender = EnumGender.MALE;
-                break;
-            case R.id.radio_female:
-                if (checked)
-                    currentChoseGender = EnumGender.FEMALE;
-                break;
-        }
+        adapter.addFragment(userFormFragment, getString(R.string.user));
+        adapter.addFragment(parentFormFragment, getString(R.string.parent));
+        viewPager.setAdapter(adapter);
     }
 
 
     private void updateUser(){
-        if(!validateForm()){
+        if (!userFormFragment.validateForm() || !parentFormFragment.validateForm()) {
             return;
         }
 
         try {
+            DatabaseReference testUserReferences = database.getReference("users").child(firebaseApp.getFirebaseUserAuthenticateId()).child("testUsers");
             String key = testUser.getUserId();
-            testUser.setName(inputName.getText().toString());
-            testUser.setAge(Integer.parseInt(inputAge.getText().toString()));
-            testUser.setSchoolGrade(inputSchoolGrade.getText().toString());
-            if(currentChoseGender == EnumGender.MALE){
-                testUser.setGender(getString(R.string.genderMale));
-            }
-            else{
-                testUser.setGender(getString(R.string.genderFemale));
-            }
-
-            database.getReference("users").child(key).setValue(testUser);
+            testUser = userFormFragment.getUser();
+            testUser.setParent(parentFormFragment.getUserParent());
+            testUserReferences.child(key).setValue(testUser);
             showSnackBar(getString(R.string.updateSuccess));
         }
         catch (Exception e){
@@ -119,92 +98,32 @@ public class TestUsersDetailsActivity extends BaseActivity {
         }
     }
 
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
 
-    private boolean validateForm(){
-        if(!validateName()){
-            return false;
-        }
-
-        if(!validateAge()){
-            return false;
-        }
-
-        if(!validateSchoolGrade()){
-            return false;
-        }
-
-        return true;
-    }
-
-    private void requestFocus(View v){
-        if (v.requestFocus()) {
-            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
-        }
-    }
-
-    private void setRequiredMessage(TextInputLayout textLayout){
-        textLayout.setError(String.format(getString(R.string.err_required_input), textLayout.getHint()));
-        requestFocus(inputName);
-    }
-
-    private boolean validateName(){
-        if(inputName.getText().toString().trim().isEmpty()){
-            setRequiredMessage(inputLayoutName);
-            return false;
-        }
-
-        return true;
-    }
-
-    private boolean validateAge(){
-        if(inputAge.getText().toString().trim().isEmpty()){
-            setRequiredMessage(inputLayoutAge);
-            return false;
-        }
-
-
-        return true;
-    }
-
-    private boolean validateSchoolGrade(){
-        if(inputSchoolGrade.getText().toString().trim().isEmpty()){
-            setRequiredMessage(inputLayoutSchoolGrade);
-            return false;
-        }
-
-        return true;
-    }
-
-
-    private class TextChangeListener implements TextWatcher {
-
-        private View view;
-
-        private TextChangeListener(View view){
-            this.view = view;
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
         }
 
         @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
         }
 
         @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
         }
 
         @Override
-        public void afterTextChanged(Editable s) {
-            switch (view.getId()){
-                case R.id.input_name:
-                    validateName();
-                    break;
-                case R.id.input_age:
-                    validateAge();
-                    break;
-                case R.id.input_layout_schoolGrade:
-                    validateSchoolGrade();
-                    break;
-            }
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
         }
     }
 }

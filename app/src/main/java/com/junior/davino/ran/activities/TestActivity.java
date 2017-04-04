@@ -33,6 +33,7 @@ import com.junior.davino.ran.speech.InputRecognizer;
 import com.junior.davino.ran.speech.MatchRecognizer;
 import com.junior.davino.ran.speech.SpeechService;
 import com.junior.davino.ran.speech.VoiceController;
+import com.junior.davino.ran.utils.Constants;
 import com.junior.davino.ran.utils.TimerUtil;
 import com.junior.davino.ran.utils.Toaster;
 import com.junior.davino.ran.utils.Util;
@@ -47,7 +48,6 @@ import java.util.List;
 public class TestActivity extends FragmentActivity implements View.OnClickListener {
 
     private static final String TAG = "TestActivity";
-    private static final int ITEMSCOUNT = 24;
     private static final int REQUEST_RECORD_AUDIO_PERMISSION = 1;
 
     private boolean isRecording = false;
@@ -117,7 +117,7 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
         verifyPermissions();
         testType = (EnumTestType) getIntent().getSerializableExtra("option");
         IItemBuilder builder = ItemBuilderFactory.createItemBuilder(testType);
-        items = builder.buildItems(ITEMSCOUNT);
+        items = builder.buildItems(Constants.ITEMSCOUNT);
         RanTestFragment fragment = RanTestFragment.newInstance(testType, new ArrayList<TestItem>(getItems()));
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_test_container, fragment)

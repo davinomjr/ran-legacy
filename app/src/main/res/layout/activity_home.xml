@@ -32,13 +32,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:theme="@style/TextLabel">
+            android:theme="@style/TextInput">
 
             <EditText android:id="@+id/input_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:hint="@string/inputEmail" />
+                android:hint="@string/inputEmail"
+                android:maxLines="1"/>
         </android.support.design.widget.TextInputLayout>
 
         <!-- Password Label -->
@@ -48,13 +49,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:theme="@style/TextLabel">
+            app:passwordToggleContentDescription="@string/password_hint"
+            app:passwordToggleEnabled="true"
+            android:theme="@style/TextInput">
 
-            <EditText android:id="@+id/input_password"
+            <EditText
+                android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:hint="@string/inputPassword"/>
+                android:hint="@string/inputPassword"
+                android:maxLines="1"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton
@@ -66,13 +71,13 @@
             android:padding="12dp"
             android:background="@color/md_material_blue_800"
             android:textColor="@color/white"
-            android:text="Login"/>
+            android:text="@string/msg_sign_in"/>
 
         <TextView android:id="@+id/link_signup"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="Ainda não conta? Clique para registrar!"
+            android:text="@string/msg_sign_up"
             android:gravity="center"
             android:textSize="16dip"/>
 

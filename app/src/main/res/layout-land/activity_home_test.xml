@@ -9,16 +9,10 @@
     tools:context="com.junior.davino.ran.activities.HomeTestActivity"
     android:background="@color/colorAccent">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-        ></include>
-
     <RelativeLayout
         android:id="@+id/menu_buttons"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
         android:layout_marginTop="3dp"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin">

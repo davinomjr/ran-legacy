@@ -80,8 +80,8 @@ public class HomeActivity extends BaseActivity {
 
 
          processingDialog = new MaterialDialog.Builder(HomeActivity.this)
-                .title(R.string.progress_dialog)
-                .content("Autenticando...")
+                .title(R.string.authenticating)
+                .content(R.string.please_wait)
                 .progress(true, 0)
                 .show();
 
@@ -126,7 +126,10 @@ public class HomeActivity extends BaseActivity {
     }
 
     public void onLoginFailed() {
-        processingDialog.dismiss();
+        if(processingDialog != null){
+            processingDialog.dismiss();
+        }
+
         showSnackBar(getString(R.string.sign_in_failed));
         loginButton.setEnabled(true);
     }

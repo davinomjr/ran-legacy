@@ -37,7 +37,13 @@
 
         <service android:name=".speech.SpeechService" />
 
-        <activity android:name=".activities.RegisterTestUserActivity" />
+        <activity
+            android:name=".activities.RegisterTestUserActivity"
+            android:theme="@style/AppTheme.Base.NoActionBar"/>
+        <activity
+            android:name=".activities.TestUsersDetailsActivity"
+            android:theme="@style/AppTheme.Base.NoActionBar"/>
+
         <activity android:name=".activities.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,7 +52,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.SignUpActivity" />
-        <activity android:name=".activities.TestUsersDetailsActivity"></activity>
     </application>
 
 </manifest>

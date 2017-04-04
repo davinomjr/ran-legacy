@@ -1,132 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@id/coordinator_layout"
     tools:context="com.junior.davino.ran.activities.TestUsersDetailsActivity">
 
     <LinearLayout
-        android:id="@+id/user_form"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="60dp">
+        android:weightSum="1">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_name"
+        <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
-            android:layout_margin="3dp"
-            android:layout_height="wrap_content"
-            android:theme="@style/TextLabel">
+            android:layout_height="0dp"
+            android:layout_weight="0.65">
 
-            <EditText
-                android:id="@+id/input_name"
+            <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/inputName" />
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        </android.support.design.widget.TextInputLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_margin="3dp"
-            android:layout_height="wrap_content">
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/tabBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="?attr/colorPrimary"
+                    android:weightSum="1"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_age"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:theme="@style/TextLabel">
+                </android.support.v7.widget.Toolbar>
 
-                <EditText
-                    android:id="@+id/input_age"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/inputAge"
-                    android:inputType="numberDecimal" />
 
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_schoolGrade"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/TextLabel">
-
-                <EditText
-                    android:id="@+id/input_schoolGrade"
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/inputSchoolGrade" />
+                    app:tabGravity="fill"
+                    app:tabMode="fixed" />
 
-            </android.support.design.widget.TextInputLayout>
-
-        </LinearLayout>
+            </android.support.design.widget.AppBarLayout>
 
 
-        <RadioGroup
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:orientation="horizontal">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </android.support.design.widget.CoordinatorLayout>
 
-            <RadioButton
-                android:id="@+id/radio_male"
-                android:layout_width="wrap_content"
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.35">
+
+            <LinearLayout
+                android:id="@+id/form_buttons"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:checked="true"
-                android:onClick="onRadioButtonClicked"
-                android:text="@string/genderMale" />
+                android:layout_marginBottom="5dp"
+                android:weightSum="1">
 
-            <RadioButton
-                android:id="@+id/radio_female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="onRadioButtonClicked"
-                android:text="@string/genderFemale" />
-        </RadioGroup>
 
-        <!-- Signup Button -->
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_update_user"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:padding="12dp"
-            android:background="@color/md_material_blue_800"
-            android:textColor="@color/white"
-            android:text="@string/updateUser"/>
+                <Button
+                    android:id="@+id/btn_update_user"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="0.5"
+                    android:background="@color/md_material_blue_800"
+                    android:padding="12dp"
+                    android:text="@string/updateUser"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_delete_user"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="0.5"
+                    android:background="@color/red_accent"
+                    android:padding="12dp"
+                    android:text="@string/deleteUser"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <!-- Signup Button -->
+            <Button
+                android:id="@+id/btn_start_test"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/form_buttons"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="35dp"
+                android:background="@color/colorPrimary"
+                android:padding="12dp"
+                android:text="Iniciar Teste"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@+id/user_form"
-        android:layout_centerInParent="true">
+</android.support.design.widget.CoordinatorLayout>
 
-
-        <!-- Signup Button -->
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_start_test"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:padding="12dp"
-            android:layout_centerInParent="true"
-            android:background="@color/colorPrimary"
-            android:textColor="@color/white"
-            android:text="Iniciar Teste"/>
-
-
-
-    </RelativeLayout>
-
-</RelativeLayout>

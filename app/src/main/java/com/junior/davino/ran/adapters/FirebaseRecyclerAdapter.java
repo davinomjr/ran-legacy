@@ -32,6 +32,7 @@ import java.util.ArrayList;
  */
 public abstract class FirebaseRecyclerAdapter<ViewHolder extends RecyclerView.ViewHolder, T> extends RecyclerView.Adapter<ViewHolder> {
 
+    private static final String TAG = "FirebaseRecyclerAdapter";
     private Query mQuery;
     private ArrayList<T> mItems;
     private ArrayList<String> mKeys;
@@ -75,6 +76,7 @@ public abstract class FirebaseRecyclerAdapter<ViewHolder extends RecyclerView.Vi
     private ChildEventListener mListener = new ChildEventListener() {
         @Override
         public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
+            Log.i(TAG,"onChildAdded");
             String key = dataSnapshot.getKey();
 
             if (!mKeys.contains(key)) {
@@ -103,6 +105,7 @@ public abstract class FirebaseRecyclerAdapter<ViewHolder extends RecyclerView.Vi
 
         @Override
         public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            Log.i(TAG,"onChildChanged");
             String key = dataSnapshot.getKey();
 
             if (mKeys.contains(key)) {
@@ -112,6 +115,7 @@ public abstract class FirebaseRecyclerAdapter<ViewHolder extends RecyclerView.Vi
 
                 mItems.set(index, newItem);
 
+
                 notifyItemChanged(index);
                 itemChanged(oldItem, newItem, key, index);
             }
@@ -119,6 +123,7 @@ public abstract class FirebaseRecyclerAdapter<ViewHolder extends RecyclerView.Vi
 
         @Override
         public void onChildRemoved(DataSnapshot dataSnapshot) {
+            Log.i(TAG,"onChildRemoved");
             String key = dataSnapshot.getKey();
 
             if (mKeys.contains(key)) {
@@ -135,6 +140,7 @@ public abstract class FirebaseRecyclerAdapter<ViewHolder extends RecyclerView.Vi
 
         @Override
         public void onChildMoved(DataSnapshot dataSnapshot, String previousChildName) {
+            Log.i(TAG,"onChildMoved");
             String key = dataSnapshot.getKey();
 
             int index = mKeys.indexOf(key);

@@ -41,20 +41,20 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserAdapter.ViewHolder,
     public void onBindViewHolder(UserAdapter.ViewHolder holder, int position) {
         TestUser item = getItem(position);
         holder.textViewName.setText(item.getName());
-        holder.textViewAge.setText(String.valueOf(item.getAge()));
+        holder.textViewAgeGrade.setText(String.valueOf(item.getAge() + " - " + item.getSchoolGrade()));
         holder.bindClick(item.getUserId(), listener);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView textViewName;
-        TextView textViewAge;
+        TextView textViewAgeGrade;
         View view;
 
         public ViewHolder(View view) {
             super(view);
             textViewName = (TextView) view.findViewById(R.id.user_name);
-            textViewAge = (TextView) view.findViewById(R.id.user_age);
+            textViewAgeGrade = (TextView) view.findViewById(R.id.user_age_grade);
             this.view = view;
         }
 

@@ -35,7 +35,7 @@ public class FirebaseApplication extends Application {
     }
     public String getFirebaseUserAuthenticateId() {
         String userId = null;
-        if(firebaseAuth.getCurrentUser() != null){
+        if(getFirebaseAuth().getCurrentUser() != null){
             userId = firebaseAuth.getCurrentUser().getUid();
         }
         return userId;
@@ -52,9 +52,11 @@ public class FirebaseApplication extends Application {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = getFirebaseAuth().getCurrentUser();
                 if(null != user){
+                    Log.i(TAG, "onAuthStateChanged STARTING TESTUSERSACTIVITY");
                     Intent intent = new Intent(context, TestUsersActivity.class);
                     context.startActivity(intent);
                 }else{
+                    Log.i(TAG, "onAuthStateChanged STARTING HOMEACTIVITY");
                     Intent loginIntent = new Intent(context, HomeActivity.class);
                     context.startActivity(loginIntent);
                 }

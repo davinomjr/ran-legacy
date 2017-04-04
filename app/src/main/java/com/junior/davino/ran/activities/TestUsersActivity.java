@@ -88,7 +88,7 @@ public class TestUsersActivity extends BaseActivity implements View.OnClickListe
         mMyAdapter = new UserAdapter(mQuery, mAdapterItems, mAdapterKeys, new UserAdapter.OnItemClickListener(){
             @Override public void onItemClick(final String testUserId) {
                 // Attach a listener to read the data at our posts reference
-                mQuery.addValueEventListener(new ValueEventListener() {
+                mQuery.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         TestUser testUser = dataSnapshot.child(testUserId).getValue(TestUser.class);

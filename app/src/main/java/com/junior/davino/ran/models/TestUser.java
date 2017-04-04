@@ -11,8 +11,20 @@ public class TestUser {
 
     String userId;
     String name;
-    String imageUri;
+    String schoolGrade;
+    String gender;
     int age;
+    TestUserParent parent;
+
+
+    public TestUserParent getParent() {
+        return parent;
+    }
+
+    public void setParent(TestUserParent parent) {
+        this.parent = parent;
+    }
+
 
     public String getUserId() {
         return userId;
@@ -22,36 +34,12 @@ public class TestUser {
         this.userId = userId;
     }
 
-    String schoolGrade;
-    String gender;
-    String address;
-
-    public TestUser(){
-
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getImageUri() {
-        return imageUri;
-    }
-
-    public void setImageUri(String imageUri) {
-        this.imageUri = imageUri;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public String getSchoolGrade() {
@@ -70,11 +58,17 @@ public class TestUser {
         this.gender = gender;
     }
 
-    public String getAddress() {
-        return address;
+    public int getAge() {
+        return age;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAge(int age) {
+        this.age = age;
     }
+
+    public TestUser(){
+        parent = new TestUserParent();
+    }
+
+
 }
