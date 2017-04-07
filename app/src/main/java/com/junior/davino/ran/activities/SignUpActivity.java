@@ -8,11 +8,9 @@ import android.widget.EditText;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.junior.davino.ran.R;
-import com.junior.davino.ran.code.FirebaseApplication;
 
 public class SignUpActivity extends BaseActivity {
 
-    FirebaseApplication firebaseApp = new FirebaseApplication();
     EditText inputName, inputEmail, inputPassword;
     TextInputLayout nameLayout, emailLayout, passwordLayout;
     Button signUpButton;

@@ -6,4 +6,5 @@ package com.junior.davino.ran.utils;
 
 public class Constants {
     public static final int ITEMSCOUNT = 24;
+    public static final String RANTEST = "ran_test";
 }

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
+
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
@@ -14,5 +15,12 @@
         android:orderInCategory="100"
         android:title="@string/action_signout"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/user_details"
+        android:orderInCategory="1000"
+        android:title="@string/user"
+        android:icon="@drawable/ic_account_circle_white_24dp"
+        app:showAsAction="always" />
 
 </menu>

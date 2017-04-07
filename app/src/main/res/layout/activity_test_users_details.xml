@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@id/coordinator_layout"
+    android:background="@color/colorBackgroundLighter"
     tools:context="com.junior.davino.ran.activities.TestUsersDetailsActivity">
 
     <LinearLayout
@@ -56,6 +57,7 @@
 
 
         <RelativeLayout
+            android:id="@+id/form_buttons_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.35">
@@ -64,6 +66,7 @@
                 android:id="@+id/form_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="5dp"
                 android:weightSum="1">
 
@@ -103,7 +106,7 @@
                 android:layout_below="@+id/form_buttons"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="20dp"
                 android:background="@color/colorPrimary"
                 android:padding="12dp"
                 android:text="Iniciar Teste"

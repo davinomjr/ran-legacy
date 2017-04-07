@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.google.firebase.database.FirebaseDatabase;
 import com.junior.davino.ran.R;
+import com.junior.davino.ran.code.FirebaseApplication;
 import com.junior.davino.ran.utils.FontsUtil;
 
 /**
@@ -14,6 +15,7 @@ import com.junior.davino.ran.utils.FontsUtil;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
+    protected FirebaseApplication firebaseApp;
     protected FirebaseDatabase database;
 
     @Override
@@ -21,6 +23,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setFonts();
         database = FirebaseDatabase.getInstance();
+        firebaseApp = new FirebaseApplication();
     }
 
     private void setFonts(){

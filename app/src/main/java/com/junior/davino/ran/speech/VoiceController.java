@@ -5,6 +5,7 @@ import android.media.AudioManager;
 import android.media.AudioRecord;
 import android.media.AudioTrack;
 import android.media.MediaRecorder;
+import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
@@ -104,7 +105,9 @@ public class VoiceController {
                 return;
 
             //Reading the file..
-            File file = new File(filePath);
+            //Reading the file..
+            File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+            File file = new File(path, filePath);
             byte[] byteData = new byte[(int) file.length()];
             Log.d(TAG, (int) file.length()+"");
             FileInputStream in = null;
@@ -130,10 +133,14 @@ public class VoiceController {
         //Write the output audio in byte
         byte saudioBuffer[] = new byte[bufferSize];
 
+        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+        File file = new File(path, filePath);
         FileOutputStream fileOutput = null;
         try {
-            fileOutput = new FileOutputStream(filePath);
+            fileOutput = new FileOutputStream(file);
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -163,14 +170,20 @@ public class VoiceController {
             return;
 
         //Reading the file..
-        File file = new File(filePath);
+        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+        File file = new File(path, filePath);
         byte[] byteData = new byte[(int) file.length()];
 
         Log.d(TAG, (int) file.length()+"");
 
+
         FileInputStream in = null;
         try {
-            in = new FileInputStream( file );
+            if(!file.exists()){
+                Log.i(TAG, "ARQ N EXISTE!!! = " + filePath);
+            }
+
+            in = new FileInputStream(file);
             in.read( byteData );
             in.close();
         } catch (FileNotFoundException e) {

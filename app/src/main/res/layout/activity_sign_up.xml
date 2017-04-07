@@ -7,6 +7,7 @@
     android:id="@id/coordinator_layout"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.junior.davino.ran.activities.SignUpActivity"
+    android:background="@color/colorBackgroundLighter"
     tools:showIn="@layout/activity_home">
 
     <LinearLayout

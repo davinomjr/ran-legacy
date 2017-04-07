@@ -2,6 +2,9 @@ package com.junior.davino.ran.models;
 
 import org.parceler.Parcel;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Created by davin on 26/03/2017.
  */
@@ -16,6 +19,28 @@ public class TestUser {
     int age;
     TestUserParent parent;
 
+    public TestUser(){
+        parent = new TestUserParent();
+    }
+
+
+    public List<TestResult> getTestResults() {
+        return testResults;
+    }
+
+    public void setTestResults(List<TestResult> testResults) {
+        this.testResults = testResults;
+    }
+
+    public TestResult getLastTestResult(){
+        if(testResults != null){
+            return testResults.get(testResults.size() - 1);
+        }
+
+        return null;
+    }
+
+    List<TestResult> testResults;
 
     public TestUserParent getParent() {
         return parent;
@@ -24,7 +49,6 @@ public class TestUser {
     public void setParent(TestUserParent parent) {
         this.parent = parent;
     }
-
 
     public String getUserId() {
         return userId;
@@ -66,9 +90,11 @@ public class TestUser {
         this.age = age;
     }
 
-    public TestUser(){
-        parent = new TestUserParent();
+    public void addResult(TestResult result){
+        if(testResults == null){
+            testResults = new LinkedList<TestResult>();
+        }
+
+        testResults.add(result);
     }
-
-
 }

@@ -14,20 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Base">
         <activity android:name=".activities.TestUsersActivity" />
-        <activity android:name=".activities.HomeTestActivity">
-
-            <!-- android:screenOrientation="portrait" -->
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+        <activity
+            android:name=".activities.HomeTestActivity">
         </activity>
         <activity
             android:name=".activities.TestActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Base.NoActionBar"/>
         <activity
             android:name=".activities.ResultActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -39,12 +33,18 @@
 
         <activity
             android:name=".activities.RegisterTestUserActivity"
-            android:theme="@style/AppTheme.Base.NoActionBar"/>
+            android:theme="@style/AppTheme.Base.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activities.TestUsersDetailsActivity"
-            android:theme="@style/AppTheme.Base.NoActionBar"/>
+            android:theme="@style/AppTheme.Base.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".activities.HomeActivity">
+        <activity android:name=".activities.HomeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

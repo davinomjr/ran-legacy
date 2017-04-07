@@ -2,27 +2,27 @@ package com.junior.davino.ran.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.junior.davino.ran.R;
+import com.junior.davino.ran.models.TestUser;
 import com.junior.davino.ran.models.enums.EnumTestType;
+
+import org.parceler.Parcels;
 
 public class HomeTestActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "HomeTestActivity";
-    private Toolbar toolbar;
-
+    private TestUser testUser;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_test);
+        testUser = Parcels.unwrap(getIntent().getParcelableExtra("user"));
         setListeners();
-//        toolbar = (Toolbar) findViewById(R.id.toolbar); // Attaching the layout to the toolbar object
-//        setSupportActionBar(toolbar);                   // Setting toolbar as the ActionBar with setSupportActionBar() call
     }
 
     @Override
@@ -32,21 +32,22 @@ public class HomeTestActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu_main; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+        else if(id == R.id.action_signout){
+            firebaseApp.logoff();
+            Intent intent = new Intent(HomeTestActivity.this, HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
@@ -81,8 +82,7 @@ public class HomeTestActivity extends BaseActivity implements View.OnClickListen
     private void initializeTest(EnumTestType testType){
         Intent intent = new Intent(this, TestActivity.class);
         intent.putExtra("option", testType);
+        intent.putExtra("user", Parcels.wrap(testUser));
         this.startActivity(intent);
     }
-
-
 }

@@ -11,13 +11,13 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.adapters.UserAdapter;
-import com.junior.davino.ran.code.FirebaseApplication;
 import com.junior.davino.ran.models.TestUser;
 
 import org.parceler.Parcels;
@@ -26,7 +26,6 @@ import java.util.ArrayList;
 
 public class TestUsersActivity extends BaseActivity implements View.OnClickListener {
 
-    FirebaseApplication firebaseApp = new FirebaseApplication();
     private final static String SAVED_ADAPTER_ITEMS = "SAVED_ADAPTER_ITEMS";
     private final static String SAVED_ADAPTER_KEYS = "SAVED_ADAPTER_KEYS";
 
@@ -35,11 +34,20 @@ public class TestUsersActivity extends BaseActivity implements View.OnClickListe
     private ArrayList<TestUser> mAdapterItems;
     private ArrayList<String> mAdapterKeys;
     private FloatingActionButton fabButton;
+    private MaterialDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users);
+
+        progressDialog = new MaterialDialog.Builder(TestUsersActivity.this)
+                .title(R.string.loading)
+                .content(R.string.please_wait)
+                .progress(true, 0)
+                .build();
+
+        progressDialog.show();
 
         fabButton = (FloatingActionButton) findViewById(R.id.btn_fab);
         fabButton.setOnClickListener(this);
@@ -85,7 +93,7 @@ public class TestUsersActivity extends BaseActivity implements View.OnClickListe
             }
         });
 
-        mMyAdapter = new UserAdapter(mQuery, mAdapterItems, mAdapterKeys, new UserAdapter.OnItemClickListener(){
+        mMyAdapter = new UserAdapter(this, mQuery, mAdapterItems, mAdapterKeys, new UserAdapter.OnItemClickListener(){
             @Override public void onItemClick(final String testUserId) {
                 // Attach a listener to read the data at our posts reference
                 mQuery.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -120,8 +128,21 @@ public class TestUsersActivity extends BaseActivity implements View.OnClickListe
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return item.getItemId() == R.id.action_settings || super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        else if(id == R.id.action_signout){
+            firebaseApp.logoff();
+            Intent intent = new Intent(TestUsersActivity.this, HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
+
 
     // Saving the list of items and keys of the items on rotation
     @Override
@@ -142,6 +163,12 @@ public class TestUsersActivity extends BaseActivity implements View.OnClickListe
     public void onClick(View v) {
         if(v.getId() == R.id.btn_fab){
             startActivity(new Intent(this, RegisterTestUserActivity.class));
+        }
+    }
+
+    public void dismissProgressLoading(){
+        if(progressDialog != null && progressDialog.isShowing()){
+            progressDialog.dismiss();
         }
     }
 }

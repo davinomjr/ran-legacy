@@ -86,4 +86,7 @@
     <string name="inputPhone">Telefone</string>
     <string name="user">User</string>
     <string name="parent">Parent</string>
+    <string name="resultHistory">Results History</string>
+    <string name="loading">Loading...</string>
+
 </resources>

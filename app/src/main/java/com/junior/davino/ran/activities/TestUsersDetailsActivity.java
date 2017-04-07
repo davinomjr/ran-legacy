@@ -17,6 +17,7 @@ import com.junior.davino.ran.R;
 import com.junior.davino.ran.code.FirebaseApplication;
 import com.junior.davino.ran.fragments.TestUserForm;
 import com.junior.davino.ran.fragments.TestUserParentForm;
+import com.junior.davino.ran.fragments.TestUserResultHistory;
 import com.junior.davino.ran.models.TestUser;
 
 import org.parceler.Parcels;
@@ -33,6 +34,7 @@ public class TestUsersDetailsActivity extends BaseActivity {
     private ViewPager viewPager;
     private TestUserForm userFormFragment;
     private TestUserParentForm parentFormFragment;
+    private TestUserResultHistory resultHistoryFragment;
     private TestUser testUser;
 
     @Override
@@ -54,7 +56,6 @@ public class TestUsersDetailsActivity extends BaseActivity {
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClickButtonListener");
                 updateUser();
             }
         });
@@ -63,8 +64,17 @@ public class TestUsersDetailsActivity extends BaseActivity {
         startTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClickButtonListener");
-                startActivity(new Intent(TestUsersDetailsActivity.this, HomeTestActivity.class));
+                Intent intent = new Intent(TestUsersDetailsActivity.this, HomeTestActivity.class);
+                intent.putExtra("user", Parcels.wrap(testUser));
+                startActivity(intent);
+            }
+        });
+
+        Button removeButton = (Button)findViewById(R.id.btn_delete_user);
+        removeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                removeUser();
             }
         });
     }
@@ -73,9 +83,11 @@ public class TestUsersDetailsActivity extends BaseActivity {
         TestUsersDetailsActivity.ViewPagerAdapter adapter = new TestUsersDetailsActivity.ViewPagerAdapter(getSupportFragmentManager());
         userFormFragment = TestUserForm.newInstance(user, false);
         parentFormFragment = TestUserParentForm.newInstance(user.getParent(), false);
+        resultHistoryFragment = TestUserResultHistory.newInstance(user);
 
         adapter.addFragment(userFormFragment, getString(R.string.user));
         adapter.addFragment(parentFormFragment, getString(R.string.parent));
+        adapter.addFragment(resultHistoryFragment, getString(R.string.resultHistory));
         viewPager.setAdapter(adapter);
     }
 
@@ -96,6 +108,14 @@ public class TestUsersDetailsActivity extends BaseActivity {
         catch (Exception e){
             Log.i(TAG, e.getMessage());
         }
+    }
+
+    private void removeUser(){
+        Log.i(TAG, "removeUser");
+        DatabaseReference testUserReferences = database.getReference("users").child(firebaseApp.getFirebaseUserAuthenticateId()).child("testUsers");
+        String key = testUser.getUserId();
+        testUserReferences.child(key).removeValue();
+        finish();
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {

@@ -1,15 +1,12 @@
 package com.junior.davino.ran.speech;
 
-import android.util.Log;
-
 import com.junior.davino.ran.interfaces.IGrammar;
-import com.junior.davino.ran.models.ResultSummary;
+import com.junior.davino.ran.models.TestResult;
 import com.junior.davino.ran.models.TestItem;
+import com.junior.davino.ran.utils.Util;
 
 import java.util.Iterator;
 import java.util.List;
-
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 
 /**
  * Created by davin on 18/03/2017.
@@ -23,7 +20,7 @@ public class MatchRecognizer {
         this.grammar = grammar;
     }
 
-    public ResultSummary processTestResult(List<TestItem> items, List<String> wordsRecognized, int ellapsedTime){
+    public TestResult processTestResult(List<TestItem> items, List<String> wordsRecognized, int ellapsedTime, String audioFilePath){
         int matchResuts = 0;
         int wrongResults = 0;
         int totalItems = items.size();
@@ -44,12 +41,14 @@ public class MatchRecognizer {
         }
 
 
-        ResultSummary result = new ResultSummary();
+        TestResult result = new TestResult();
         result.setResultTime(ellapsedTime);
         result.setMeanResultTime((double)Math.round(ellapsedTime / (float)totalItems * 100d) / 100d);
         result.setStimuliCount(items.size());
         result.setHitsCount(matchResuts);
         result.setMissesCount(wrongResults);
+        result.setTestDateTime(Util.getCurrentDateTimeFormatted());
+        result.setAudioPath(audioFilePath);
         return result;
     }
 

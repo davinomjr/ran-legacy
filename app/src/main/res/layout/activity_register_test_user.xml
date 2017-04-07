@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@id/coordinator_layout"
+    android:background="@color/colorBackgroundLighter"
     tools:context="com.junior.davino.ran.activities.RegisterTestUserActivity">
 
     <LinearLayout
@@ -67,17 +68,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/user_form"
-                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_marginTop="20dp"
                 android:weightSum="1">
 
                 <Button
                     android:id="@+id/btn_register_user"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:background="@color/colorPrimary"
                     android:text="@string/createUser"
                     android:textColor="@android:color/white" />

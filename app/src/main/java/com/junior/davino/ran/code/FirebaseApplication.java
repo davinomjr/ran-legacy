@@ -132,4 +132,8 @@ public class FirebaseApplication extends Application {
                     }
                 });
     }
+
+    public void logoff(){
+        getFirebaseAuth().signOut();
+    }
 }

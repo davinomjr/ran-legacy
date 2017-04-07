@@ -1,5 +1,6 @@
 package com.junior.davino.ran.adapters;
 
+import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.google.firebase.database.Query;
 import com.junior.davino.ran.R;
+import com.junior.davino.ran.activities.TestUsersActivity;
 import com.junior.davino.ran.models.TestUser;
 
 import java.util.ArrayList;
@@ -20,15 +22,19 @@ import java.util.ArrayList;
 
 public class UserAdapter extends FirebaseRecyclerAdapter<UserAdapter.ViewHolder, TestUser> {
 
+    private final OnItemClickListener listener;
+    private final Context context;
+    private boolean completedLoading = false;
+
     public interface OnItemClickListener{
         void onItemClick(String uid);
     }
 
-    private final OnItemClickListener listener;
 
-    public UserAdapter(Query query, @Nullable ArrayList<TestUser> items, @Nullable ArrayList<String> keys, OnItemClickListener listener) {
+    public UserAdapter(Context context, Query query, @Nullable ArrayList<TestUser> items, @Nullable ArrayList<String> keys, OnItemClickListener listener) {
         super(query, items, keys);
         this.listener = listener;
+        this.context = context;
     }
 
     @Override
@@ -41,7 +47,7 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserAdapter.ViewHolder,
     public void onBindViewHolder(UserAdapter.ViewHolder holder, int position) {
         TestUser item = getItem(position);
         holder.textViewName.setText(item.getName());
-        holder.textViewAgeGrade.setText(String.valueOf(item.getAge() + " - " + item.getSchoolGrade()));
+        holder.textViewAgeGrade.setText(String.format("%d anos - %s", item.getAge(),item.getSchoolGrade()));
         holder.bindClick(item.getUserId(), listener);
     }
 
@@ -70,6 +76,10 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserAdapter.ViewHolder,
 
     @Override
     protected void itemAdded(TestUser item, String key, int position) {
+        if(!completedLoading){
+            ((TestUsersActivity) context).dismissProgressLoading();
+        }
+
         Log.d("UserAdapter", "Added a new item to the adapter.");
     }
 

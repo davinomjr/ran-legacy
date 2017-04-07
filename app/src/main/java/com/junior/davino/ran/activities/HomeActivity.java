@@ -12,11 +12,9 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.firebase.ui.auth.ResultCodes;
 import com.junior.davino.ran.R;
-import com.junior.davino.ran.code.FirebaseApplication;
 
 public class HomeActivity extends BaseActivity {
 
-    FirebaseApplication firebaseApp = new FirebaseApplication();
     private static final String TAG = "HomeActivity";
     private static final int RC_SIGN_IN = 29;
     private static final int RC_SIGN_UP = 0;
@@ -133,4 +131,6 @@ public class HomeActivity extends BaseActivity {
         showSnackBar(getString(R.string.sign_in_failed));
         loginButton.setEnabled(true);
     }
+
+
 }

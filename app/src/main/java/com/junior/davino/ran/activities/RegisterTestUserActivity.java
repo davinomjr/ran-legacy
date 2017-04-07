@@ -13,7 +13,6 @@ import android.widget.Button;
 
 import com.google.firebase.database.DatabaseReference;
 import com.junior.davino.ran.R;
-import com.junior.davino.ran.code.FirebaseApplication;
 import com.junior.davino.ran.fragments.TestUserForm;
 import com.junior.davino.ran.fragments.TestUserParentForm;
 import com.junior.davino.ran.models.TestUser;
@@ -23,7 +22,6 @@ import java.util.List;
 
 public class RegisterTestUserActivity extends BaseActivity {
 
-    FirebaseApplication firebaseApp = new FirebaseApplication();
     private static final String TAG = "RegisterTestUserActivity";
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -65,7 +63,6 @@ public class RegisterTestUserActivity extends BaseActivity {
         adapter.addFragment(parentFormFragment, getString(R.string.parent));
         viewPager.setAdapter(adapter);
     }
-
 
     private void registerUser() {
         if (!userFormFragment.validateForm() || !parentFormFragment.validateForm()) {

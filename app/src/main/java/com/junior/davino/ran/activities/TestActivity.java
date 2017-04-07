@@ -8,10 +8,8 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Environment;
 import android.os.IBinder;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
@@ -26,8 +24,9 @@ import com.junior.davino.ran.factories.WordFilterFactory;
 import com.junior.davino.ran.fragments.RanTestFragment;
 import com.junior.davino.ran.interfaces.IGrammar;
 import com.junior.davino.ran.interfaces.IItemBuilder;
-import com.junior.davino.ran.models.ResultSummary;
 import com.junior.davino.ran.models.TestItem;
+import com.junior.davino.ran.models.TestResult;
+import com.junior.davino.ran.models.TestUser;
 import com.junior.davino.ran.models.enums.EnumTestType;
 import com.junior.davino.ran.speech.InputRecognizer;
 import com.junior.davino.ran.speech.MatchRecognizer;
@@ -35,8 +34,9 @@ import com.junior.davino.ran.speech.SpeechService;
 import com.junior.davino.ran.speech.VoiceController;
 import com.junior.davino.ran.utils.Constants;
 import com.junior.davino.ran.utils.TimerUtil;
-import com.junior.davino.ran.utils.Toaster;
 import com.junior.davino.ran.utils.Util;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,29 +45,29 @@ import java.util.List;
  * Created by davin on 24/02/2017.
  */
 
-public class TestActivity extends FragmentActivity implements View.OnClickListener {
+public class TestActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "TestActivity";
     private static final int REQUEST_RECORD_AUDIO_PERMISSION = 1;
 
-    private boolean isRecording = false;
+    private TestUser currentTestUser;
 
     private List<TestItem> items;
-    Button btnSpeak;
-    Toaster toaster = new Toaster();
-    TimerUtil timerUtil = new TimerUtil();
-    boolean listening;
-    CountDownTimer countdownTimer;
-    MaterialDialog processingDialog;
-    EnumTestType testType;
-    InputRecognizer inputRecognizer;
-    List<String> wordsRecognition = new ArrayList<>();
-    Button btn_back, btn_reset;
+    private Button btnSpeak;
+    private TimerUtil timerUtil = new TimerUtil();
+    private boolean listening;
+    private CountDownTimer countdownTimer;
+    private MaterialDialog processingDialog;
+    private EnumTestType testType;
+    private InputRecognizer inputRecognizer;
+    private List<String> wordsRecognition = new ArrayList<>();
+    private Button btn_back, btn_reset;
 
     private SpeechService mSpeechService;
     private MatchRecognizer matchRecognizer;
     private VoiceController voiceController;
     private String audioFilePath;
+
 
 
     private SpeechService.Listener mSpeechServiceListener = createServiceListener();
@@ -116,6 +116,7 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
 
         verifyPermissions();
         testType = (EnumTestType) getIntent().getSerializableExtra("option");
+        currentTestUser = Parcels.unwrap(getIntent().getParcelableExtra("user"));
         IItemBuilder builder = ItemBuilderFactory.createItemBuilder(testType);
         items = builder.buildItems(Constants.ITEMSCOUNT);
         RanTestFragment fragment = RanTestFragment.newInstance(testType, new ArrayList<TestItem>(getItems()));
@@ -300,7 +301,7 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
             finish();
         } else {
             reset();
-            toaster.showToastMessage(this, getString(R.string.reseted));
+            showSnackBar(getString(R.string.reseted));
         }
     }
 
@@ -317,13 +318,14 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
         }
 
         int ellapsedTime = timerUtil.getLastResult();
-        ResultSummary result = matchRecognizer.processTestResult(getItems(), wordsRecognition, ellapsedTime);
+        TestResult result = matchRecognizer.processTestResult(getItems(), wordsRecognition, ellapsedTime, audioFilePath);
+        currentTestUser.addResult(result);
 
         Intent intent = new Intent(TestActivity.this, ResultActivity.class);
-        intent.putExtra("result", result);
-        intent.putExtra("option", testType);
-        intent.putExtra("items", new ArrayList<>(getItems()));
-        intent.putExtra("audioFilePath", audioFilePath);
+        intent.putExtra("result", Parcels.wrap(result));
+        intent.putExtra("option", Parcels.wrap(testType));
+        intent.putExtra("items", Parcels.wrap(new ArrayList<>(getItems())));
+        intent.putExtra("audioFilePath", Parcels.wrap(audioFilePath));
         startActivity(intent);
     }
 
@@ -334,7 +336,24 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
         matchRecognizer = new MatchRecognizer(grammar);
         wordsRecognition = new ArrayList<>();
         prepareVoiceRecognition();
-        audioFilePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/ran_test.pcm";
+        audioFilePath = generateAudioUserPath();
+        Log.i(TAG, "FILEPATHGENERATED = " + audioFilePath);
+    }
+
+    private String generateAudioUserPath(){
+        String currentDate = Util.getCurrentDateTimeFormatted();
+        String currentUserTestName = currentTestUser.getName().trim();
+        String prefix = "/";
+        String extension = ".pcm";
+
+        StringBuilder pathBuilder = new StringBuilder(prefix);
+        pathBuilder.append(Constants.RANTEST);
+        pathBuilder.append("_");
+        pathBuilder.append(currentUserTestName);
+        pathBuilder.append("_");
+        pathBuilder.append(currentDate.replace(":", "").replace("/", "_"));
+        pathBuilder.append(extension);
+        return pathBuilder.toString();
     }
 
     private String getCharacterSplit() {

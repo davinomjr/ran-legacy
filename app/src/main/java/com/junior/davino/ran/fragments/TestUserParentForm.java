@@ -63,11 +63,9 @@ public class TestUserParentForm extends Fragment {
         inputParentEmail.addTextChangedListener(new TextChangeListener(inputParentEmail));
         inputParentPhone.addTextChangedListener(new TextChangeListener(inputParentPhone));
 
-        parent = Parcels.unwrap(getArguments().getParcelable("parent"));
         if(!(boolean)getArguments().getSerializable("newUser")){
             fillValues();
         }
-
 
         inputLayoutParentName.setHintAnimationEnabled(true);
         inputLayoutParentEmail.setHintAnimationEnabled(true);
@@ -129,7 +127,8 @@ public class TestUserParentForm extends Fragment {
     }
 
     public boolean validateForm(){
-        return validateParentName() & validateParentEmail() & validateParentPhone();
+        //return validateParentName() & validateParentEmail() & validateParentPhone();
+        return true;
     }
 
     public TestUserParent getUserParent(){

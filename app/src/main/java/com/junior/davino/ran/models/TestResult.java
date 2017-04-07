@@ -7,17 +7,29 @@ import android.os.Parcelable;
  * Created by davin on 02/03/2017.
  */
 
-public class ResultSummary implements Parcelable {
+@org.parceler.Parcel
+public class TestResult implements Parcelable {
 
-    public ResultSummary(){
+    int resultTime;
+    double meanResultTime;
+    int stimuliCount;
+    int hitsCount;
+    int missesCount;
+    String audioPath;
+
+    public TestResult(){
 
     }
 
-    private int resultTime;
-    private double meanResultTime;
-    private int stimuliCount;
-    private int hitsCount;
-    private int missesCount;
+    public String getTestDateTime() {
+        return testDateTime;
+    }
+
+    public void setTestDateTime(String testDateTime) {
+        this.testDateTime = testDateTime;
+    }
+
+    private String testDateTime;
 
 
     public int getStimuliCount() {
@@ -34,6 +46,14 @@ public class ResultSummary implements Parcelable {
 
     public void setResultTime(int resultTime) {
         this.resultTime = resultTime;
+    }
+
+    public String getAudioPath() {
+        return audioPath;
+    }
+
+    public void setAudioPath(String audioPath) {
+        this.audioPath = audioPath;
     }
 
     public double getMeanResultTime() {
@@ -60,24 +80,24 @@ public class ResultSummary implements Parcelable {
         this.missesCount = missesCount;
     }
 
-    public static final Parcelable.Creator<ResultSummary> CREATOR = new Parcelable.ClassLoaderCreator<ResultSummary>(){
+    public static final Parcelable.Creator<TestResult> CREATOR = new Parcelable.ClassLoaderCreator<TestResult>(){
         @Override
-        public ResultSummary createFromParcel(Parcel source) {
-            return new ResultSummary(source);
+        public TestResult createFromParcel(Parcel source) {
+            return new TestResult(source);
         }
 
         @Override
-        public ResultSummary[] newArray(int size) {
-            return new ResultSummary[size];
+        public TestResult[] newArray(int size) {
+            return new TestResult[size];
         }
 
         @Override
-        public ResultSummary createFromParcel(Parcel source, ClassLoader loader) {
-            return new ResultSummary(source);
+        public TestResult createFromParcel(Parcel source, ClassLoader loader) {
+            return new TestResult(source);
         }
     };
 
-    private ResultSummary(Parcel in){
+    private TestResult(Parcel in){
         resultTime = in.readInt();
         meanResultTime = in.readDouble();
         stimuliCount = in.readInt();

@@ -4,6 +4,7 @@
     <color name="colorPrimaryDarker">#0091ea</color>
     <color name="colorPrimaryDark">#01579B</color>
     <color name="colorBackgroundLight">#1186cf</color>
+    <color name="colorBackgroundLighter">#E3F2FD</color>
     <color name="colorAccent">#fff</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="backgroundTest">#f0f0f0</color>

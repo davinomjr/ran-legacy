@@ -1,11 +1,14 @@
 package com.junior.davino.ran.models;
 
+import org.parceler.Parcel;
+
 import java.io.Serializable;
 
 /**
  * Created by davin on 24/02/2017.
  */
 
+@Parcel
 public class TestItem implements Serializable {
 
     private int codeTestNumber;
