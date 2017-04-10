@@ -45,7 +45,15 @@ public class HomeActivity extends BaseActivity {
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplication(), SignUpActivity.class));
+                startActivity(new Intent(HomeActivity.this, SignUpActivity.class));
+            }
+        });
+
+        TextView tvLostPassword = (TextView) findViewById(R.id.link_lostPassword);
+        tvLostPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, LostPasswordActivity.class));
             }
         });
     }
@@ -124,11 +132,19 @@ public class HomeActivity extends BaseActivity {
     }
 
     public void onLoginFailed() {
+        onLoginFailed(null);
+    }
+
+    public void onLoginFailed(String errorMessage) {
         if(processingDialog != null){
             processingDialog.dismiss();
         }
 
-        showSnackBar(getString(R.string.sign_in_failed));
+        if(errorMessage == null){
+            errorMessage = getString(R.string.sign_in_failed);
+        }
+
+        showSnackBar(errorMessage);
         loginButton.setEnabled(true);
     }
 

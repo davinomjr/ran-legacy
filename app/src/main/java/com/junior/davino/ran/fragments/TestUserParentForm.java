@@ -82,31 +82,31 @@ public class TestUserParentForm extends Fragment {
 
 
     private boolean validateParentName() {
-        removeErrorMessage(inputLayoutParentName);
-        if (inputParentName.getText().toString().trim().isEmpty()) {
-            setRequiredMessage(inputLayoutParentName);
-            return false;
-        }
+//        removeErrorMessage(inputLayoutParentName);
+//        if (inputParentName.getText().toString().trim().isEmpty()) {
+//            setRequiredMessage(inputLayoutParentName);
+//            return false;
+//        }
 
         return true;
     }
 
     private boolean validateParentEmail() {
-        removeErrorMessage(inputLayoutParentEmail);
-        if (inputParentEmail.getText().toString().trim().isEmpty()) {
-            setRequiredMessage(inputLayoutParentEmail);
-            return false;
-        }
+//        removeErrorMessage(inputLayoutParentEmail);
+//        if (inputParentEmail.getText().toString().trim().isEmpty()) {
+//            setRequiredMessage(inputLayoutParentEmail);
+//            return false;
+//        }
 
         return true;
     }
 
     private boolean validateParentPhone() {
-        removeErrorMessage(inputLayoutParentPhone);
-        if (inputParentPhone.getText().toString().trim().isEmpty()) {
-            setRequiredMessage(inputLayoutParentPhone);
-            return false;
-        }
+//        removeErrorMessage(inputLayoutParentPhone);
+//        if (inputParentPhone.getText().toString().trim().isEmpty()) {
+//            setRequiredMessage(inputLayoutParentPhone);
+//            return false;
+//        }
 
         return true;
     }
@@ -162,6 +162,9 @@ public class TestUserParentForm extends Fragment {
                     break;
                 case R.id.input_parent_name:
                     validateParentName();
+                    break;
+                case R.id.input_parent_phone:
+                    validateParentPhone();
                     break;
             }
         }

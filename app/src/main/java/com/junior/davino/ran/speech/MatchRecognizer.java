@@ -3,6 +3,7 @@ package com.junior.davino.ran.speech;
 import com.junior.davino.ran.interfaces.IGrammar;
 import com.junior.davino.ran.models.TestResult;
 import com.junior.davino.ran.models.TestItem;
+import com.junior.davino.ran.models.enums.EnumTestType;
 import com.junior.davino.ran.utils.Util;
 
 import java.util.Iterator;
@@ -20,7 +21,7 @@ public class MatchRecognizer {
         this.grammar = grammar;
     }
 
-    public TestResult processTestResult(List<TestItem> items, List<String> wordsRecognized, int ellapsedTime, String audioFilePath){
+    public TestResult processTestResult(List<TestItem> items, EnumTestType testType, List<String> wordsRecognized, int ellapsedTime, String audioFilePath){
         int matchResuts = 0;
         int wrongResults = 0;
         int totalItems = items.size();
@@ -49,6 +50,7 @@ public class MatchRecognizer {
         result.setMissesCount(wrongResults);
         result.setTestDateTime(Util.getCurrentDateTimeFormatted());
         result.setAudioPath(audioFilePath);
+        result.setTestType(testType);
         return result;
     }
 

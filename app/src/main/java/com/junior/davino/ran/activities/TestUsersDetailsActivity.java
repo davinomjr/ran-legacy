@@ -2,6 +2,7 @@ package com.junior.davino.ran.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,13 +13,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.firebase.database.DatabaseReference;
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.code.FirebaseApplication;
 import com.junior.davino.ran.fragments.TestUserForm;
 import com.junior.davino.ran.fragments.TestUserParentForm;
-import com.junior.davino.ran.fragments.TestUserResultHistory;
+import com.junior.davino.ran.fragments.TestUserResultHistoryFragment;
 import com.junior.davino.ran.models.TestUser;
+import com.junior.davino.ran.models.TestUserParent;
 
 import org.parceler.Parcels;
 
@@ -34,8 +38,9 @@ public class TestUsersDetailsActivity extends BaseActivity {
     private ViewPager viewPager;
     private TestUserForm userFormFragment;
     private TestUserParentForm parentFormFragment;
-    private TestUserResultHistory resultHistoryFragment;
+    private TestUserResultHistoryFragment resultHistoryFragment;
     private TestUser testUser;
+    private MaterialDialog confirmationDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +79,24 @@ public class TestUsersDetailsActivity extends BaseActivity {
         removeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                removeUser();
+                confirmationDialog = new MaterialDialog.Builder(TestUsersDetailsActivity.this)
+                        .title(R.string.confirmation)
+                        .content(R.string.confirmation_delete_msg)
+                        .positiveText(R.string.yes)
+                        .negativeText(R.string.no)
+                        .onPositive(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                removeUser();
+                            }
+                        }).onNegative(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                confirmationDialog.dismiss();
+                            }
+                        }).build();
+
+                confirmationDialog.show();
             }
         });
     }
@@ -83,7 +105,7 @@ public class TestUsersDetailsActivity extends BaseActivity {
         TestUsersDetailsActivity.ViewPagerAdapter adapter = new TestUsersDetailsActivity.ViewPagerAdapter(getSupportFragmentManager());
         userFormFragment = TestUserForm.newInstance(user, false);
         parentFormFragment = TestUserParentForm.newInstance(user.getParent(), false);
-        resultHistoryFragment = TestUserResultHistory.newInstance(user);
+        resultHistoryFragment = TestUserResultHistoryFragment.newInstance(user);
 
         adapter.addFragment(userFormFragment, getString(R.string.user));
         adapter.addFragment(parentFormFragment, getString(R.string.parent));
@@ -98,11 +120,20 @@ public class TestUsersDetailsActivity extends BaseActivity {
         }
 
         try {
-            DatabaseReference testUserReferences = database.getReference("users").child(firebaseApp.getFirebaseUserAuthenticateId()).child("testUsers");
-            String key = testUser.getUserId();
+            DatabaseReference testUserReferences = database.getReference("users").child(testUser.getUserId()).child("testUsers");
+            String key = testUser.getTestUserId();
             testUser = userFormFragment.getUser();
-            testUser.setParent(parentFormFragment.getUserParent());
-            testUserReferences.child(key).setValue(testUser);
+            DatabaseReference userReference = testUserReferences.child(key);
+            userReference.child("name").setValue(testUser.getName());
+            userReference.child("age").setValue(testUser.getAge());
+            userReference.child("gender").setValue(testUser.getGender());
+            userReference.child("schoolGrade").setValue(testUser.getSchoolGrade());
+
+            TestUserParent testUserParent = testUser.getParent();
+            DatabaseReference userParentReference = testUserReferences.child(key).child("parent");
+            userParentReference.child("name").setValue(testUserParent.getName());
+            userParentReference.child("email").setValue(testUserParent.getEmail());
+            userParentReference.child("phone").setValue(testUserParent.getPhone());
             showSnackBar(getString(R.string.updateSuccess));
         }
         catch (Exception e){
@@ -112,8 +143,8 @@ public class TestUsersDetailsActivity extends BaseActivity {
 
     private void removeUser(){
         Log.i(TAG, "removeUser");
-        DatabaseReference testUserReferences = database.getReference("users").child(firebaseApp.getFirebaseUserAuthenticateId()).child("testUsers");
-        String key = testUser.getUserId();
+        DatabaseReference testUserReferences = database.getReference("users").child(testUser.getUserId()).child("testUsers");
+        String key = testUser.getTestUserId();
         testUserReferences.child(key).removeValue();
         finish();
     }

@@ -1,71 +1,73 @@
 package com.junior.davino.ran.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.TextInputLayout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.firebase.auth.FirebaseUser;
 import com.junior.davino.ran.R;
 
-public class SignUpActivity extends BaseActivity {
+public class UserProfileActivity extends BaseActivity {
 
+    private static final String TAG = "UserProfileActivity";
     EditText inputName, inputEmail, inputPassword;
     TextInputLayout nameLayout, emailLayout, passwordLayout;
-    Button signUpButton;
-    MaterialDialog processingDialog;
+    Button updateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_user_profile);
+
         nameLayout = (TextInputLayout) findViewById(R.id.input_layout_name);
         emailLayout = (TextInputLayout) findViewById(R.id.input_layout_name);
         passwordLayout = (TextInputLayout) findViewById(R.id.input_layout_password);
         inputName = (EditText) findViewById(R.id.input_name);
         inputEmail = (EditText) findViewById(R.id.input_email);
         inputPassword = (EditText) findViewById(R.id.input_password);
-        signUpButton = (Button) findViewById(R.id.btn_signup);
-        signUpButton.setOnClickListener(new View.OnClickListener() {
+
+        nameLayout.setHintAnimationEnabled(false);
+        emailLayout.setHintAnimationEnabled(false);
+
+        fillValues();
+        updateButton = (Button) findViewById(R.id.btn_update_user);
+        updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                register();
-            }
-        });
-        TextView loginTv = (TextView)findViewById(R.id.link_login);
-        loginTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SignUpActivity.this, HomeActivity.class));
-                finish();
+                updateUser();
             }
         });
     }
 
-    private void register(){
+    private void fillValues(){
+        FirebaseUser user = firebaseApp.getFirebaseAuth().getCurrentUser();
+        inputName.setText(user.getDisplayName());
+        inputEmail.setText(user.getEmail());
 
+        nameLayout.setHintAnimationEnabled(true);
+        emailLayout.setHintAnimationEnabled(true);
+    }
+
+    private void updateUser(){
         if (!validate()) {
-            onSignupFailed();
             return;
         }
-
-        signUpButton.setEnabled(false);
-
-        processingDialog = new MaterialDialog.Builder(SignUpActivity.this)
-                .title(R.string.progress_dialog)
-                .content("Criando...")
-                .progress(true, 0)
-                .show();
 
         String name = inputName.getText().toString();
         String email = inputEmail.getText().toString();
         String password = inputPassword.getText().toString();
 
-
-        firebaseApp.createNewUser(this, name, email, password, getString(R.string.err_msg_signup));
+        firebaseApp.updateUser(name, email, password);
+        showSnackBar(getString(R.string.updateSuccess));
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                finish();
+            }
+        }, 3000);
     }
 
     public boolean validate() {
@@ -97,20 +99,6 @@ public class SignUpActivity extends BaseActivity {
         }
 
         return valid;
-    }
-
-
-    public void onSignupSuccess() {
-        processingDialog.dismiss();
-        signUpButton.setEnabled(true);
-        setResult(RESULT_OK, null);
-        finish();
-    }
-
-    public void onSignupFailed() {
-        processingDialog.dismiss();
-        showSnackBar(getString(R.string.sign_in_failed));
-        signUpButton.setEnabled(true);
     }
 
 }

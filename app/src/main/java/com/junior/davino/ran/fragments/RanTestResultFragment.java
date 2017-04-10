@@ -15,7 +15,8 @@ import com.junior.davino.ran.interfaces.IGridAdapter;
 import com.junior.davino.ran.models.TestItem;
 import com.junior.davino.ran.models.enums.EnumTestType;
 
-import java.util.ArrayList;
+import org.parceler.Parcels;
+
 import java.util.List;
 
 public class RanTestResultFragment extends Fragment {
@@ -30,11 +31,11 @@ public class RanTestResultFragment extends Fragment {
         // Required empty public constructor
     }
     
-    public static RanTestResultFragment newInstance(EnumTestType testType, ArrayList<TestItem> items) {
+    public static RanTestResultFragment newInstance(EnumTestType testType, List<TestItem> items) {
         RanTestResultFragment fragment = new RanTestResultFragment();
         Bundle args = new Bundle();
+        args.putParcelable("items", Parcels.wrap(items));
         args.putSerializable("option", testType);
-        args.putSerializable("items", items);
         fragment.setArguments(args);
         return fragment;
     }
@@ -46,7 +47,7 @@ public class RanTestResultFragment extends Fragment {
 
         Context context = getActivity();
         EnumTestType option = (EnumTestType) getArguments().getSerializable("option");
-        items = (List<TestItem>)getArguments().getSerializable("items");
+        items = Parcels.unwrap(getArguments().getParcelable("items"));
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.rv_item);
         mRecyclerView.setHasFixedSize(true);

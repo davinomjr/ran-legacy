@@ -70,12 +70,14 @@ public class RegisterTestUserActivity extends BaseActivity {
         }
 
         try {
-            DatabaseReference testUserReferences = database.getReference("users").child(firebaseApp.getFirebaseAuth().getCurrentUser().getUid()).child("testUsers");
+            String userId = firebaseApp.getFirebaseAuth().getCurrentUser().getUid();
+            DatabaseReference testUserReferences = database.getReference("users").child(userId).child("testUsers");
             String key = testUserReferences.push().getKey();
-            TestUser user = userFormFragment.getUser();
-            user.setUserId(key);
-            user.setParent(parentFormFragment.getUserParent());
-            testUserReferences.child(key).setValue(user);
+            TestUser testUser = userFormFragment.getUser();
+            testUser.setUserId(userId);
+            testUser.setTestUserId(key);
+            testUser.setParent(parentFormFragment.getUserParent());
+            testUserReferences.child(key).setValue(testUser);
             showSnackBar(getString(R.string.createSuccess));
             finish();
         } catch (Exception e) {

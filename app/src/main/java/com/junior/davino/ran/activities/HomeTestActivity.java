@@ -26,7 +26,7 @@ public class HomeTestActivity extends BaseActivity implements View.OnClickListen
     }
 
     @Override
-    public void onDestroy(){
+    public void onDestroy() {
         super.onDestroy();
     }
 
@@ -39,21 +39,21 @@ public class HomeTestActivity extends BaseActivity implements View.OnClickListen
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        else if(id == R.id.action_signout){
+        if (id == R.id.action_signout) {
             firebaseApp.logoff();
             Intent intent = new Intent(HomeTestActivity.this, HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
+        } else if (id == R.id.user_details) {
+            startActivity(new Intent(HomeTestActivity.this, UserProfileActivity.class));
         }
+
 
         return super.onOptionsItemSelected(item);
     }
 
-    private void setListeners(){
+    private void setListeners() {
         findViewById(R.id.btn_color).setOnClickListener(this);
         findViewById(R.id.btn_digit).setOnClickListener(this);
         findViewById(R.id.btn_letter).setOnClickListener(this);
@@ -61,7 +61,7 @@ public class HomeTestActivity extends BaseActivity implements View.OnClickListen
     }
 
     public void onClick(View v) {
-        switch(v.getId()){
+        switch (v.getId()) {
             case R.id.btn_color:
                 initializeTest(EnumTestType.COLORS);
                 break;
@@ -73,13 +73,13 @@ public class HomeTestActivity extends BaseActivity implements View.OnClickListen
                 break;
             case R.id.btn_object:
                 initializeTest(EnumTestType.OBJECTS);
-            break;
+                break;
 
         }
     }
 
 
-    private void initializeTest(EnumTestType testType){
+    private void initializeTest(EnumTestType testType) {
         Intent intent = new Intent(this, TestActivity.class);
         intent.putExtra("option", testType);
         intent.putExtra("user", Parcels.wrap(testUser));

@@ -11,7 +11,8 @@ import android.widget.TextView;
 
 import com.google.firebase.database.Query;
 import com.junior.davino.ran.R;
-import com.junior.davino.ran.activities.TestUsersActivity;
+import com.junior.davino.ran.interfaces.OnItemClickListener;
+import com.junior.davino.ran.interfaces.OnLayoutListenerReady;
 import com.junior.davino.ran.models.TestUser;
 
 import java.util.ArrayList;
@@ -23,18 +24,16 @@ import java.util.ArrayList;
 public class UserAdapter extends FirebaseRecyclerAdapter<UserAdapter.ViewHolder, TestUser> {
 
     private final OnItemClickListener listener;
+    private OnLayoutListenerReady recyclerViewListener;
     private final Context context;
-    private boolean completedLoading = false;
+    private int totalItemsSize;
 
-    public interface OnItemClickListener{
-        void onItemClick(String uid);
-    }
-
-
-    public UserAdapter(Context context, Query query, @Nullable ArrayList<TestUser> items, @Nullable ArrayList<String> keys, OnItemClickListener listener) {
+    public UserAdapter(Context context, Query query, @Nullable ArrayList<TestUser> items, @Nullable ArrayList<String> keys, OnItemClickListener listener, OnLayoutListenerReady recyclerViewListener) {
         super(query, items, keys);
         this.listener = listener;
         this.context = context;
+        this.recyclerViewListener = recyclerViewListener;
+        totalItemsSize = items.size();
     }
 
     @Override
@@ -48,7 +47,7 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserAdapter.ViewHolder,
         TestUser item = getItem(position);
         holder.textViewName.setText(item.getName());
         holder.textViewAgeGrade.setText(String.format("%d anos - %s", item.getAge(),item.getSchoolGrade()));
-        holder.bindClick(item.getUserId(), listener);
+        holder.bindClick(item.getTestUserId(), listener);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -76,11 +75,10 @@ public class UserAdapter extends FirebaseRecyclerAdapter<UserAdapter.ViewHolder,
 
     @Override
     protected void itemAdded(TestUser item, String key, int position) {
-        if(!completedLoading){
-            ((TestUsersActivity) context).dismissProgressLoading();
-        }
-
         Log.d("UserAdapter", "Added a new item to the adapter.");
+        if(position == totalItemsSize){
+            recyclerViewListener.onLayoutReady();
+        }
     }
 
     @Override

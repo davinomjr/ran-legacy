@@ -1,24 +1,52 @@
 package com.junior.davino.ran.models;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import com.junior.davino.ran.models.enums.EnumTestType;
+
+import java.util.List;
 
 /**
  * Created by davin on 02/03/2017.
  */
 
 @org.parceler.Parcel
-public class TestResult implements Parcelable {
+public class TestResult {
 
+    String resultId;
     int resultTime;
     double meanResultTime;
     int stimuliCount;
     int hitsCount;
     int missesCount;
     String audioPath;
+    String testDateTime;
+    EnumTestType testType;
+    private List<TestItem> testItems;
 
     public TestResult(){
+    }
+//
+//    public List<TestItem> getTestItems() {
+//        return testItems;
+//    }
+//
+//    public void setTestItems(List<TestItem> testItems) {
+//        this.testItems = testItems;
+//    }
 
+    public String getResultId() {
+        return resultId;
+    }
+
+    public void setResultId(String resultId) {
+        this.resultId = resultId;
+    }
+
+    public EnumTestType getTestType() {
+        return testType;
+    }
+
+    public void setTestType(EnumTestType testType) {
+        this.testType = testType;
     }
 
     public String getTestDateTime() {
@@ -28,9 +56,6 @@ public class TestResult implements Parcelable {
     public void setTestDateTime(String testDateTime) {
         this.testDateTime = testDateTime;
     }
-
-    private String testDateTime;
-
 
     public int getStimuliCount() {
         return stimuliCount;
@@ -80,42 +105,8 @@ public class TestResult implements Parcelable {
         this.missesCount = missesCount;
     }
 
-    public static final Parcelable.Creator<TestResult> CREATOR = new Parcelable.ClassLoaderCreator<TestResult>(){
-        @Override
-        public TestResult createFromParcel(Parcel source) {
-            return new TestResult(source);
-        }
-
-        @Override
-        public TestResult[] newArray(int size) {
-            return new TestResult[size];
-        }
-
-        @Override
-        public TestResult createFromParcel(Parcel source, ClassLoader loader) {
-            return new TestResult(source);
-        }
-    };
-
-    private TestResult(Parcel in){
-        resultTime = in.readInt();
-        meanResultTime = in.readDouble();
-        stimuliCount = in.readInt();
-        hitsCount = in.readInt();
-        missesCount = in.readInt();
-    }
-
     @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(resultTime);
-        dest.writeDouble(meanResultTime);
-        dest.writeInt(stimuliCount);
-        dest.writeInt(hitsCount);
-        dest.writeInt(missesCount);
+    public String toString(){
+        return this.getTestDateTime() + " - " + this.getTestType().toString();
     }
 }

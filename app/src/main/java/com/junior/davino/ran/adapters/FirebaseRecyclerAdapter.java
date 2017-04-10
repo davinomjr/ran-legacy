@@ -70,7 +70,9 @@ public abstract class FirebaseRecyclerAdapter<ViewHolder extends RecyclerView.Vi
             mItems = new ArrayList<T>();
             mKeys = new ArrayList<String>();
         }
+
         query.addChildEventListener(mListener);
+
     }
 
     private ChildEventListener mListener = new ChildEventListener() {
@@ -78,7 +80,6 @@ public abstract class FirebaseRecyclerAdapter<ViewHolder extends RecyclerView.Vi
         public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
             Log.i(TAG,"onChildAdded");
             String key = dataSnapshot.getKey();
-
             if (!mKeys.contains(key)) {
                 T item = getConvertedObject(dataSnapshot);
                 int insertedPosition;

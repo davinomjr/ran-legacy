@@ -78,8 +78,8 @@
     <string name="err_msg_signin">There was a problem authenticating the testUser</string>
 
     <string name="msg_sign_in">Login</string>
-    <string name="msg_sign_up">No account? Click to register</string>
-
+    <string name="msg_sign_up">Register</string>
+    <string name="msg_lost_password">Lost password?</string>
     <string name="authenticating">Authenticating</string>
     <string name="userLabel">User</string>
     <string name="parentLabel">Parent</string>
@@ -88,5 +88,11 @@
     <string name="parent">Parent</string>
     <string name="resultHistory">Results History</string>
     <string name="loading">Loading...</string>
-
+    <string name="confirmation">Confirmation</string>
+    <string name="confirmation_delete_msg">Are you sure you wanna delete this user? This is a irreversible step.</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="recoverPassword">Recover password</string>
+    <string name="recoverSuccessfull">You will receive an email with instructions how to reset your password.</string>
+    <string name="err_msg_wrong_auth_data">Wrong email/password.</string>
 </resources>

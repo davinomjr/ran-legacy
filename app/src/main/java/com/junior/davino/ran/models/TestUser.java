@@ -12,25 +12,33 @@ import java.util.List;
 @Parcel
 public class TestUser {
 
-    String userId;
+    String testUserId;
     String name;
     String schoolGrade;
     String gender;
     int age;
     TestUserParent parent;
+    String userId;
+    private List<TestResult> testResults;
 
     public TestUser(){
         parent = new TestUserParent();
     }
 
-
-    public List<TestResult> getTestResults() {
-        return testResults;
+    public String getTestUserId() {
+        return testUserId;
     }
 
-    public void setTestResults(List<TestResult> testResults) {
-        this.testResults = testResults;
+    public void setTestUserId(String testUserId) {
+        this.testUserId = testUserId;
     }
+//    public List<TestResult> getTestResults() {
+//        return testResults;
+//    }
+//
+//    public void setTestResults(List<TestResult> testResults) {
+//        this.testResults = testResults;
+//    }
 
     public TestResult getLastTestResult(){
         if(testResults != null){
@@ -39,8 +47,6 @@ public class TestUser {
 
         return null;
     }
-
-    List<TestResult> testResults;
 
     public TestUserParent getParent() {
         return parent;

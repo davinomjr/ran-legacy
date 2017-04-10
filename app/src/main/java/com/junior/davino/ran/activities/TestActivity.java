@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.firebase.database.DatabaseReference;
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.factories.GrammarFactory;
 import com.junior.davino.ran.factories.ItemBuilderFactory;
@@ -318,15 +319,23 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
         }
 
         int ellapsedTime = timerUtil.getLastResult();
-        TestResult result = matchRecognizer.processTestResult(getItems(), wordsRecognition, ellapsedTime, audioFilePath);
-        currentTestUser.addResult(result);
+        TestResult result = matchRecognizer.processTestResult(getItems(), testType, wordsRecognition, ellapsedTime, audioFilePath);
+        addTestResult(result);
 
         Intent intent = new Intent(TestActivity.this, ResultActivity.class);
         intent.putExtra("result", Parcels.wrap(result));
-        intent.putExtra("option", Parcels.wrap(testType));
         intent.putExtra("items", Parcels.wrap(new ArrayList<>(getItems())));
-        intent.putExtra("audioFilePath", Parcels.wrap(audioFilePath));
         startActivity(intent);
+        finish();
+    }
+
+    private void addTestResult(TestResult result){
+        currentTestUser.addResult(result);
+        DatabaseReference testResultsReference = firebaseApp.getUsersQuery().child(currentTestUser.getUserId()).child("testUsers").child(currentTestUser.getTestUserId()).child("testResults");
+        String key = testResultsReference.push().getKey();
+        result.setResultId(key);
+        testResultsReference.child(key).setValue(result);
+        testResultsReference.child(key).child("testItems").setValue(items);
     }
 
 

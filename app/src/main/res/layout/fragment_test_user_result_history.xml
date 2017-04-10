@@ -3,11 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackgroundLighter"
-    tools:context="com.junior.davino.ran.fragments.TestUserResultHistory">
+    tools:context="com.junior.davino.ran.fragments.TestUserResultHistoryFragment">
 
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_history"
+        android:id="@+id/rv_resultHistory"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"

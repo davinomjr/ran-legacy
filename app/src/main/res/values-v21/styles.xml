@@ -12,17 +12,12 @@
 
         <item name="android:buttonTint">@color/colorPrimary</item>
 
-        <item name="android:windowContentTransitions">true</item>
-        <item name="android:windowAllowEnterTransitionOverlap">true</item>
-        <item name="android:windowAllowReturnTransitionOverlap">true</item>
-        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
-        <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
-
-
         <!-- Material Dialog -->
         <item name="md_widget_color">@color/grey_accent</item>
         <item name="md_medium_font">OpenDyslexic-Regular.otf</item>
         <item name="md_regular_font">OpenDyslexic-Regular.otf</item>
+        <item name="md_positive_color">@color/colorPrimaryDark</item>
+        <item name="md_negative_color">@color/colorPrimaryDark</item>
 
         <item name="android:actionBarStyle">@style/AppTheme.ActionBarStyle</item>
     </style>
@@ -41,6 +36,8 @@
         <item name="md_widget_color">@color/grey_accent</item>
         <item name="md_medium_font">OpenDyslexic-Regular.otf</item>
         <item name="md_regular_font">OpenDyslexic-Regular.otf</item>
+        <item name="md_positive_color">@color/colorPrimaryDark</item>
+        <item name="md_negative_color">@color/colorPrimaryDark</item>
 
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAllowEnterTransitionOverlap">true</item>

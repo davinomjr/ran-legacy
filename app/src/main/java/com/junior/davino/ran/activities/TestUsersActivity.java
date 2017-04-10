@@ -2,6 +2,7 @@ package com.junior.davino.ran.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,6 +19,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.junior.davino.ran.R;
 import com.junior.davino.ran.adapters.UserAdapter;
+import com.junior.davino.ran.interfaces.OnItemClickListener;
+import com.junior.davino.ran.interfaces.OnLayoutListenerReady;
 import com.junior.davino.ran.models.TestUser;
 
 import org.parceler.Parcels;
@@ -35,6 +38,12 @@ public class TestUsersActivity extends BaseActivity implements View.OnClickListe
     private ArrayList<String> mAdapterKeys;
     private FloatingActionButton fabButton;
     private MaterialDialog progressDialog;
+    private OnLayoutListenerReady recyclerViewListener = new OnLayoutListenerReady() {
+        @Override
+        public void onLayoutReady() {
+            dismissProgressLoading();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +64,12 @@ public class TestUsersActivity extends BaseActivity implements View.OnClickListe
         handleInstanceState(savedInstanceState);
         setupFirebase();
         setupRecyclerview();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dismissProgressLoading();
+            }
+        }, 4000);
     }
 
     // Restoring the item list and the keys of the items: they will be passed to the adapter
@@ -75,7 +90,7 @@ public class TestUsersActivity extends BaseActivity implements View.OnClickListe
     }
 
     private void setupRecyclerview() {
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_users);
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_users);
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
             @Override
             public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
@@ -89,13 +104,13 @@ public class TestUsersActivity extends BaseActivity implements View.OnClickListe
 
             @Override
             public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
             }
         });
 
-        mMyAdapter = new UserAdapter(this, mQuery, mAdapterItems, mAdapterKeys, new UserAdapter.OnItemClickListener(){
+
+        mMyAdapter = new UserAdapter(this, mQuery, mAdapterItems, mAdapterKeys, new OnItemClickListener(){
             @Override public void onItemClick(final String testUserId) {
-                // Attach a listener to read the data at our posts reference
+                // Attach a recyclerViewListener to read the data at our posts reference
                 mQuery.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -111,10 +126,10 @@ public class TestUsersActivity extends BaseActivity implements View.OnClickListe
                     }
                 });
 
-                Log.i("TestUsersActivity", "CLICKD and USER ID = " + testUserId);
+                Log.i("TestUsersActivity", "CLICKED, USER ID = " + testUserId);
             }
 
-        });
+        }, recyclerViewListener);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(mMyAdapter);
@@ -123,26 +138,27 @@ public class TestUsersActivity extends BaseActivity implements View.OnClickListe
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem item = menu.findItem(R.id.user_details);
+        item.setTitle(firebaseApp.getFirebaseAuth().getCurrentUser().getDisplayName());
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        else if(id == R.id.action_signout){
+        if(id == R.id.action_signout){
             firebaseApp.logoff();
             Intent intent = new Intent(TestUsersActivity.this, HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
         }
+        else if(id == R.id.user_details){
+            startActivity(new Intent(TestUsersActivity.this, UserProfileActivity.class));
+        }
 
         return super.onOptionsItemSelected(item);
     }
-
 
     // Saving the list of items and keys of the items on rotation
     @Override
@@ -157,7 +173,6 @@ public class TestUsersActivity extends BaseActivity implements View.OnClickListe
         super.onDestroy();
         mMyAdapter.destroy();
     }
-
 
     @Override
     public void onClick(View v) {
