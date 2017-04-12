@@ -16,8 +16,8 @@
         <item name="subtitleTextColor">@android:color/white</item>
 
         <item name="md_widget_color">@color/grey_accent</item>
-        <item name="md_medium_font">OpenDyslexic-Regular.otf</item>
-        <item name="md_regular_font">OpenDyslexic-Regular.otf</item>
+        <item name="md_medium_font">OpenDyslexic_Regular.ttf</item>
+        <item name="md_regular_font">OpenDyslexic_Regular.ttf</item>
         <item name="md_positive_color">@color/colorPrimaryDark</item>
         <item name="md_negative_color">@color/colorPrimaryDark</item>
 
@@ -41,8 +41,8 @@
         <item name="subtitleTextColor">@android:color/white</item>
 
         <item name="md_widget_color">@color/grey_accent</item>
-        <item name="md_medium_font">OpenDyslexic-Regular.otf</item>
-        <item name="md_regular_font">OpenDyslexic-Regular.otf</item>
+        <item name="md_medium_font">OpenDyslexic_Regular.ttf</item>
+        <item name="md_regular_font">OpenDyslexic_Regular.ttf</item>
         <item name="md_positive_color">@color/colorPrimaryDark</item>
         <item name="md_negative_color">@color/colorPrimaryDark</item>
 
@@ -69,12 +69,14 @@
         <item name="android:layout_weight">1</item>
         <item name="android:drawablePadding">-80dp</item>
         <item name="android:paddingBottom">80dp</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 
     <style name="MainButtonTheme_Land">
         <item name="android:textColor">#ffffff</item>
         <item name="android:layout_weight">1</item>
         <item name="android:paddingBottom">50dp</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 
     <style name="AppTheme.ActionBar" parent="AppTheme.Base">
@@ -116,5 +118,39 @@
 
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!-- With < v21, Android will use the sDefaults array (i.e., Typeface.defaultFromStyle()) if and only if
+         fontFamily=@null, typeface is omitted (defaults to -1 when parsed), and style > 0.
+         But it gets trickier: when style == 0 (textStyle=normal), then you *must* also set typeface="sans"
+         in order to trick it into using the Typeface.SANS instance.
+      -->
+
+    <!-- Default Lato styles -->
+    <style name="TextAppearance.OpenDyslexic" parent="TextAppearance.AppCompat">
+        <!-- with fontFamily=null and typeface=normal, TextView will automatically
+             fall back to Typeface.defaultFromStyle(int) based on the android:textStyle attribute,
+             EXCEPT in the case of "normal", where we will also have to set typeface=sans -->
+        <item name="android:fontFamily">@null</item>
+        <item name="android:typeface">normal</item>
+    </style>
+
+    <style name="TextAppearance.OpenDyslexic.Normal">
+        <!-- with fontFamily=null and textStyle=normal, we can get the custom font by setting typeface=sans -->
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="TextAppearance.OpenDyslexic.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.OpenDyslexic.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="TextAppearance.OpenDyslexic.BoldItalic">
+        <item name="android:textStyle">bold|italic</item>
+    </style>
 
 </resources>

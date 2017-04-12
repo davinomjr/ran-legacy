@@ -3,6 +3,7 @@ package com.junior.davino.ran.activities;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.google.firebase.database.FirebaseDatabase;
 import com.junior.davino.ran.R;
@@ -27,10 +28,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     private void setFonts(){
-        FontsUtil.setDefaultFont(this, "DEFAULT", "fonts/OpenDyslexic-Regular.otf");
-        FontsUtil.setDefaultFont(this, "MONOSPACE", "fonts/OpenDyslexic-Regular.otf");
-        FontsUtil.setDefaultFont(this, "SERIF", "fonts/OpenDyslexic-Regular.otf");
-        FontsUtil.setDefaultFont(this, "SANS_SERIF", "fonts/OpenDyslexic-Regular.otf");
+        FontsUtil.setDefaultFont(this, "DEFAULT", "fonts/OpenDyslexic_Regular.ttf");
+        FontsUtil.setDefaultFont(this, "MONOSPACE", "fonts/OpenDyslexic_Regular.ttf");
+        FontsUtil.setDefaultFont(this, "SERIF", "fonts/OpenDyslexic_Regular.ttf");
+        FontsUtil.setDefaultFont(this, "SANS_SERIF", "fonts/OpenDyslexic_Regular.ttf");
+        Log.i("setFonts", "FONTS SETTED!!!");
     }
 
     public void showSnackBar(String message){

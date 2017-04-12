@@ -8,13 +8,17 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".code.RanApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Base">
+
+
         <activity android:name=".activities.TestUsersActivity" />
-        <activity android:name=".activities.HomeTestActivity" />
+        <activity android:name=".activities.HomeTestActivity"
+            android:theme="@style/AppTheme.Base"/>
         <activity
             android:name=".activities.TestActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -52,7 +56,10 @@
         </activity>
         <activity android:name=".activities.SignUpActivity" />
         <activity android:name=".activities.LostPasswordActivity" />
-        <activity android:name=".activities.UserProfileActivity"></activity>
+        <activity android:name=".activities.UserProfileActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

@@ -52,7 +52,6 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
     private static final int REQUEST_RECORD_AUDIO_PERMISSION = 1;
 
     private TestUser currentTestUser;
-
     private List<TestItem> items;
     private Button btnSpeak;
     private TimerUtil timerUtil = new TimerUtil();
@@ -68,8 +67,6 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
     private MatchRecognizer matchRecognizer;
     private VoiceController voiceController;
     private String audioFilePath;
-
-
 
     private SpeechService.Listener mSpeechServiceListener = createServiceListener();
 
@@ -152,8 +149,7 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void verifyPermissions() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
-                == PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
             Log.i(TAG, "PERMISSION OK!!");
         } else if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.RECORD_AUDIO)) {
             showPermissionMessageDialog();
@@ -169,7 +165,10 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
         };
 
         for (String permission : permissions) {
-            if (!Util.isPermissionOk(this, permission)) {
+            if(ActivityCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED){
+                Log.i(TAG, "PERMISSION " + permission +  " OK!");
+            }
+            else{
                 Log.i(TAG, "Permission not granted: " + permission);
                 finish();
             }

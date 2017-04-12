@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp">
+
+    <ImageView
+        android:id="@+id/item_color_result_view"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:adjustViewBounds="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_circle"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/item_result_check"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:background="@drawable/ic_cancel_white_24dp" />
+
+
+
+</RelativeLayout>

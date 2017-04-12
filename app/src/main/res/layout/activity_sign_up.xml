@@ -7,20 +7,25 @@
     android:id="@id/coordinator_layout"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.junior.davino.ran.activities.SignUpActivity"
-    android:background="@color/colorBackgroundLighter"
-    tools:showIn="@layout/activity_home">
+    android:background="@color/colorBackgroundLighter">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="344dp"
         android:layout_height="wrap_content"
-        android:paddingTop="56dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
+        android:paddingTop="26dp"
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="8dp">
 
-        <ImageView android:src="@drawable/letter_r"
+        <ImageView android:src="@drawable/ran_logo"
             android:layout_width="wrap_content"
             android:layout_height="72dp"
             android:layout_marginBottom="24dp"
@@ -82,11 +87,12 @@
             android:id="@+id/btn_signup"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="24dp"
             android:padding="12dp"
             android:background="@color/md_material_blue_800"
             android:textColor="@color/white"
+            android:fontFamily="sans-serif"
             android:text="Criar conta"/>
 
         <TextView android:id="@+id/link_login"
@@ -98,5 +104,5 @@
             android:textSize="16dip"/>
 
     </LinearLayout>
-
+</RelativeLayout>
 </android.support.constraint.ConstraintLayout>

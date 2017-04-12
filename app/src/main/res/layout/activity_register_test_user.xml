@@ -78,6 +78,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
                     android:text="@string/createUser"
+                    android:fontFamily="sans-serif"
                     android:textColor="@android:color/white" />
 
             </LinearLayout>

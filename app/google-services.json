@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "892700629493",
+    "firebase_url": "https://api-project-892700629493.firebaseio.com",
+    "project_id": "api-project-892700629493",
+    "storage_bucket": "api-project-892700629493.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892700629493:android:3857d4b9d627f19b",
+        "android_client_info": {
+          "package_name": "com.junior.davino.ran"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892700629493-pe8idm4tkvpemsrvc7cjraj3go7du3rp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB_LKeQs0TbpmMM_GTSjQ7PCFX5BTzJKs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

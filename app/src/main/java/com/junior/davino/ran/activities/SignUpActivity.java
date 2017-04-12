@@ -23,7 +23,7 @@ public class SignUpActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         nameLayout = (TextInputLayout) findViewById(R.id.input_layout_name);
-        emailLayout = (TextInputLayout) findViewById(R.id.input_layout_name);
+        emailLayout = (TextInputLayout) findViewById(R.id.input_layout_email);
         passwordLayout = (TextInputLayout) findViewById(R.id.input_layout_password);
         inputName = (EditText) findViewById(R.id.input_name);
         inputEmail = (EditText) findViewById(R.id.input_email);
@@ -46,9 +46,7 @@ public class SignUpActivity extends BaseActivity {
     }
 
     private void register(){
-
         if (!validate()) {
-            onSignupFailed();
             return;
         }
 
@@ -101,15 +99,21 @@ public class SignUpActivity extends BaseActivity {
 
 
     public void onSignupSuccess() {
-        processingDialog.dismiss();
+        if(processingDialog != null && processingDialog.isShowing()){
+            processingDialog.dismiss();
+        }
+
         signUpButton.setEnabled(true);
         setResult(RESULT_OK, null);
         finish();
     }
 
     public void onSignupFailed() {
-        processingDialog.dismiss();
-        showSnackBar(getString(R.string.sign_in_failed));
+        if(processingDialog != null && processingDialog.isShowing()){
+            processingDialog.dismiss();
+        }
+
+        showSnackBar(getString(R.string.err_msg_signup));
         signUpButton.setEnabled(true);
     }
 

@@ -22,7 +22,6 @@ import java.util.List;
 public class RanTestResultFragment extends Fragment {
 
     private static final String TAG = "RanTestResultFragment";
-
     private List<TestItem> items;
     private RecyclerView mRecyclerView;
 
@@ -34,8 +33,8 @@ public class RanTestResultFragment extends Fragment {
     public static RanTestResultFragment newInstance(EnumTestType testType, List<TestItem> items) {
         RanTestResultFragment fragment = new RanTestResultFragment();
         Bundle args = new Bundle();
-        args.putParcelable("items", Parcels.wrap(items));
         args.putSerializable("option", testType);
+        args.putParcelable("items", Parcels.wrap(items));
         fragment.setArguments(args);
         return fragment;
     }

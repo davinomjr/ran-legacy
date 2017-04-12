@@ -5,18 +5,21 @@
       <config>
         <devices>
           <device id="Nexus 5" />
-          <device id="Nexus 9" />
           <device id="Nexus 4" />
+          <device id="Nexus 7" />
+          <device id="pixel" />
+          <device id="Nexus 7 2013" />
+          <device id="Nexus 5X" />
+          <device id="Nexus 9" />
           <device id="Nexus 10" />
           <device id="Nexus 6P" />
-          <device id="Nexus 5X" />
         </devices>
         <target>android-25</target>
       </config>
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="BookmarkManager">
@@ -24,38 +27,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="874aaf7b-fd63-4eff-bb48-6ad2deca56e8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/LostPasswordActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/UserProfileActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/interfaces/OnItemClickListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/interfaces/OnLayoutListenerReady.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_lost_password.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_test_result_history.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestUserResultHistory.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestUserResultHistoryFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/font_compat_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/code/RanApplication.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw-v19/fonts.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw-v21/fonts.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/BaseActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/HomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/HomeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/HomeTestActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/HomeTestActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/RegisterTestUserActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/RegisterTestUserActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/SignUpActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/SignUpActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestUsersActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestUsersActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestUsersDetailsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestUsersDetailsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/FirebaseRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/FirebaseRecyclerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/UserAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/UserAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/builders/LetterBuilder.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/builders/LetterBuilder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/code/FirebaseApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/code/FirebaseApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/RanTestFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/RanTestFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/RanTestResultFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/RanTestResultFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestUserParentForm.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestUserParentForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/TestResult.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/TestResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/TestUser.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/TestUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/enums/EnumTestType.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/enums/EnumTestType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/MatchRecognizer.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/MatchRecognizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/VoiceController.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/VoiceController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/filters/LetterFilter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/filters/LetterFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/grammar/LetterGrammar.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/grammar/LetterGrammar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_home_test.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_home_test.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home_test.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home_test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_lost_password.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_lost_password.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_register_test_user.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_register_test_user.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_test_users_details.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_test_users_details.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_test_user_result_history.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_test_user_result_history.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_digit_test.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_digit_test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_digit_test_result.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_digit_test_result.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
     </list>
     <ignored path="RAN.iws" />
@@ -88,120 +89,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="TestUsersActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestUsersActivity.java">
+      <file leaf-file-name="FirebaseApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/code/FirebaseApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1205">
-              <caret line="183" column="16" selection-start-line="183" selection-start-column="16" selection-end-line="183" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1532#1671#0" expanded="true" />
-                <element signature="e#1670#1671#0" expanded="true" />
-                <element signature="e#2350#2486#0" expanded="true" />
-                <element signature="e#2485#2486#0" expanded="true" />
-                <element signature="e#4072#5145#0" expanded="true" />
-                <element signature="e#5144#5145#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="184">
+              <caret line="77" column="71" selection-start-line="77" selection-start-column="71" selection-end-line="77" selection-end-column="71" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_lost_password.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_lost_password.xml">
+      <file leaf-file-name="SignUpActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/SignUpActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+            <state relative-caret-position="307">
+              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding>
-                <element signature="e#2268#2293#0" expanded="true" />
+                <element signature="e#2968#3001#0" expanded="true" />
+                <element signature="e#3821#3855#0" expanded="true" />
               </folding>
             </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_home.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="70" column="34" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2">
+          <provider selected="true" editor-type-id="android-designer2">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/UserAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="78" column="37" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestUserParentForm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestUserParentForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FirebaseRecyclerAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/FirebaseRecyclerAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="102" column="55" selection-start-line="102" selection-start-column="55" selection-end-line="102" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserProfileActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/UserProfileActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-              <folding>
-                <element signature="e#1417#1563#0" expanded="true" />
-                <element signature="e#1562#1563#0" expanded="true" />
-                <element signature="e#2222#2255#0" expanded="true" />
-                <element signature="e#2292#2412#0" expanded="true" />
-                <element signature="e#2411#2412#0" expanded="true" />
-                <element signature="e#2724#2756#0" expanded="true" />
-                <element signature="e#2982#3015#0" expanded="true" />
-                <element signature="e#3234#3270#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignUpActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/SignUpActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="41" column="69" selection-start-line="41" selection-start-column="69" selection-end-line="41" selection-end-column="69" />
-              <folding>
-                <element signature="e#1544#1770#0" expanded="true" />
-                <element signature="e#1769#1770#0" expanded="true" />
-                <element signature="e#3681#3715#0" expanded="true" />
-              </folding>
-            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_sign_up.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="91" column="45" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="45" />
+            <state relative-caret-position="281">
+              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+              <folding>
+                <element signature="e#395#435#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_lost_password.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_lost_password.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -210,15 +153,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppCompatActivity.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/25.1.1/appcompat-v7-25.1.1-sources.jar!/android/support/v7/app/AppCompatActivity.java">
+      <file leaf-file-name="activity_register_test_user.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register_test_user.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="80" column="51" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RanTestFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/RanTestFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2622">
-              <caret line="188" column="16" selection-start-line="188" selection-start-column="16" selection-end-line="188" selection-end-column="16" />
+            <state relative-caret-position="475">
+              <caret line="46" column="83" selection-start-line="46" selection-start-column="83" selection-end-line="46" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RanTestResultFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/RanTestResultFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="542">
+              <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
               <folding>
-                <element signature="e#6912#6913#0" expanded="true" />
-                <element signature="e#6965#6966#0" expanded="true" />
+                <element signature="e#2667#3101#0" expanded="true" />
+                <element signature="e#3100#3101#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values-pt-rBR/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="83" column="32" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -232,9 +218,9 @@
         <option value="Enum" />
         <option value="valueResourceFile" />
         <option value="layoutResourceFile_vertical" />
-        <option value="Class" />
         <option value="resourceFile" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -506,6 +492,11 @@
                 <option name="description" value="Prepare com.google.firebase:firebase-common:10.2.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComGoogleFirebaseFirebaseCommon1020Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.meetme.android:font-compat:1.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComMeetmeAndroidFontCompat10Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.twitter.sdk.android:twitter-core:2.3.0" />
@@ -1475,6 +1466,11 @@
                 <option name="name" value="prepareComGoogleFirebaseFirebaseCommon1020Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.meetme.android:font-compat:1.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComMeetmeAndroidFontCompat10Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Prepare com.twitter.sdk.android:twitter-core:2.3.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="prepareComTwitterSdkAndroidTwitterCore230Library" />
@@ -2212,7 +2208,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="C:\Users\davin\AndroidStudioProjects\RAN" value="4469875519087" />
+        <entry key="C:\Users\davin\AndroidStudioProjects\RAN" value="4470491662551" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2588,57 +2584,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_users.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/border.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_register_test_user.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_color_test.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_color_test_result.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/VoiceController.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_digit_test_result.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_digit_test.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_test_user_result_history.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/ListViewAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/interfaces/OnItemClickListener.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/ColorItemGridAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestUserResultHistory.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/MatchRecognizer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/RegisterTestUserActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/TestUser.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/SummaryResultFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/TestResultHistoryAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/enums/EnumTestType.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_test_result_history.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/TestResult.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/ResultActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestUserResultHistoryFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestResultFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/RanTestResultFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestUserParentForm.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_test_users_details.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestUsersDetailsActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/LostPasswordActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/HomeTestActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-pt-rBR/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/code/FirebaseApplication.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/HomeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/UserProfileActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/interfaces/OnLayoutListenerReady.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/FirebaseRecyclerAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestUsersActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_lost_password.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/UserAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_home_test.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/VoiceController.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/code/RanApplication.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/raw/fonts.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/raw-19/fonts.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/raw-21/fonts.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/raw-v19/fonts.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/raw-v21/fonts.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/BaseActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_test_users_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_register_test_user.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/filters/LetterFilter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/builders/LetterBuilder.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/grammar/LetterGrammar.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/LetterItemResultGridAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_digit_test.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_digit_test_result.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/SummaryResultFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_home_test.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/HomeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/SignUpActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/code/FirebaseApplication.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/RanTestFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestResultFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/RanTestResultFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_lost_password.xml" />
       </list>
     </option>
   </component>
@@ -2705,10 +2701,6 @@
               <option name="myItemId" value="RAN" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2726,6 +2718,10 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="values" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles.xml" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2748,6 +2744,64 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="strings.xml" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RAN" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RAN" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="raw" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fonts.xml" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RAN" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="raw" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2791,6 +2845,28 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activity_home_test.xml" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RAN" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2842,7 +2918,55 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="interfaces" />
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RAN" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ran" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="speech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RAN" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ran" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="speech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2886,8 +3010,44 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="adapters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RAN" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ran" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="activities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RAN" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2899,12 +3059,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Firebasetest" />
-    <property name="device.picker.selection" value="G2AZB60142892LC" />
+    <property name="device.picker.selection" value="110bf395" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\davin\AndroidStudioProjects\RAN\app\src\main\res" />
+    </key>
     <key name="android.template.packageName">
       <recent name="com.junior.davino.ran.activities" />
     </key>
@@ -2919,6 +3082,7 @@
       <recent name="com.junior.davino.ran.speech.filters" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\davin\AndroidStudioProjects\RAN\app\src\main\res\raw-21" />
       <recent name="C:\Users\davin\AndroidStudioProjects\RAN\app\src\main\res\layout" />
       <recent name="C:\Users\davin\AndroidStudioProjects\RAN\app\src\main\res\drawable" />
     </key>
@@ -3333,7 +3497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491534037698</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="App finished">
+      <created>1491793649737</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1491793649737</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3346,7 +3517,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49172577" sideWeight="0.23791622" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46690306" sideWeight="0.76208377" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4066194" sideWeight="0.76208377" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -3393,7 +3564,8 @@
     <MESSAGE value="Firebase auth system and database users, pending results persistance and refining UI" />
     <MESSAGE value="Create user/parent form, refactor auth system, adapters, improve in layouts/design" />
     <MESSAGE value="Improved authentication system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved authentication system" />
+    <MESSAGE value="App finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="App finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3402,429 +3574,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_digit_test.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_users.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="16" column="40" selection-start-line="9" selection-start-column="3" selection-end-line="16" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_test_user_result_history.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_user.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/interfaces/OnItemClickListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/ColorItemGridAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/TestItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/RegisterTestUserActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-393">
-          <caret line="74" column="54" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
-          <folding>
-            <element signature="e#2288#2312#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.android/build-cache/edf2b5b6ba05dd03b4f9fa751ab42413992a52c0/output/jars/classes.jar!/com/google/firebase/database/FirebaseDatabase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/TestResultHistoryAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="45" column="43" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2227#2409#0" expanded="true" />
-            <element signature="e#2408#2409#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/enums/EnumTestType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/SummaryResultFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
-          <folding>
-            <element signature="e#1558#1582#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_test_result_history.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/MatchRecognizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/TestResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#711#712#0" expanded="true" />
-            <element signature="e#742#743#0" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/ResultActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="49" column="72" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestUserResultHistoryFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="114" column="55" selection-start-line="114" selection-start-column="55" selection-end-line="114" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2791#2792#0" expanded="false" />
-            <element signature="e#2835#2836#0" expanded="false" />
-            <element signature="e#3209#3409#0" expanded="false" />
-            <element signature="e#3408#3409#0" expanded="false" />
-            <element signature="e#3513#5525#0" expanded="false" />
-            <element signature="e#4059#4069#0" expanded="false" />
-            <element signature="e#5524#5525#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestResultFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/RanTestResultFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="49" column="69" selection-start-line="49" selection-start-column="69" selection-end-line="49" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="44" column="55" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/models/TestUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestUsersDetailsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="78" column="68" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3301#3322#0" expanded="true" />
-            <element signature="e#3357#3389#0" expanded="true" />
-            <element signature="e#3429#3441#0" expanded="true" />
-            <element signature="e#3481#3492#0" expanded="true" />
-            <element signature="e#3530#3824#0" expanded="true" />
-            <element signature="e#3823#3824#0" expanded="true" />
-            <element signature="e#3837#4147#0" expanded="true" />
-            <element signature="e#4146#4147#0" expanded="true" />
-            <element signature="e#4224#4225#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="328" column="17" selection-start-line="328" selection-start-column="17" selection-end-line="328" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="39" column="69" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_test_user_parent_form.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="46" column="56" selection-start-line="32" selection-start-column="7" selection-end-line="46" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_test_user_form.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1300">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_test_users_details.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/LostPasswordActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-          <folding>
-            <element signature="e#817#1022#0" expanded="true" />
-            <element signature="e#1021#1022#0" expanded="true" />
-            <element signature="e#1712#1750#0" expanded="true" />
-            <element signature="e#1787#1907#0" expanded="true" />
-            <element signature="e#2222#2260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="37" />
-          <folding>
-            <element signature="e#568#592#0" expanded="true" />
-            <element signature="e#740#754#0" expanded="true" />
-            <marker date="1491788506680" expanded="false" signature="384:409" ph="&quot;Settings&quot;" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="79" column="44" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="44" />
-          <folding>
-            <element signature="e#1642#1661#0" expanded="true" />
-            <element signature="e#2328#2348#0" expanded="true" />
-            <element signature="e#2784#2807#0" expanded="true" />
-            <element signature="e#3139#3162#0" expanded="true" />
-            <element signature="e#3704#3724#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/HomeTestActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-          <folding>
-            <element signature="e#837#838#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="96" column="55" selection-start-line="96" selection-start-column="55" selection-end-line="96" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-pt-rBR/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="104" column="41" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/code/FirebaseApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="178" column="28" selection-start-line="178" selection-start-column="28" selection-end-line="178" selection-end-column="28" />
-          <folding>
-            <element signature="e#6044#6363#0" expanded="true" />
-            <element signature="e#6362#6363#0" expanded="true" />
-            <element signature="e#6438#6759#0" expanded="true" />
-            <element signature="e#6758#6759#0" expanded="true" />
-            <element signature="e#6840#7156#0" expanded="true" />
-            <element signature="e#7155#7156#0" expanded="true" />
-            <element signature="e#8440#8491#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/HomeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="134" column="28" selection-start-line="134" selection-start-column="28" selection-end-line="134" selection-end-column="28" />
-          <folding>
-            <element signature="e#4371#4372#0" expanded="true" />
-            <element signature="e#4406#4407#0" expanded="true" />
-            <element signature="e#4612#4646#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestUserForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="66" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/interfaces/OnLayoutListenerReady.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.android/build-cache/edf2b5b6ba05dd03b4f9fa751ab42413992a52c0/output/jars/classes.jar!/com/google/firebase/database/Query.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="577">
@@ -3839,30 +3588,6 @@
           <caret line="102" column="55" selection-start-line="102" selection-start-column="55" selection-end-line="102" selection-end-column="55" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_lost_password.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding>
-            <element signature="e#2268#2293#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="70" column="34" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestUsersActivity.java">
@@ -3902,8 +3627,8 @@
         <state relative-caret-position="2622">
           <caret line="188" column="16" selection-start-line="188" selection-start-column="16" selection-end-line="188" selection-end-column="16" />
           <folding>
-            <element signature="e#6912#6913#0" expanded="true" />
-            <element signature="e#6965#6966#0" expanded="true" />
+            <element signature="e#6912#6913#0" expanded="false" />
+            <element signature="e#6965#6966#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3913,22 +3638,134 @@
         <state relative-caret-position="129">
           <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
           <folding>
-            <element signature="e#1417#1563#0" expanded="true" />
-            <element signature="e#1562#1563#0" expanded="true" />
-            <element signature="e#2222#2255#0" expanded="true" />
-            <element signature="e#2292#2412#0" expanded="true" />
-            <element signature="e#2411#2412#0" expanded="true" />
-            <element signature="e#2724#2756#0" expanded="true" />
-            <element signature="e#2982#3015#0" expanded="true" />
-            <element signature="e#3234#3270#0" expanded="true" />
+            <element signature="e#1417#1563#0" expanded="false" />
+            <element signature="e#1562#1563#0" expanded="false" />
+            <element signature="e#2222#2255#0" expanded="false" />
+            <element signature="e#2292#2412#0" expanded="false" />
+            <element signature="e#2411#2412#0" expanded="false" />
+            <element signature="e#2724#2756#0" expanded="false" />
+            <element signature="e#2982#3015#0" expanded="false" />
+            <element signature="e#3234#3270#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/HomeTestActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="91" column="45" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="45" />
+        <state relative-caret-position="-520">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-24/android/media/AudioRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="972" column="16" selection-start-line="972" selection-start-column="16" selection-end-line="972" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/VoiceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="172" column="31" selection-start-line="172" selection-start-column="20" selection-end-line="172" selection-end-column="31" />
+          <folding>
+            <element signature="e#2356#2468#0" expanded="false" />
+            <element signature="e#2467#2468#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="104" column="52" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/fonts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="38" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw19/fonts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw-v19/fonts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw21/fonts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/code/RanApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/filters/DigitFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw-v21/fonts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_ran_test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3936,16 +3773,298 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/SignUpActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="41" column="69" selection-start-line="41" selection-start-column="69" selection-end-line="41" selection-end-column="69" />
+        <state relative-caret-position="200">
+          <caret line="32" column="47" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="71" column="43" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_test_users_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="115" column="47" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/filters/LetterFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
           <folding>
-            <element signature="e#1544#1770#0" expanded="true" />
-            <element signature="e#1769#1770#0" expanded="true" />
-            <element signature="e#3681#3715#0" expanded="true" />
+            <element signature="e#1599#1650#0" expanded="false" />
+            <element signature="e#1685#1736#0" expanded="false" />
+            <element signature="e#1771#1822#0" expanded="false" />
+            <element signature="e#1857#1908#0" expanded="false" />
+            <element signature="e#1943#1994#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/builders/LetterBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/MatchRecognizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/speech/grammar/LetterGrammar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/DigitItemResultGridAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/adapters/LetterItemResultGridAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="54" column="62" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_object_test_result.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_digit_test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_digit_test_result.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/ResultActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-665">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/SummaryResultFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="78" column="57" selection-start-line="78" selection-start-column="57" selection-end-line="78" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_home_test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="35" column="46" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home_test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="45" column="70" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="79" column="57" selection-start-line="79" selection-start-column="57" selection-end-line="79" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/HomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="137" column="67" selection-start-line="137" selection-start-column="67" selection-end-line="137" selection-end-column="67" />
+          <folding>
+            <element signature="e#3574#3607#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-pt-rBR/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="83" column="32" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/code/FirebaseApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="77" column="71" selection-start-line="77" selection-start-column="71" selection-end-line="77" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/TestResultFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/RanTestFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="46" column="83" selection-start-line="46" selection-start-column="83" selection-end-line="46" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/fragments/RanTestResultFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/TestActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+          <folding>
+            <element signature="e#2667#3101#0" expanded="true" />
+            <element signature="e#3100#3101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/junior/davino/ran/activities/SignUpActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding>
+            <element signature="e#2968#3001#0" expanded="true" />
+            <element signature="e#3821#3855#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register_test_user.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="80" column="51" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding>
+            <element signature="e#395#435#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_lost_password.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
   </component>

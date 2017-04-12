@@ -30,6 +30,7 @@
                 android:layout_weight="1"
                 android:background="@color/orange_accent"
                 android:drawableLeft="@drawable/ic_cancel_white_24dp"
+                android:fontFamily="sans-serif"
                 android:text="Voltar" />
 
             <Button
@@ -40,6 +41,7 @@
                 android:layout_weight="1"
                 android:background="@color/md_material_blue_800"
                 android:drawableLeft="@drawable/ic_mic_white_24dp"
+                android:fontFamily="sans-serif"
                 android:text="Iniciar" />
 
             <Button
@@ -51,6 +53,7 @@
                 android:layout_weight="1"
                 android:background="@color/md_edittext_error"
                 android:drawableLeft="@drawable/ic_restore_white_24dp"
+                android:fontFamily="sans-serif"
                 android:text="Reiniciar" />
 
         </LinearLayout>

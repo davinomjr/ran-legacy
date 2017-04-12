@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\edf2b5b6ba05dd03b4f9fa751ab42413992a52c0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="94fca868854457ede6df15c902938468c71d579e">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_d823aebb5f003ac7460c082564987a5fedfbd087.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\b2a93f0f687d41d89536770bd7a2f277d0ead634\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_62c45bb41b02171b10ce418fe7c5c0b0bf3600b7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.1.3\f6c3aed1cdfa21b5c1737c915186ea93a95a58bd\jackson-core-2.1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\jackson-core-2.1.3_fddb9d6b4d1c4ebfeb9a5a213bc50ae64c545113.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\3d361de33aedd50dcf2a971762d7b546a88fdefa\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a1c351dc10b92d638da57f3a6513f87cfbdc9f83">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_29f5e283db8246a0c5a3bd17b0b60e14380c897b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\30d4c4bc66be1b64c88daf882b5f50a6db0a9e0b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="48532a016bb0dfbe7970c147ce784598a515406b">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_1b1257deceac6901e019e4945c6da2d34c9aac6f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\58fdd23d452aa6f0b46f94f7dabe60eae07f0778\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b831d3902674d096189451d46fce219e2c2904b7">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_5a110a77c0e41242deddf903e1761d60fda2a554.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.google.auth\google-auth-library-oauth2-http\0.6.0\8f25e25c8638976fe1d106f665d2b03089fe8c6e\google-auth-library-oauth2-http-0.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8f25e25c8638976fe1d106f665d2b03089fe8c6e">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\google-auth-library-oauth2-http-0.6.0_2d611e9d62b52fdc7b60021a28ce6691f8f28ce7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.2\f8d87f15b94b8d74e7ccf61d7eedb558811cdb30\converter-gson-2.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.2_4f82714efbbf2e603890996e53e3ab69fff89dc4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\okhttp-3.2.0_e1771d352410d444f3f9400c7490a674330462d3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\de32ea8d0a2d122dcf125aa2c8d02f7165b70f70\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8e1d31656bc9f1889283836e025e6cb703acd38a">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_e3135e847a64c389d32aeb89bb2f8ba6e4a710db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\be4bacf14a8e82f0f3d5458956c71c3cb83d74eb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_c05962a0529ee60fbb8367e55ee8fc806b2b75d1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\6973295377a4fdce24829e0046e49a95533fb0d0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_b8caea6f2db59c41ec5123df227fd03fc6d474c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.google.errorprone\error_prone_annotations\2.0.11\3624d81fca4e93c67f43bafc222b06e1b1e3b260\error_prone_annotations-2.0.11.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3624d81fca4e93c67f43bafc222b06e1b1e3b260">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\error_prone_annotations-2.0.11_98455be02fd6950338b3d3ee1294b3f68ff86676.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\bca8894fb893c334f7102d7dde012ff9ba3d8910\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_c4ce8fcbb1f52cc430da30149b6f58693231b94c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\2822189576c537c3d464736b7f4a078f681b6d74\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="de7a7419adf97a681f96281fdf38be62861047d9">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_cd419c221fb43d9dd30d138736afff26bea9681d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_231153c6111aed365bbd20abb69e41a69e7cdc92.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.4\5fe28b9518e58819180a43a850fbc0dd24b7c050\commons-lang3-3.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5fe28b9518e58819180a43a850fbc0dd24b7c050">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\commons-lang3-3.4_894f1882d0e56351a62537300b16aba2d432cdae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\8c6272c9a887b1968c8e0d1df8f77e8ce863589d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="895c63ba9782b04f0c5da69205216f6ec87119eb">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_577fcfb76345cecb6fea655c2d84ddadc9070600.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.19.0\cdca49ad0977c040f603478aa2e16b2775c8fec6\google-http-client-1.19.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cdca49ad0977c040f603478aa2e16b2775c8fec6">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\google-http-client-1.19.0_8f09f51bc1a5df39b1c265ec11920e72d70d03cd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\9f33405c3faf6ce818013cc6704c91c1fc4ea3fb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1e14ebe1cda8491f152083e752ca5bf73cd37bff">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_d9adf2e7df9050a0e242d8c1aaed76d3072c6160.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\90756d29630efd32831cdacfcc2bdb94cd43c2b8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cf8c0b6ec17f059cf61ecd101296e16c38562196">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_dfa0d4b10de0bed45b4debae2679914f26c441a1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\io.grpc\grpc-okhttp\1.1.2\318e4dc4c93365ef99c231185a0edf9b83a93cef\grpc-okhttp-1.1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="318e4dc4c93365ef99c231185a0edf9b83a93cef">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\grpc-okhttp-1.1.2_7e89630f0f87fc1a807a9caa663dd4f0ce77b1d4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\597242fba91a545219cf6da774be4a5edbea2d93\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9d5ae39b0de30b0f73c815513024feff3542f36e">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_f8b035f3eea55738d51fb7b50e3bfc1bf2c1284c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\4bbd389fcac77a9aa8a9414f631991892e9f6998\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="058253c7da6cf5cb545922d07fcc2cd19d5d0ce1">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_465b654d70c1280eb9495eaba17dd29e958b0365.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\d629d63c34d59a39f981e5676c9f195edf682de8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_4174f06f6d5d4910b75c41bead090da76982727b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\0e65de456496160b645d713ba35dd629f0252345\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7308fa2037dac339ea04b90cdd17e87f835ea294">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_a15fc360133be2c05c8409f6787092b549151e60.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\869ca2120b95f9ff797c8404bb95b723fc86e339\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_da1ea4202d52d669610750e659c2e85e91014e97.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0e63438106789e0b653d926822908cf033a0346f">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_66a1de1df808858f962d14b7b2b0467515364a55\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\8b29d822e5e506fc28e8d2b3505d6723e95ad3da\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bdf5cd702d3d860cd85783a776c26605f557882">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_ba735f245102eb859631c27136c93780f194bfbe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.google.protobuf\protobuf-lite\3.0.1\59b5b9c6e1a3054696d23492f888c1f8b583f5fc\protobuf-lite-3.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="59b5b9c6e1a3054696d23492f888c1f8b583f5fc">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\protobuf-lite-3.0.1_6189f4ce613df49ab816334143873fcdb5e433c9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.twitter\twitter-text\1.13.0\78415b95ae3184c5926d593feab64bfc0b73b2dd\twitter-text-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="78415b95ae3184c5926d593feab64bfc0b73b2dd">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\twitter-text-1.13.0_616233a93eb70c650a842fde83806cfe0b248fdf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\3d6a9485009343d5fc76d243bc318daf90c21616\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_59eb86bfd45e34388cfa3b43c378909dcd07268d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\org.parceler\parceler-api\1.1.6\2a06b6b1ecf5dadee8a874dfb51ad018fde3e6c5\parceler-api-1.1.6.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2a06b6b1ecf5dadee8a874dfb51ad018fde3e6c5">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\parceler-api-1.1.6_4dd73fd1416a9596e0cd94e14752cb8c179274c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\d1973a92aa75a1c329e1a4ba2d3a1b63ed45a565\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_9114f1b11d877ddb3840cdc0348044336adf70b2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\c6f2d4ff14f05ecc880724acf3cbf04ae5a80546\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_ec082e9b800b2f53f840dd153f2b2d939df83597.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\io.grpc\grpc-context\1.1.2\13b5ee5ae223633c5817ba446937ffb4e24e0011\grpc-context-1.1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="13b5ee5ae223633c5817ba446937ffb4e24e0011">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\grpc-context-1.1.2_afb59f39a7942c4e6245079a255f626d7c997152.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\a76e5ed385bceb31549b597ffbebe919d2ee0aac\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_8f8a1affb94020e209cfe4edd82e8a718938087c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\4ea482d537bb967c896a14965727f62d751d73bc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_e4caf70a5a147dce1eb50c589e5e20d279fddc5a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\io.grpc\grpc-stub\1.1.2\9adc5c1a55eda5952a4c49e926739fa96f265df5\grpc-stub-1.1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9adc5c1a55eda5952a4c49e926739fa96f265df5">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\grpc-stub-1.1.2_4fe936d4c4a6524e3b1dc8a1e7508907d10d5974.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\f695b80a128662bbde6c316f2caaed1e10ff2030\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a319fd4d548ba4cc9511561d37109ba922bfbf6a">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_04c71e3a14bae9fe8cf9958c8795d4d09bc2b039.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\20.0\89507701249388e1ed5ddcf8c41f4ce1be7831ef\guava-20.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="89507701249388e1ed5ddcf8c41f4ce1be7831ef">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\guava-20.0_8ad942244e03de2274ef018d6d8bb2f4b3da04f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\b864e9a887e517b7d213d4275d1fb81d95b95837\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a8ae156c2726ac9c56daaf4b49452ec2cdb7bba9">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_a57adb2b22f79a22748fa04da49a9251707da41b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\f86a723df06fe3b048446794b0cc55ee08acd878\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0efd1b44f47c134fb245914a1d54a55adbfc2f8d">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_bf9ebe3e62b58d36fcd0b183ae4ed6828d94f55b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\d1d5b384c560e7f9deaee487568ff7abc59ba2af\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="343ad59d9fb3bbf6ab99baafad859eb4b0fecc02">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_25bab3da7a249ee33463d7e4a2d4625596a9ed36.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\93f59817530a7b1a032f015a47ecdacccc5c7327\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1395232a7eddc612029353b3c953cb0fced71076">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_2861533bd54a1f8f4e12f37f2d97c7847624e6e2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\ce53f06903396ad74fbc1c7d0a17f173e00d322b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0e301f24b283f14b564f660c9abe863af6be5896">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_60043d9fcefc0ee6c7c5d64e86889e67ee934c2a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.5.0\4de2b4ed3445c37ec1720a7d214712e845a24636\okhttp-2.5.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\okhttp-2.5.0_52d646de083bffc40a53f9a84b62eebc62375fba.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\e9befd4d5da217fe2224b047f5fbfb0d8169550e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_d1aa84ebad288df0b065db397ae9e54e64a994cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.google.auth\google-auth-library-credentials\0.6.0\2f22d2cb659087aaa190990fa28854439b08b4e9\google-auth-library-credentials-0.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2f22d2cb659087aaa190990fa28854439b08b4e9">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\google-auth-library-credentials-0.6.0_cf5a5f2b837c3f0d2b663306f3d95dec0eb74cb8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\4aed9e88a486943040b5b7ba7876da3eab62269f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c6047a34af07d6ec4e950ba1dc70ce23ac65ecaa">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_888e78cb85b3769e4b83e561765567e1b25c4346.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\io.grpc\grpc-protobuf-lite\1.1.2\a1668f8f9f5d6778675ddb9e0c7641c3cea5f524\grpc-protobuf-lite-1.1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a1668f8f9f5d6778675ddb9e0c7641c3cea5f524">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\grpc-protobuf-lite-1.1.2_e6eaa117f32e37402fe29c439860a3bcf0e3d04a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.19.0\81dbf9795d387d5e80e55346582d5f2fb81a42eb\google-http-client-jackson2-1.19.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="81dbf9795d387d5e80e55346582d5f2fb81a42eb">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\google-http-client-jackson2-1.19.0_a6be7758367fe53c14dc42d35921d9b38dd055da.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\1f82e163465ceaad5dcd0423e936007c688e9819\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_eb01495cc10bdba6939deba067b5fd7e321af0b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.1\f7be08ec23c21485b9b5a1cf1654c2ec8c58168d\jsr305-3.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7be08ec23c21485b9b5a1cf1654c2ec8c58168d">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\jsr305-3.0.1_60206be2af1af1c475572297e3f60dd1bf113951.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\io.grpc\grpc-core\1.1.2\26c46b3886600f55dd5da3525e0d35d7b8fb5afa\grpc-core-1.1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26c46b3886600f55dd5da3525e0d35d7b8fb5afa">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\grpc-core-1.1.2_b348efb4d65391eba10a5c5395bb6f95f7709f8c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\5cfecb96285fe8f6ece6a2a166e8342bcf1028b5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_3bebaf1b92784cf7f3dbc38e2d289f99450887ca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\9a08b13a9118222b2462088f074019c14e8c3f20\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a846ddbf5bf88dee5f89d4dffe22c864f576d9b0">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_17740dd9fc4e207821122a2bd80a0c45fbae98e9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\c87c205bcef4c5d3654739d8ab32c50f19494798\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_af0aacffeb99e0ed64a058cd39e627ca63bebbda.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\8dc82c7005a1faf4d0a87d7066a76a06ed609305\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a10ed1f1cff990ef081263ad33f13dc6c207eb4e">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_bb2fe2e19883c6b0796b5a8ce178e4557760dee1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_a7c298b36692883d0b45d63b180883dd7ee0b0e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\cb4aa576b9c70d34d0fb176ca747e62b069fab58\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0558e5b6c171bd6719581340f9ac6be4af5ae265">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_ba5f3f7838388649e28d93209f360827676c2678.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\108dbcbc7cbc8a967079ef169c7de042366c59be\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1c9011d98a99539e16e9e70723747738258e1e07">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_80e7f3e9fc68e130dd495a46b867fa807d75bba5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\okio-1.6.0_2c8edacd06c6d5454c11267f21c1689567182c77.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.2\43eeae0b9fb087bb3194ba59ab63a38a32fbf3e\retrofit-2.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\retrofit-2.0.2_288a077124197c338e0cf6e6d92e9abd1b674f12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.0\support-annotations-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.0_965367b4ae0ee407ac25a372f2389759e247b882.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_58e472a18e0b4d1b60d96cba71211b202718f9ca\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\2786b46d78d4e360d51f4183c7e0da5b8f53fbc2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_e22969bfa892232af688fa63893cc5085b6283a9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0_6344f2dcb78a9824df84cdccdf661ee15f4a0378.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\31f8fdce67875a19848b857d90a73ea470a50cb4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1df6d719c4e264d66bb98baa5cb637495b8cca66">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_f2b6305d035e55a73bca71fed426f59c71bc0b41.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\javax.annotation\javax.annotation-api\1.2\479c1e06db31c432330183f5cae684163f186146\javax.annotation-api-1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="479c1e06db31c432330183f5cae684163f186146">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\javax.annotation-api-1.2_7f6a2ab9b088fc916501b08298f5bc67fc5344b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\gson-2.6.1_8a297dd3edd5f64712f8a6626341c6af8be2d4dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_24852e0127f976beb5f1c847b83517ae0bbd7dff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\glide-3.7.0_0357a0931f7eade988432761355da1febf8e97ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.gradle\caches\modules-2\files-2.1\com.google.instrumentation\instrumentation-api\0.3.0\a2e145e7a7567c6372738f5c5a6f3ba6407ac354\instrumentation-api-0.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a2e145e7a7567c6372738f5c5a6f3ba6407ac354">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\instrumentation-api-0.3.0_134b5c93267cd7ad8dccb3a994684c66f2ed9bcf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\cc5e495cd770d69973ec26ccb1a8f80d6fd7d139\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_b8af78916ca29c8fa9ed01e0d5d006ec3e2bc09a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\beac50521b3413dfd6d735269eda129c2a9379bc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4e01b82d664e1a8253b2b9658e74b5da35c8771d">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_8eb10d6ee387d574e3194fd9675d8d76891557c6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\davin\.android\build-cache\a03a5c9c5301297adbd710c6e42c5c6152871159\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f5bcd9cbfeedc58f493339841a7c5d0347a39f0b">
+        <dex dex="C:\Users\davin\AndroidStudioProjects\RAN\app\build\intermediates\pre-dexed\debug\classes_63eb9d6900f26900aa7b6463af520b8c82375b6c.jar" />
+    </item>
+
+</items>

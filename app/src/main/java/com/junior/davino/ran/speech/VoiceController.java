@@ -101,12 +101,14 @@ public class VoiceController {
         stop();
 
         try {
-            if (filePath ==null )
+            if (filePath ==null ){
+                Log.i(TAG, "FILEPATH = NULL!!!!!");
                 return;
+            }
 
             //Reading the file..
             //Reading the file..
-            File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+            File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
             File file = new File(path, filePath);
             byte[] byteData = new byte[(int) file.length()];
             Log.d(TAG, (int) file.length()+"");
@@ -133,14 +135,12 @@ public class VoiceController {
         //Write the output audio in byte
         byte saudioBuffer[] = new byte[bufferSize];
 
-        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
         File file = new File(path, filePath);
         FileOutputStream fileOutput = null;
         try {
             fileOutput = new FileOutputStream(file);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -170,7 +170,7 @@ public class VoiceController {
             return;
 
         //Reading the file..
-        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
         File file = new File(path, filePath);
         byte[] byteData = new byte[(int) file.length()];
 

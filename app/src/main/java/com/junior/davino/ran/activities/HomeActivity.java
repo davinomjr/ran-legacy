@@ -128,7 +128,6 @@ public class HomeActivity extends BaseActivity {
         processingDialog.dismiss();
         loginButton.setEnabled(true);
         startActivity(new Intent(getApplication(), TestUsersActivity.class));
-        finish();
     }
 
     public void onLoginFailed() {
@@ -136,7 +135,7 @@ public class HomeActivity extends BaseActivity {
     }
 
     public void onLoginFailed(String errorMessage) {
-        if(processingDialog != null){
+        if(processingDialog != null && processingDialog.isShowing()){
             processingDialog.dismiss();
         }
 
