@@ -1,17 +1,161 @@
 <resources>
 
-    <style name="AppTheme" parent="AppTheme.Base">
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light">
+        <item name="android:typeface">monospace</item>
+        <item name="colorPrimary">@color/colorPrimaryDarker</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="subtitleTextColor">@android:color/white</item>
+
+        <item name="android:buttonTint">@color/colorPrimary</item>
+
+        <!-- Material Dialog -->
+        <item name="md_widget_color">@color/grey_accent</item>
+        <item name="md_medium_font">OpenDyslexic_Regular.ttf</item>
+        <item name="md_regular_font">OpenDyslexic_Regular.ttf</item>
+        <item name="md_positive_color">@color/colorPrimaryDark</item>
+        <item name="md_negative_color">@color/colorPrimaryDark</item>
+
+        <item name="android:actionBarStyle">@style/AppTheme.ActionBarStyle</item>
+    </style>
+
+    <style name="AppTheme.Base.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:typeface">monospace</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionMenuTextColor">@color/textColorPrimary</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="android:buttonTint">@color/colorPrimary</item>
+
+        <item name="md_widget_color">@color/grey_accent</item>
+        <item name="md_medium_font">OpenDyslexic_Regular.ttf</item>
+        <item name="md_regular_font">OpenDyslexic_Regular.ttf</item>
+        <item name="md_positive_color">@color/colorPrimaryDark</item>
+        <item name="md_negative_color">@color/colorPrimaryDark</item>
+
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
         <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
         <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+
+
+        <item name="android:dialogTheme">@style/AppTheme.Dialog</item>
+        <item name="dialogTheme">@style/AppTheme.Dialog</item>
+        <item name="android:alertDialogTheme">@style/AppTheme.Dialog</item>
+        <item name="alertDialogTheme">@style/AppTheme.Dialog</item>
+
+        <item name="android:actionBarStyle">@style/AppTheme.ActionBarStyle</item>
+    </style>
+
+
+    <style name="AppTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:color">@color/colorPrimaryDark</item>
+        <item name="android:titleTextStyle">@style/AppTheme.ActionBar.TitleTextStyle</item>
+    </style>
+
+    <style name="AppTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="MainButtonTheme">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:drawablePadding">-80dp</item>
+        <item name="android:paddingBottom">80dp</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 
     <style name="MainButtonTheme_Land">
         <item name="android:textColor">#ffffff</item>
         <item name="android:layout_weight">1</item>
         <item name="android:paddingBottom">50dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+
+    <style name="TextInput" parent="Widget.Design.TextInputLayout">
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="colorControlNormal">@color/black</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textSize">20sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="FormLabel">
+        <item name="android:textColor">@color/grey_accent</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">-15dp</item>
+    </style>
+
+
+    <!-- Default Roboto styles, for all OS versions -->
+    <style name="TextAppearance.Roboto" parent="TextAppearance.AppCompat">
+        <!-- Setting the fontFamily to something that doesn't exist causes the system to load the fallback font -->
+        <item name="android:fontFamily">roboto</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Normal">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.BoldItalic">
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
+
+    <!-- With < v21, Android will use the sDefaults array (i.e., Typeface.defaultFromStyle()) if and only if
+         fontFamily=@null, typeface is omitted (defaults to -1 when parsed), and style > 0.
+         But it gets trickier: when style == 0 (textStyle=normal), then you *must* also set typeface="sans"
+         in order to trick it into using the Typeface.SANS instance.
+      -->
+
+    <!-- Default Lato styles -->
+    <style name="TextAppearance.OpenDyslexic" parent="TextAppearance.AppCompat">
+        <!-- with fontFamily=null and typeface=normal, TextView will automatically
+             fall back to Typeface.defaultFromStyle(int) based on the android:textStyle attribute,
+             EXCEPT in the case of "normal", where we will also have to set typeface=sans -->
+        <item name="android:fontFamily">@null</item>
+        <item name="android:typeface">normal</item>
+    </style>
+
+    <style name="TextAppearance.OpenDyslexic.Normal">
+        <!-- with fontFamily=null and textStyle=normal, we can get the custom font by setting typeface=sans -->
+        <item name="android:textStyle">normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="TextAppearance.OpenDyslexic.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.OpenDyslexic.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="TextAppearance.OpenDyslexic.BoldItalic">
+        <item name="android:textStyle">bold|italic</item>
     </style>
 
 </resources>

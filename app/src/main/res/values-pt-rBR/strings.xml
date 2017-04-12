@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RAN</string>
+    <string name="btStart">Iniciar</string>
+    <string name="btFinalize">Finalizar</string>
+    <string name="sNumberWords">Número de palavras: %s</string>
+    <string name="sNumberStimuli">Número de estímulos: %s</string>
+    <string name="sNumberMatches">Número de Acertos: %s</string>
+    <string name="sNumberMiss">Número de Erros: %s</string>
+    <string name="voiceRecognitionNotPresent">Reconhecimento de Voz não disponível.</string>
+    <string name="audioError">Ocorreu um erro na reprodução/gravação do áudio</string>
+    <string name="clientError">Ocorreu um erro no serviço de reconhecimento de voz.</string>
+    <string name="networkError">Ocorreu um erro na rede. Favor verificar dados/WIFI</string>
+    <string name="networkTimeoutError">O tempo limite de resposta para rede se esgotou</string>
+    <string name="noMatchError">0 acertos</string>
+    <string name="serverError">Problema no servidor</string>
+    <string name="speechTimeoutError">O tempo limite para reconhecimento de voz se esgotou</string>
+    <string name="recoginizerBusyError">Recurso de reconhecimento de voz indisponível no momento</string>
+    <string name="genericError">Ocorreu um erro inesperado</string>
+    <string name="time">Tempo: %s segundos</string>
+    <string name="meanTime">Média de tempo/estímulo: %s segundos</string>
+    <string name="progress_dialog">Processando</string>
+    <string name="please_wait">Por favor aguarde...</string>
+    <string name="menu_color">Cores</string>
+    <string name="menu_digit">Dígitos</string>
+    <string name="menu_letter">Letras</string>
+    <string name="menu_object">Objetos</string>
+    <string name="action_settings">Configurações</string>
+    <string name="action_signout">Sair</string>
+    <string name="reseted">Reiniciado</string>
+    <string name="resultTabTitle1">Geral</string>
+    <string name="resultTabTitle2">Acertos</string>
+    <string name="resultTabTitle3">Erros</string>
+    <string name="test">Teste</string>
+    <string name="play">Ouvir</string>
+
+    <string name="two">2</string>
+    <string name="four">4</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="nine">9</string>
+
+    <string name="letter_a">a aa ah e</string>
+    <string name="letter_f">f F s S</string>
+    <string name="letter_s">s ss es e</string>
+    <string name="letter_g">g G d D</string>
+    <string name="letter_u">u U</string>
+
+
+    <string name="letter_d">d v b e</string>
+    <string name="letter_o">o oh</string>
+    <string name="letter_p">p t v b e</string>
+
+    <string name="letter_r">r R s S</string>
+    <string name="letter_h">h H</string>
+
+    <string name="language_code">pt-BR</string>
+    <string name="createUser">Criar</string>
+    <string name="updateUser">Atualizar</string>
+    <string name="deleteUser">Remover</string>
+
+    <string name="inputName">Nome</string>
+    <string name="inputAge">Idade</string>
+    <string name="inputSchoolGrade">Escolaridade</string>
+    <string name="inputGender">Gênero</string>
+    <string name="inputPhoto">Foto</string>
+    <string name="genderMale">Masculino</string>
+    <string name="genderFemale">Feminino</string>
+    <string name="inputEmail">Email</string>
+    <string name="inputPassword">Senha</string>
+
+    <string name="err_required_input">%s é um campo obrigatório</string>
+    <string name="err_msg_name">Favor informar um nome</string>
+    <string name="err_msg_age">Favor informar idade válida</string>
+    <string name="err_msg_SchoolGrade">Favor informar nível de escolaridade válido</string>
+    <string name="err_msg_email">Favor informar um email válido</string>
+    <string name="err_msg_password">Favor informar uma senha válida</string>
+    <string name="err_msg_phone">Favor informar um telefone válido</string>
+    <string name="registerButton">Registrar</string>
+    <string name="createSuccess">Inclusão realizada com sucesso!</string>
+    <string name="updateSuccess">Alteração realizada com sucesso!</string>
+    <string name="sign_In_Required">Login necessário</string>
+    <string name="sign_in_failed">Login falhou!</string>
+    <string name="err_msg_signup">Ocorreu um problema no cadastramento de usuário</string>
+    <string name="err_msg_signin">Ocorreu um problema na autenticação do usuário</string>
+
+    <string name="msg_sign_in">Entrar</string>
+    <string name="msg_sign_up">Registrar</string>
+    <string name="msg_lost_password">Perdeu a senha?</string>
+    <string name="authenticating">Autenticando</string>
+    <string name="userLabel">Usuário</string>
+    <string name="parentLabel">Responsável</string>
+    <string name="inputPhone">Telefone</string>
+
+    <string name="user">Usuário</string>
+    <string name="parent">Responsável</string>
+    <string name="resultHistory">Histórico de Resultados</string>
+    <string name="loading">Carregando...</string>
+    <string name="confirmation">Confirmação</string>
+    <string name="confirmation_delete_msg">Você realmente deseja remover este usuário? Esse processo excluirá o usuário e seu respectivo histórico de resultados salvos.</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="recoverPassword">Recuperar senha</string>
+    <string name="recoverSuccessfull">Você receberá um e-mail com instruções de como reinicializar sua senha.</string>
+    <string name="err_msg_wrong_auth_data">Email/senha inválido(s).</string>
+</resources>

@@ -29,6 +29,11 @@ public class ObjectGrammar extends BaseGrammar implements IGrammar {
     }
 
     @Override
+    public int getMinLength(){
+        return 2;
+    }
+
+    @Override
     public List<String> getGrammarItems() {
         List<String> words = new ArrayList<>();
         words.add("tesoura");

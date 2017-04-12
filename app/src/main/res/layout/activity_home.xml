@@ -1,110 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_home"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.junior.davino.ran.activities.HomeActivity"
-    android:background="@color/colorAccent">
+    android:background="@color/colorBackgroundLighter"
+    tools:context="com.junior.davino.ran.activities.HomeActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-        ></include>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_below="@id/toolbar"
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="2dp">
+        <LinearLayout
+            android:layout_width="344dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingTop="56dp"
+            android:layout_centerInParent="true"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
 
-            <TableRow
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:src="@drawable/ran_logo" />
+
+            <!-- Email Label -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:theme="@style/TextInput">
+
+                <EditText
+                    android:id="@+id/input_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/inputEmail"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Password Label -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:theme="@style/TextInput"
+                app:passwordToggleContentDescription="@string/password_hint"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/input_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/inputPassword"
+                    android:inputType="textPassword"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_login"
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:weightSum="1"
-                android:layout_weight="0.5">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/md_material_blue_800"
+                android:padding="12dp"
+                android:text="@string/msg_sign_in"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/white" />
 
-                <RelativeLayout
-                    android:layout_width="0dp"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="24dp">
+
+
+                <TextView
+                    android:id="@+id/link_lostPassword"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:layout_margin="2dp">
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/msg_lost_password"
+                    android:textSize="16dip" />
 
-                    <Button
-                        android:id="@+id/btn_color"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="@string/menu_color"
-                        android:background="#01579B"
-                        android:drawableBottom="@drawable/ic_palette_white_24dp"
-                        style="@style/MainButtonTheme" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="0dp"
+
+                <TextView
+                    android:id="@+id/link_signup"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:layout_margin="2dp">
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/msg_sign_up"
+                    android:textSize="16dip" />
 
-                    <Button
-                        android:id="@+id/btn_digit"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="@string/menu_digit"
-                        android:background="#0277BD"
-                        android:drawableBottom="@drawable/ic_looks_one_white_24dp"
-                        style="@style/MainButtonTheme"/>
-                </RelativeLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:weightSum="1"
-                android:layout_weight="0.5">
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:layout_margin="2dp">
-                    <Button
-                        android:id="@+id/btn_letter"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="@string/menu_letter"
-                        android:background="#0288D1"
-                        android:drawableBottom="@drawable/ic_text_format_white_24dp"
-                        style="@style/MainButtonTheme"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:layout_margin="2dp">
-
-                    <Button
-                        android:id="@+id/btn_object"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="@string/menu_object"
-                        android:background="#039BE5"
-                        android:drawableBottom="@drawable/ic_flight_white_24dp"
-                        style="@style/MainButtonTheme"/>
-                </RelativeLayout>
-            </TableRow>
+            </RelativeLayout>
 
 
-        </TableLayout>
+        </LinearLayout>
 
-    </LinearLayout>
-
-</RelativeLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -2,7 +2,6 @@ package com.junior.davino.ran.speech.grammar;
 
 import android.content.Context;
 
-import com.junior.davino.ran.R;
 import com.junior.davino.ran.interfaces.IGrammar;
 
 import java.util.ArrayList;
@@ -21,31 +20,31 @@ public class LetterGrammar extends BaseGrammar implements IGrammar {
     }
 
     public boolean isEqual(String expectedWord, String actualWord){
-        switch(expectedWord){
-            case "a":
-                return context.getResources().getString(R.string.letter_a).contains(actualWord);
-            case "f":
-                return context.getResources().getString(R.string.letter_f).contains(actualWord);
-            case "s":
-                return context.getResources().getString(R.string.letter_s).contains(actualWord);
-            case "g":
-                return context.getResources().getString(R.string.letter_g).contains(actualWord);
-            case "u":
-                return context.getResources().getString(R.string.letter_u).contains(actualWord);
-            default:
-                return false;
+        return true;
+//        switch(expectedWord){
+//            case "a":
+//                return context.getResources().getString(R.string.letter_a).contains(actualWord);
+//            case "d":
+//                return context.getResources().getString(R.string.letter_d).contains(actualWord);
+//            case "o":
+//                return context.getResources().getString(R.string.letter_o).contains(actualWord);
+//            case "s":
+//                return context.getResources().getString(R.string.letter_s).contains(actualWord);
+//            case "p":
+//                return context.getResources().getString(R.string.letter_p).contains(actualWord);
+//            default:
+//                return false;
         }
-    }
 
 
     @Override
     public List<String> getGrammarItems() {
         List<String> words = new ArrayList<>();
         words.add("a");
-        words.add("f");
+        words.add("d");
+        words.add("o");
         words.add("s");
-        words.add("g");
-        words.add("u");
+        words.add("p");
         return words;
     }
 }

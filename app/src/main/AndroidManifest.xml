@@ -2,39 +2,64 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.junior.davino.ran">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".code.RanApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.Base">
+
+
+        <activity android:name=".activities.TestUsersActivity" />
+        <activity android:name=".activities.HomeTestActivity"
+            android:theme="@style/AppTheme.Base"/>
         <activity
-            android:name=".activities.HomeActivity">
-            <!-- android:screenOrientation="portrait" -->
+            android:name=".activities.TestActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Base.NoActionBar" />
+        <activity
+            android:name=".activities.ResultActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Base.NoActionBar" />
+
+        <service android:name=".speech.SpeechService" />
+
+        <activity
+            android:name=".activities.RegisterTestUserActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.TestUsersDetailsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Base.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activities.HomeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activities.TestActivity"
+        <activity android:name=".activities.SignUpActivity" />
+        <activity android:name=".activities.LostPasswordActivity" />
+        <activity android:name=".activities.UserProfileActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape">
+            android:screenOrientation="portrait">
         </activity>
-
-        <activity
-            android:name=".activities.ResultActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape">
-        </activity>
-        <service android:name=".speech.SpeechService"/>
     </application>
 
 </manifest>

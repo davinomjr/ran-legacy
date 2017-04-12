@@ -39,7 +39,6 @@ public class DigitFilter implements IWordFilter {
 
         Log.i(TAG, sentenceRecognized);
         List<String> results = new LinkedList<String>(Arrays.asList(sentenceRecognized.split(characterSplit)));
-
         ListIterator<String> it = results.listIterator();
         while(it.hasNext()){
             String nextWord = StringUtils.stripAccents(it.next().toLowerCase());

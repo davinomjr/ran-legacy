@@ -1,71 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundTest">
+    android:background="@color/backgroundTest"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/buttons"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_alignParentTop="true">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btn_back"
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp">
+
+            <Button
+                android:id="@+id/btn_back"
+                style="@style/Test_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@color/orange_accent"
+                android:drawableLeft="@drawable/ic_cancel_white_24dp"
+                android:fontFamily="sans-serif"
+                android:text="Voltar" />
+
+            <Button
+                android:id="@+id/btn_start"
+                style="@style/Test_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/md_material_blue_800"
+                android:drawableLeft="@drawable/ic_mic_white_24dp"
+                android:fontFamily="sans-serif"
+                android:text="Iniciar" />
+
+            <Button
+                android:id="@+id/btn_reset"
+                style="@style/Test_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:background="@color/md_edittext_error"
+                android:drawableLeft="@drawable/ic_restore_white_24dp"
+                android:fontFamily="sans-serif"
+                android:text="Reiniciar" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_test_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buttons" />
+
+        <TextView
+            android:id="@+id/countdownTimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Voltar"
-            android:drawableLeft="@drawable/ic_cancel_white_24dp"
-            android:drawablePadding="-45sp"
-            android:paddingLeft="50dp"
-            android:background="@color/orange_accent"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_marginRight="15dp" />
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/grey_accent"
+            android:textSize="150dp" />
 
-        <Button
-            android:id="@+id/btn_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Iniciar"
-            android:drawableLeft="@drawable/ic_mic_white_24dp"
-            android:drawablePadding="-45sp"
-            android:paddingLeft="50dp"
-            android:background="@color/md_material_blue_800"
-            style="@style/Widget.AppCompat.Button.Colored" />
+    </RelativeLayout>
 
-        <Button
-            android:id="@+id/btn_reset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Reiniciar"
-            android:drawablePadding="-45sp"
-            android:paddingLeft="30dp"
-            android:drawableLeft="@drawable/ic_restore_white_24dp"
-            android:layout_marginLeft="15dp"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:background="@color/md_edittext_error" />
-
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/fragment_test_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttons" />
-
-    <TextView
-        android:id="@+id/countdownTimer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_centerInParent="true"
-        android:textSize="150dp" />
-
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

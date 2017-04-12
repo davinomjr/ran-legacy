@@ -17,19 +17,19 @@ public class LetterBuilder extends BaseBuilder implements IItemBuilder {
             item.setCodeTestNumber(1);
         }
         else if(colorCode == 2){
-            item.setName("f");
+            item.setName("d");
             item.setCodeTestNumber(2);
         }
         else if(colorCode == 3){
-            item.setName("s");
+            item.setName("o");
             item.setCodeTestNumber(3);
         }
         else if(colorCode == 4){
-            item.setName("g");
+            item.setName("s");
             item.setCodeTestNumber(4);
         }
         else{
-            item.setName("u");
+            item.setName("p");
             item.setCodeTestNumber(5);
         }
 

@@ -3,6 +3,7 @@ package com.junior.davino.ran.speech.filters;
 import android.content.Context;
 
 import com.junior.davino.ran.interfaces.IWordFilter;
+import com.junior.davino.ran.utils.Constants;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -29,11 +30,13 @@ public class ObjectFilter implements IWordFilter {
     @Override
     public List<String> filterWords(String sentenceRecognized, String characterSplit) {
         List<String> wordsRecognized = new LinkedList<String>(Arrays.asList(sentenceRecognized.split(characterSplit)));
-        ListIterator<String> it = wordsRecognized.listIterator();
-        while(it.hasNext()){
-            String nextWord = StringUtils.stripAccents(it.next().toLowerCase());
-            if(nextWord.isEmpty() || nextWord.length() <= minLength){ // Retirando falso positivo
-                it.remove();
+        if(wordsRecognized.size() > Constants.ITEMSCOUNT){
+            ListIterator<String> it = wordsRecognized.listIterator();
+            while(it.hasNext()){
+                String nextWord = StringUtils.stripAccents(it.next().toLowerCase());
+                if(nextWord.isEmpty() || nextWord.length() <= minLength){ // Retirando falso positivo
+                    it.remove();
+                }
             }
         }
 

@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.junior.davino.ran.fragments.SummaryResultFragment">
+
+        <TextView
+            android:id="@+id/timeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/time"
+            android:textColor="#000000" />
+
+
+        <TextView
+            android:id="@+id/mean_timeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/meanTime"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/stimuli_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/sNumberWords"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/hits_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/sNumberMatches"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/misses_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/sNumberMiss"
+            android:textColor="#000000" />
+
+</LinearLayout>
