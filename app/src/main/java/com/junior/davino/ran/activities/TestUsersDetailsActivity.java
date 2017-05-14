@@ -32,7 +32,7 @@ import java.util.List;
 public class TestUsersDetailsActivity extends BaseActivity {
 
     private static final String TAG = "TestUsersDetailsActivity";
-    FirebaseApplication firebaseApp = new FirebaseApplication();
+    private FirebaseApplication firebaseApp = new FirebaseApplication();
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;

@@ -146,6 +146,4 @@ public class HomeActivity extends BaseActivity {
         showSnackBar(errorMessage);
         loginButton.setEnabled(true);
     }
-
-
 }

@@ -32,7 +32,7 @@ public class ColorFilter implements IWordFilter {
     @Override
     public List<String> filterWords(String sentenceRecognized, String characterSplit) {
         Log.i(TAG, "MIN LENGTH = " + minLength);
-        List<String> wordsRecognized = new LinkedList<String>(Arrays.asList(sentenceRecognized.split(characterSplit)));
+         List<String> wordsRecognized = new LinkedList<String>(Arrays.asList(sentenceRecognized.split(characterSplit)));
 
         if(wordsRecognized.size() > Constants.ITEMSCOUNT){
             ListIterator<String> it = wordsRecognized.listIterator();

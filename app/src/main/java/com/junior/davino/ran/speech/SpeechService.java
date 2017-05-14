@@ -128,11 +128,14 @@ public class SpeechService extends Service {
                 }
 
             }
-            if (text != null) {
+            if(text == null){
+                text = " ";
+            }
                 for (Listener listener : mListeners) {
                     listener.onSpeechRecognized(text, isFinal);
                 }
-            }
+
+
         }
 
         @Override
