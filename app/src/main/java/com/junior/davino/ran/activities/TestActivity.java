@@ -50,6 +50,9 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "TestActivity";
     private static final int REQUEST_RECORD_AUDIO_PERMISSION = 1;
+    private static final int REQUEST_INTERNET_PERMISSION = 2;
+    private static final int REQUEST_WRITE_EXTERNAL_PERMISSION = 3;
+    private static final int REQUEST_READ_EXTERNAL_PERMISSION = 4;
 
     private TestUser currentTestUser;
     private List<TestItem> items;
@@ -149,8 +152,9 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void verifyPermissions() {
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
-            Log.i(TAG, "PERMISSION OK!!");
+
         } else if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.RECORD_AUDIO)) {
             showPermissionMessageDialog();
         } else {
@@ -159,9 +163,10 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
         }
 
         String[] permissions = {
-                android.Manifest.permission.READ_EXTERNAL_STORAGE,
-                android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.INTERNET
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.INTERNET,
+                Manifest.permission.RECORD_AUDIO
         };
 
         for (String permission : permissions) {
@@ -169,9 +174,23 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
                 Log.i(TAG, "PERMISSION " + permission +  " OK!");
             }
             else{
-                Log.i(TAG, "Permission not granted: " + permission);
-                finish();
+                Log.i(TAG, "Permission not granted, requesting permission...");
+                ActivityCompat.requestPermissions(this, new String[]{permission}, getPermissionCode(permission));
             }
+        }
+    }
+
+    private int getPermissionCode(String permission){
+        switch(permission){
+            case Manifest.permission.RECORD_AUDIO:
+                return REQUEST_RECORD_AUDIO_PERMISSION;
+            case Manifest.permission.INTERNET:
+                return REQUEST_INTERNET_PERMISSION;
+            case Manifest.permission.READ_EXTERNAL_STORAGE:
+                return REQUEST_READ_EXTERNAL_PERMISSION;
+            case Manifest.permission.WRITE_EXTERNAL_STORAGE:
+                return REQUEST_WRITE_EXTERNAL_PERMISSION;
+            default: throw new IndexOutOfBoundsException("permission");
         }
     }
 

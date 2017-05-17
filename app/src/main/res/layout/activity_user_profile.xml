@@ -5,6 +5,7 @@
     android:id="@id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackgroundLighter"
     tools:context="com.junior.davino.ran.activities.UserProfileActivity">
 
 
@@ -18,11 +19,11 @@
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="8dp">
 
-        <ImageView android:src="@drawable/letter_r"
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="72dp"
+            android:layout_height="100dp"
             android:layout_marginBottom="24dp"
-            android:layout_gravity="center_horizontal" />
+            android:src="@drawable/ran_logo" />
 
         <!--  Name Label -->
         <android.support.design.widget.TextInputLayout
