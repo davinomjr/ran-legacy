@@ -68,6 +68,7 @@ public class FirebaseApplication extends Application {
             }
         };
     }
+
     public void createNewUser(final Context context, final String name, final String email, final String password, final String errorMessage){
         getFirebaseAuth().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener((Activity) context, new OnCompleteListener<AuthResult>() {
