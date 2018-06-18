@@ -1,5 +1,5 @@
 # RAN-Legacy
-An Android application for the RAN (Rapid Automatized Naming) test.
+An Android app for the RAN (Rapid Automatized Naming) test.
 
 Rapid automatized naming (RAN) is a task that measures how quickly individuals can name aloud objects, pictures, colors, or symbols (letters or digits) (https://en.wikipedia.org/wiki/Rapid_automatized_naming)
 
