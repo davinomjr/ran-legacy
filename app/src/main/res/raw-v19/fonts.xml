@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <familyset>
     <family name="sans-serif">
-        <font style="normal" weight="400">fonts/OpenDyslexic_Regular.ttf</font>
-        <font style="italic" weight="400">fonts/OpenDyslexic_Italic.ttf</font>
-        <font style="normal" weight="700">fonts/OpenDyslexic_Bold.ttf</font>
-        <font style="italic" weight="700">fonts/OpenDyslexic_BoldItalic.ttf</font>
+        <font style="normal" weight="400">fonts/Arial.ttf</font>
+        <font style="italic" weight="400">fonts/Arial.ttf</font>
+        <font style="normal" weight="700">fonts/Arial.ttf</font>
+        <font style="italic" weight="700">fonts/Arial.ttf</font>
     </family>
 </familyset>

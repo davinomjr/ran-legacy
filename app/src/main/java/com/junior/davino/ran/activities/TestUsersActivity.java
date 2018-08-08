@@ -1,5 +1,6 @@
 package com.junior.davino.ran.activities;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,6 +23,7 @@ import com.junior.davino.ran.adapters.UserAdapter;
 import com.junior.davino.ran.interfaces.OnItemClickListener;
 import com.junior.davino.ran.interfaces.OnLayoutListenerReady;
 import com.junior.davino.ran.models.TestUser;
+import com.junior.davino.ran.utils.FontsUtil;
 
 import org.parceler.Parcels;
 
@@ -146,7 +148,24 @@ public class TestUsersActivity extends BaseActivity implements View.OnClickListe
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if(id == R.id.action_signout){
+        if(id == R.id.change_font) {
+            new MaterialDialog.Builder(this)
+                    .title(getString(R.string.change_font))
+                    .items(FontsUtil.FONTS)
+                    .itemsCallbackSingleChoice(this.getCurrentFontNumber(), new MaterialDialog.ListCallbackSingleChoice() {
+                        @Override
+                        public boolean onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                            changeFont(FontsUtil.fontNumberToName(which));
+                            finish();
+                            startActivity(getIntent());
+                            return true;
+                        }
+                    })
+                    .positiveText(getString(R.string.choose))
+                    .show();
+
+        }
+        else if(id == R.id.action_signout){
             firebaseApp.logoff();
             Intent intent = new Intent(TestUsersActivity.this, HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

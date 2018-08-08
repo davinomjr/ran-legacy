@@ -1,6 +1,7 @@
 package com.junior.davino.ran.activities;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
@@ -53,6 +54,8 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
     private static final int REQUEST_INTERNET_PERMISSION = 2;
     private static final int REQUEST_WRITE_EXTERNAL_PERMISSION = 3;
     private static final int REQUEST_READ_EXTERNAL_PERMISSION = 4;
+
+    private static final int MULTIPLE_CODE_PERMISSION = 5;
 
     private TestUser currentTestUser;
     private List<TestItem> items;
@@ -152,16 +155,6 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void verifyPermissions() {
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
-
-        } else if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.RECORD_AUDIO)) {
-            showPermissionMessageDialog();
-        } else {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO},
-                    REQUEST_RECORD_AUDIO_PERMISSION);
-        }
-
         String[] permissions = {
                 Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -169,15 +162,17 @@ public class TestActivity extends BaseActivity implements View.OnClickListener {
                 Manifest.permission.RECORD_AUDIO
         };
 
-        for (String permission : permissions) {
-            if(ActivityCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED){
-                Log.i(TAG, "PERMISSION " + permission +  " OK!");
-            }
-            else{
-                Log.i(TAG, "Permission not granted, requesting permission...");
-                ActivityCompat.requestPermissions(this, new String[]{permission}, getPermissionCode(permission));
-            }
-        }
+        ActivityCompat.requestPermissions(this, permissions, MULTIPLE_CODE_PERMISSION);
+//
+//        for (String permission : permissions) {
+//            if(ActivityCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED){
+//                Log.i(TAG, "PERMISSION " + permission +  " OK!");
+//            }
+//            else{
+//                Log.i(TAG, "Permission not granted, requesting permission...");
+//                ActivityCompat.requestPermissions(this, new String[]{permission}, getPermissionCode(permission));
+//            }
+//        }
     }
 
     private int getPermissionCode(String permission){

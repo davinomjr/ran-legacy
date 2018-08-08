@@ -1,27 +1,35 @@
 {
   "project_info": {
-    "project_number": "892700629493",
-    "firebase_url": "https://api-project-892700629493.firebaseio.com",
-    "project_id": "api-project-892700629493",
-    "storage_bucket": "api-project-892700629493.appspot.com"
+    "project_number": "1052643318174",
+    "firebase_url": "https://ran-application.firebaseio.com",
+    "project_id": "ran-application",
+    "storage_bucket": "ran-application.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:892700629493:android:3857d4b9d627f19b",
+        "mobilesdk_app_id": "1:1052643318174:android:3857d4b9d627f19b",
         "android_client_info": {
           "package_name": "com.junior.davino.ran"
         }
       },
       "oauth_client": [
         {
-          "client_id": "892700629493-pe8idm4tkvpemsrvc7cjraj3go7du3rp.apps.googleusercontent.com",
+          "client_id": "1052643318174-0b6ca288492dgltnvcb63o60o3sh8h8h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.junior.davino.ran",
+            "certificate_hash": "c9a47b9a2dd1e9bf2c3243436d16b9c4edb7628b"
+          }
+        },
+        {
+          "client_id": "1052643318174-gmev94bahovftatppter251cv8jsooh5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBB_LKeQs0TbpmMM_GTSjQ7PCFX5BTzJKs"
+          "current_key": "AIzaSyBgz8i8r3NgzUbjQECmj82IKNNBWmbC-rM"
         }
       ],
       "services": {
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052643318174-gmev94bahovftatppter251cv8jsooh5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

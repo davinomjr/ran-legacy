@@ -95,4 +95,7 @@
     <string name="recoverPassword">Recover password</string>
     <string name="recoverSuccessfull">You will receive an email with instructions how to reset your password.</string>
     <string name="err_msg_wrong_auth_data">Wrong email/password.</string>
+
+    <string name="change_font">Change font</string>
+    <string name="choose">Choose</string>
 </resources>

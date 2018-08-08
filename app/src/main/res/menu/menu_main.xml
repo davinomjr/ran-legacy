@@ -11,8 +11,15 @@
         <!--app:showAsAction="never" />-->
 
     <item
+        android:id="@+id/change_font"
+        android:orderInCategory="1"
+        android:title="@string/change_font"
+        app:showAsAction="never"
+        />
+
+    <item
         android:id="@+id/action_signout"
-        android:orderInCategory="100"
+        android:orderInCategory="2"
         android:title="@string/action_signout"
         app:showAsAction="never" />
 

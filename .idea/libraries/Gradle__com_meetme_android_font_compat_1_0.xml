@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.meetme.android:font-compat-1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/23281c98596ca04874e8d1f558a6a5642510f498/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/23281c98596ca04874e8d1f558a6a5642510f498/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.meetme.android/font-compat/1.0/5fbfe46ab0e999bbf6b49618469cea5be40dd2e7/font-compat-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

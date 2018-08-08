@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <familyset>
     <!-- by using a custom font family name here, we can leverage the system's built-in fontFamily="lato" attribute to access these fonts -->
-    <family name="sans-serif">
-        <font style="normal" weight="300">fonts/OpenDyslexic_Regular.ttf</font>
-        <font style="normal" weight="400">fonts/OpenDyslexic_Regular.ttf</font>
-        <font style="italic" weight="400">fonts/OpenDyslexic_Italic.ttf</font>
-        <font style="normal" weight="500">fonts/OpenDyslexic_Regular.ttf</font>
-        <font style="normal" weight="700">fonts/OpenDyslexic_Bold.ttf</font>
-        <font style="italic" weight="700">fonts/OpenDyslexic_BoldItalic.ttf</font>
-    </family>
+    <!--<family name="sans-serif">-->
+        <!--<font style="normal" weight="300">fonts/Arial.ttf</font>-->
+        <!--<font style="normal" weight="400">fonts/Arial.ttf</font>-->
+        <!--<font style="italic" weight="400">fonts/Arial.ttf</font>-->
+        <!--<font style="normal" weight="500">fonts/Arial.ttf</font>-->
+        <!--<font style="normal" weight="700">fonts/Arial.ttf</font>-->
+        <!--<font style="italic" weight="700">fonts/OpenDyslexic_BoldItalic.ttf</font>-->
+    <!--</family>-->
 
     <!-- TODO: support aliases for different weights -->
     <alias name="sans-serif-thin" to="sans-serif" weight="100" />

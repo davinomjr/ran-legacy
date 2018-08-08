@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.firebase:firebase-storage-common-10.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/5b95a600ed98b188382fcef2e9dcbd2654b3675c/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/5b95a600ed98b188382fcef2e9dcbd2654b3675c/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

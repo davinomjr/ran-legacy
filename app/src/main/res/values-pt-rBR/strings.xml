@@ -103,4 +103,7 @@
     <string name="recoverPassword">Recuperar senha</string>
     <string name="recoverSuccessfull">Você receberá um e-mail com instruções de como reinicializar sua senha.</string>
     <string name="err_msg_wrong_auth_data">Email/senha inválido(s).</string>
+
+    <string name="change_font">Mudar fonte</string>
+    <string name="choose">Escolher</string>
 </resources>
